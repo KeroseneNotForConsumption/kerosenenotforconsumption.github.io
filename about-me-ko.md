@@ -2,14 +2,14 @@
 layout: page
 title: About me
 permalink: /about/me
-lang: en
+lang: ko
 ---
 
 # Chemistry Major
 
-I am a chemistry major currently interested in physical chemistry and computational chemistry. 
+저는 현재 물리 화학 및 컴퓨터 화학에 관심이 있는 화학 전공입니다.
 
-I first became interested in chemistry in high school, where I learned a lot - from your typical high school chemistry to college level material such as organic chemistry. The questions I had from those courses motivated me to start this blog and answer those questions. 
+저는 고등학교 때 화학에 처음 관심을 갖게 되었습니다. 그곳에서 일반적인 고등학교 화학에서 유기 화학과 같은 대학 수준의 재료에 이르기까지 많은 것을 배웠습니다. 그 과정에서 받은 질문은 저로 하여금 이 블로그를 시작하고 그 질문에 답하도록 동기를 부여했습니다.
 
 # Programming as a Hobby
 

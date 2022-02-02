@@ -2,14 +2,14 @@
 layout: page
 title: About this blog
 permalink: /about/blog
-lang: en
+lang: ko
 ---
 
 # The Blog
 
-The primary purpose of this blog is to share some of my questions and answers on chemistry.
+이 블로그의 주요 목적은 화학에 대한 나의 질문과 답변을 공유하는 것입니다.
 
-In this blog, I will also showcase some of my attempts at modeling and simulating chemical phenomena with code.
+이 블로그에서는 코드를 사용하여 화학 현상을 모델링하고 시뮬레이션하려는 몇 가지 시도를 소개합니다.
 
 # Any more questions?
 

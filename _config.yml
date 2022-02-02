@@ -31,9 +31,18 @@ github_username:  kerosenenotforconsumption
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-polyglot
 
 # Custom permalink
 permalink: /:categories/:title/
+
+languages: ["en", "ko"]
+default_lang: "en"
+exclude_from_localization: ["assets/css", "assets/img"]
+parallel_localization: false
+
+sass:
+    sourcemap: never
 
 # Exclude from processing.
 # The following items will not be processed, by default.

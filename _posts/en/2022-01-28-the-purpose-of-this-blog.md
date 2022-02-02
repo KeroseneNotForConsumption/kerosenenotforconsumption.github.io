@@ -3,6 +3,7 @@ layout: post
 title:  "The Purpose of this Blog"
 date:   2022-01-28 11:10:17 +0900
 categories: blog
+lang: en
 ---
 
 # A Repository For All Unanswered Questions
