@@ -1,0 +1,24 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@charset "utf-8";
+
+/* Put any custom CSS here */
+/* noto-serif-kr-regular - latin_korean */
+@font-face {
+    font-family: 'Noto Serif KR';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('../fonts/noto-serif-kr-v17-latin_korean-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/noto-serif-kr-v17-latin_korean-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* Override theme defaults */
+$base-font-family: 'Noto Serif KR';
+$base-font-size:   17px;
+$base-line-height: 2.0;
+
+/* load _sass/minima.scss */
+@import "minima";

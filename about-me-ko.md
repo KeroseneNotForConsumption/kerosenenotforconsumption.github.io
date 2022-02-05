@@ -1,37 +1,38 @@
 ---
 layout: page
-title: About me
+title: 글쓴이 소개
 permalink: /about/me
 lang: ko
 ---
 
-# Chemistry Major
+# 전공이 화학입니다
 
-저는 현재 물리 화학 및 컴퓨터 화학에 관심이 있는 화학 전공입니다.
+안녕하세요? 저는 물리화학과 계산화학에 관심이 있는 화학과 학부생입니다.
 
-저는 고등학교 때 화학에 처음 관심을 갖게 되었습니다. 그곳에서 일반적인 고등학교 화학에서 유기 화학과 같은 대학 수준의 재료에 이르기까지 많은 것을 배웠습니다. 그 과정에서 받은 질문은 저로 하여금 이 블로그를 시작하고 그 질문에 답하도록 동기를 부여했습니다.
+제가 처음 화학에 관심을 가지게 된 계기는 고등학교에서 화학을 배우면서였습니다. 화학I와 같은 고등학교 화학부터 고급화학, 그리고 유기화학까지 넓고 다양한 범위의 화학을 배울 수 있었으며, 저는 이 와중에 여러 가지 질문을 묻고 답하며 크게 성장할 수 있었습니다. 이 블로그가 여러분들에게 큰 도움이 되기를 바랍니다.
 
-# Programming as a Hobby
+# 코딩도 취미로 조금씩 합니다
 
-I am also an aspiring pythonista, with various ongoing, complete, and (sadly) abandoned projects.
+저는 유난히 파이썬을 좋아하며 여러 프로젝트를 진행해 본 경험이 있으며 현재도 진행 중인 프로젝트가 하나쯤은 있을 것입니다.
 
-So far, I have some experience with the following modules:
+다음과 같은 파이썬 모듈은 많이 써본 경험이 있지요:
 
 - NumPy
 - SciPy
 - SimPy
 - Matplotlib
 - Plotly
-- and more to come!
+- 그리고 앞으로 더 많이 써보겠지요?
 
-My first attempt at applying programming to chemsitry was when I and a group of friends built an ideal gas simuation with the Unity game engine. Since its inception, I added more features to it, such as intermolecular forces (according to the Lennard-Jones potential), and bonding/dissociation (which follow second-order and first-order kinetics). I was especially proud of the latter as the simulation could now demonstrate dynamic equilibrium. I may revisit this in the future.
+프로그래밍을 화학에 적용한 첫 번째 시도는 나와 친구 그룹이 Unity 게임 엔진으로 이상 기체 시뮬레이션을 구축했을 때였습니다. 처음부터 분자 간 인력(Lennard-Jones 전위에 따름) 및 결합/해리(2차 및 1차 동역학에 따름)와 같은 더 많은 기능을 추가했습니다. 나는 시뮬레이션이 이제 동적 평형을 보여줄 수 있었기 때문에 후자가 특히 자랑스러웠습니다. 나는 앞으로 이것을 다시 볼 수 있습니다.
 
-Feel free to check out my [Github](https://github.com/KeroseneNotForConsumption)!
+제가 진행해 본 프로젝트 중 규모가 가장 컸던 것은 바로 유니티 게임 엔진으로 제작한 '이상 기체 시뮬레이션'입니다. 과제연구로 친구들과 전체적인 틀을 만들고 기본적인 기능을 구현해냈었습니다. 그 이후로 분자간 인력(Lennard-Jones 퍼텐셜)과 결합/해리(각각 1차/2차 반응식을 따릅니다)도 추가하였으며, 결과적으로 이를 통하여 동적 평형을 보일 수 있었다는 것이 뿌듯하였지요. 다만 지금 보니 코드가 좀 난잡한 부분이 있기에 언젠가 다시 한번 시도해보고 싶네요.
 
-# Kerosene Certainly Not For Consumption
+관심이 있으시다면 제 [깃허브](https://github.com/KeroseneNotForConsumption)도 한 번 둘러보는 것 어떨까요?
 
-My username, "KeroseneNotForConsumption", was chosen just because (A) it was distinct and memorable (B) I liked it. You can call me *Kerosene* if you want.
+# 등유는 먹으면 좋지 않아요
 
-If you have accidently ingested kerosene, do not attempt to vomit as aspirating kerosene can cause serious damage to the lungs.  Seek medical attention immediately, and certainly do not smoke cigarettes like this [Darwin Awards recipient](https://darwinawards.com/darwin/darwin2012-03.html).
+제 닉네임, "KeroseneNotForConsumption"이 조금 이상하기는 하지만 잘 각인이 된다 생각하여 선택하게 되었습니다. 좀 길기에 그냥 **등유**라고 불려주셔도 될 것 같네요.
 
+딱히 궁금하시지는 않겠지만 등유를 실수로 먹었을 때 취해야 할 응급처치는 등유의 물질 안전 보건 자료 (Material Safety Data Sheet, 줄여서 MSDS)를 통하여 알 수 있습니다. 이에 따르면 등유를 토하려 하면 오히려 등유가 폐에 들어가 폐 손상을 입을 수 있다고 합니다. 무엇보다 [2012년 다윈상 수상자](https://darwinawards.com/darwin/darwin2012-03.html)처럼 담배는 피우시지는 마시고요.
 

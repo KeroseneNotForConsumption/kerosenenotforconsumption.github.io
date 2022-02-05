@@ -1,24 +1,24 @@
 ---
 layout: post
-title:  "이 블로그의 목적"
+title:  "블로그의 목적"
 date:   2022-01-28 11:10:17 +0900
 categories: blog
 lang: ko
 ---
 
-# A Repository For All Unanswered Questions
+# 화학 관련 질문의 집대성
 
-이 블로그의 주요 목적은 고등학교와 대학에서 화학을 배우는 동안 화학에 대한 답이 없는 질문에 답하는 것입니다.
+저는 고등학교와 대학에서 화학을 배우는 동안 여러 가지 질문이 떠오르고는 했었는데, 이 블로그에서는 그 질문들을 답하고자 합니다.
 
-이러한 질문 중 일부는 화학 및 물리학 및 수학과 같은 다른 분야를 더 깊이 파고들지 않고는 답을 얻을 수 없습니다. 그러한 질문은 가능한 가장 간단한 방법으로 답변될 것입니다.
+질문 중 일부는 심화된 물리학, 수학 등 지식을 요구할 수 있습니다. 답하기 위하여 이런 지식을 당연히 소개해야 하겠지만 최대한 쉽고 직관적으로 설명할 생각이에요.
 
-다른 질문은 표면적으로는 쉬워 보이지만 더 깊이 파고들면 화학에 대한 중요한 통찰력을 드러냅니다. 나는 또한 그러한 질문을 소개하고 해결하고자 합니다.
+이렇게 여러 질문을 통하여 화학을 탐구해보며 더 깊은 지식과 통찰력을 얻을 수 있다고 생각하며 글을 써 나아갈 생각입니다.
 
-# Modeling and Simulating Chemical Phenomena
+# 화학 모델링과 시뮬레이션
 
-The other purpose of this blog is to share some of my attempts of modelling and simulating chemistry with code, mainly python.
+또한 이 블로그에서는 제가 화학을 코드로 모델링하고 시뮬레이션하는 시도 몇 가지도 소개해보려 합니다.
 
-This blog will focus on explaining the general workings of my projects, which will most likely be available as a public [Github](https://github.com/KeroseneNotForConsumption) repository. 
+파이썬과 같은 언어를 잘 모르는 사람에게도 접근성이 좋겠끔 설명하려 합니다만, 더 자세히 알고 싶으시다면 제 [깃허브](https://github.com/KeroseneNotForConsumption)도 한 번 둘러보시기 바래요. 
 
 
 

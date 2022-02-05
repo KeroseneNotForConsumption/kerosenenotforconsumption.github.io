@@ -1,16 +1,16 @@
 ---
 layout: page
-title: About this blog
+title: 블로그 소개
 permalink: /about/blog
 lang: ko
 ---
 
-# The Blog
+# 블로그
 
-이 블로그의 주요 목적은 화학에 대한 나의 질문과 답변을 공유하는 것입니다.
+이 블로그는 우선 화학에 대한 질문과 답변을 공유하기 위하여 만들어졌습니다.
 
-이 블로그에서는 코드를 사용하여 화학 현상을 모델링하고 시뮬레이션하려는 몇 가지 시도를 소개합니다.
+더불어 이 블로그에서는 코드를 통한 화학 현상의 모델링과 시뮬레이션도 다룰 계획입니다.
 
-# Any more questions?
+# 질문 없나요?
 
-If you have any questions or suggestions about anything about this blog, feel free to email me. I may not be able to respond to all emails in a timely manner, but any input will be appreciated greatly.
+이메일을 통한 질문이나 조언은 언제나 환영합니다! 다만 답장이 많이 늦어질 수 있다는 점은 양해 부탁드려요!
