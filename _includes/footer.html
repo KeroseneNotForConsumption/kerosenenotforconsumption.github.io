@@ -8,17 +8,17 @@
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
-          <li class="p-name">
+          <li class="p-name" style="font-size:90%">
             {%- if site.author -%}
               {{ site.author | escape }}
             {%- else -%}
               {{ site.data.l10n.title | escape }}
             {%- endif -%}
             {%- if site.email -%}
-            <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+            <li style="font-size:90%"><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
             {%- endif -%}
         </ul>
-        <div>{%- include social.html -%}</div>
+        <div style="font-size:90%">{%- include social.html -%}</div>
         <div class="lang-switcher">
           {%- include lang-switcher.html -%}
         </div>
@@ -29,7 +29,7 @@
       </div>
 
       <div class="footer-col footer-col-3">
-        <p>{{- site.data.l10n.description | escape -}}</p>
+        <p style="font-size:90%">{{- site.data.l10n.description | escape -}}</p>
       </div>
     </div>
 
