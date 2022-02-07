@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "블로그의 목적"
-date:   2022-01-28 11:10:17 +0900
 categories: blog
 lang: ko
 ---
