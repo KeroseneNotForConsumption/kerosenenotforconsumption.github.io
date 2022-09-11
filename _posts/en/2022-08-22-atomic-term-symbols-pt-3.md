@@ -17,7 +17,7 @@ In the preceding Part 1 and 2, we went over the theoretical background of multi-
 # Example: Carbon $1s^22s^22p^2$
 $1s^22s^22p^2$ carbon consists of 6 electrons, which is a lot compared to our previous examples. The following are some of the microstates of $1s^22s^22p^2$.
 
-![Microstates 1](/assets/img/atomic-term-symbols/microstates_1.png)
+![Microstate 1](/assets/img/atomic-term-symbols/microstates_1.png)
 
 For all microstates, the four electrons of $1s$ and $2s$ subshells are the same. In addition, for these four electrons, the $M_L = m_{l1} + m_{l2} + \cdots = 0$ and $M_S = m_{s1} + m_{s2} + \cdots = 0$ as they cancel each other out.
 
@@ -39,7 +39,7 @@ This results in 15 microstates. Mathematically speaking, assigning 2 equivalent 
 
 $$\frac{G!}{N!(G-N)!}$$
 
-The number of microstates is equal to the number of actual states, as shown in part 2. Similar to part 2, we organize these microstates into a table, according to their $M_L$ and $M_S$. For each term symbol, we cancel one microstate from each of the the possible $M_L$ and $M_S$ for that term symbol. We finish when there are no microstates remaining (thus no states remaining as well).
+The number of microstates is equal to the number of actual states, as shown in part 2. Similar to approach 2 of part 2, we organize these microstates into a table, according to their $M_L$ and $M_S$. For each term symbol, we cancel one microstate from each of the the possible $M_L$ and $M_S$ for that term symbol. We finish when there are no microstates remaining (thus no states remaining as well).
 
 ![Microstate Table](/assets/img/atomic-term-symbols/table_1.png)
 
@@ -59,15 +59,15 @@ Note that the process of drawing electron configurations and then filling in the
 
 ![Table](/assets/img/atomic-term-symbols/table_2.png)
 
-The first term symbol that arises from this table is $^3P$, as the largest value of $M_L = 1$ (which implies $L = 1$) and $M_S = 1$ (which implies $S = 1$). We cross out one entry from each $M_L$ and $M_S$ possible for $^3P$.
+The first term symbol that arises from this table is $^3P$, as the largest value of $M_S = +1$ (which implies $S = 1$) and simultaneously, the largest possible value of $M_L = +1$ (which implies $L = 1$). We cross out one entry from each $M_L$ and $M_S$ possible for $^3P$.
 
 ![Table](/assets/img/atomic-term-symbols/table_4.png)
 
-The next term symbol is $^1D$, as the largest value of $M_L = 2$ (which implies $L = 2$) and $M_S = 0$ (which implies $S = 0$).
+The next term symbol is $^1D$, as $M_S = 0$ (which implies $S = 0$) and the largest value of $M_L = +2$ (which implies $L = 2$).
 
 ![Table](/assets/img/atomic-term-symbols/table_6.png)
 
-The last term symbol is $^1S$, where $M_L = 0$ and $M_S = 0$.
+The last term symbol is $^1S$, where $M_S = 0$ and $M_L = 0$ thus $S = 0$ and $L = 0$.
 
 These are the term symbols:
 
@@ -75,11 +75,11 @@ These are the term symbols:
 
 We have yet to fully specify these term symbols, notably the value of $J$. Recall how $J$ can have the values $\left\|L - S\right\|,\,\cdots,\,L + S$.
 
-For $^1D$ ($L = 2$ and $S = 0$), $J_{min} = 2$ and $J_{max} = 2$. Therefore, $J = 2$ and the term symbol is $^1D_2$.
+For $^3P$ ($L = 1$ and $S = 1$), $J_{\text{min}} = 0$ and $J_{\text{max}} = 2$. Therefore, $J = 2,\, 1,\, 0$ and the term symbols are $^3P_2$, $^3P_1$, and $^3P_0$.
 
-For $^3P$ ($L = 1$ and $S = 1$), $J_{min} = 0$ and $J_{max} = 2$. Therefore, $J = 2, 1, 0$ and the term symbols are $^3P_2$, $^3P_1$, and $^3P_0$.
+For $^1D$ ($L = 2$ and $S = 0$), $J_{\text{min}} = 2$ and $J_{\text{max}} = 2$. Therefore, $J = 2$ and the term symbol is $^1D_2$.
 
-For $^1S$ ($L = 0$ and $S = 0$), $J_{min} = 0$ and $J_{max} = 0$. Therefore, $J = 0$ and the term symbol is $^1S_0$.
+For $^1S$ ($L = 0$ and $S = 0$), $J_{\text{min}} = 0$ and $J_{\text{max}} = 0$. Therefore, $J = 0$ and the term symbol is $^1S_0$.
 
 Therefore, the term symbols for $1s^22s^22p^2$ carbon, or $np^2$ in general, are as follows.
 
@@ -87,7 +87,7 @@ Therefore, the term symbols for $1s^22s^22p^2$ carbon, or $np^2$ in general, are
 
 # Table of Possible Term Symbols
 
-With the above procedure, a table of the term symbols for equivalent electrons can be prepared.
+With the above procedure, a table of the term symbols for various electron configurations can be prepared.
 
 | Electron configuration         | Term symbols (excluding $J$)                                                                                                            |
 |--------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
@@ -106,25 +106,27 @@ There are three things to note about this table.
 
 First, some electron configuration produces two or more of the same term symbol. This is the exception where two or more energy states of the same electron configuration can have the same $L$, $M_L$, $S$, and $M_S$. For these cases, electron configuration alone is not a suitable substitute to energy when describing energy states (and levels).
 
-Second, electron configurations consisting of only filled subshells are always $^1S$, as all $m_l$ and $m_s$ cancel out between all electrons. In fact, like $M_L$ and $M_S$, $M_J$ always equals zero. Thus, $J = 0$ and their term symbol is indeed always $^1S_0$.
+Second, electron configurations consisting of only filled subshells are always $^1S$, as all $m_l$ and $m_s$ cancel out between all electrons, resulting in $M_L = 0$ and $M_S = 0$. In fact, like $M_L$ and $M_S$, $M_J$ always equals zero. Thus, $J = 0$ and their term symbol is indeed always $^1S_0$.
 
-Lastly and most importantly, electron configurations with the same number of electron holes (lack of electrons) have the same term symbols as those with the same number of electrons in the same subshell. In other words, adding $n$ electrons to an empty subshell is the same as removing $n$ electrons from a full subshell. Holes act like electrons; they contribute to the overall angular momenta in the same way.
+The last and most important point is about electron holes, which are the absense of electrons. Electron configurations with some electron holes (lack of electrons) have the same term symbols as those with the same number of electrons in the same subshell. In other words, adding $n$ electrons to an empty subshell is the same (with respect to angular momentum) as removing $n$ electrons from a full subshell. Holes act like electrons; they contribute to the overall angular momenta in the same way.
 
 ![Holes](/assets/img/atomic-term-symbols/holes.png)
+
+Therefore, not only is it acceptable to replace electron holes with electrons to calculate $L$ and $S$, it is often easier to do so.
 
 # Example 2: Excited $1s^22s^22p^43p^2$ Neon
 
 Let us apply three useful points that we have learned until now on an excited neon configuration of $1s^22s^22p^43p^2$.
 
 1. Completely filled subshells do not contribute to the overall $M_L$ and $M_S$, and thus can be ignored when determining term symbols.
-2. Electron configurations with the same number of electron holes (lack of electrons) have the same term symbols as those with the same number of electrons in the same subshell.
+2. Replace electron holes with electrons when calculating $L$ and $S$.
 3. (From part 2) The addition of two angular momenta characterized by quantum numbers $j_1$ and $j_2$ results in a total angular momentum whose quantum number $J$ has the possible values $ J=\left\|j_1 - j_2\right\|,\,\cdots,\,j_1 + j_2$ 
 
 From the $1s^22s^22p^43p^2$ configuration, we can ignore completely filled subshells and only deal with $2p^43p^2$ - all thanks to point 1.
 
 With point 2, the $2p^43p^2$ configuration can be replaced with the $2p^23p^2$ configuration by replacing electron holes in the $2p$ subshell with electrons.
 
-We are left with the $2p^23p^2$ configuration. This configuration consist of the $2p^2$ configuration and the $3p^2$ configuration. For a $np^2$ configuration (equivalent electrons), the term symbols are (without $J$) $^3P$, $^1P$, and $^1S$. Between $2p^2$ and $3p^2$ electrons (non-equivalent electrons), the $L$ and $S$ of the term symbols (denoted $l_i$ and $s_i$) can be "added" according to point 3 to produce new term symbols characterizing $2p^23p^2$ as a whole.
+We are left with the $2p^23p^2$ configuration. This configuration consist of the $2p^2$ configuration and the $3p^2$ configuration. For a $np^2$ configuration (equivalent electrons), the term symbols are (without $J$) $^3P$, $^1P$, and $^1S$ (as we have calculated for ground state carbon). Between $2p^2$ and $3p^2$ subshells (which are non-equivalent electrons), the $L$ and $S$ of the term symbols (denoted $l_i$ and $s_i$ below) can be "added" according to point 3 to produce new term symbols characterizing $2p^23p^2$ as a whole.
 
 A. Adding $^3P$ and $^3P$
 
@@ -133,11 +135,11 @@ A. Adding $^3P$ and $^3P$
 |    $^3P$    |   1   |   1   |
 |    $^3P$    |   1   |   1   |
 
-| &nbsp; $l_1$ &nbsp; | &nbsp; $l_2$ &nbsp; | &nbsp; $L_{min}$ &nbsp; | &nbsp; $L_{max}$ &nbsp; |   &nbsp; $L$   &nbsp; |
+| &nbsp; $l_1$ &nbsp; | &nbsp; $l_2$ &nbsp; | &nbsp; $L_{\text{min}}$ &nbsp; | &nbsp; $L_{\text{max}}$ &nbsp; |   &nbsp; $L$   &nbsp; |
 |:-----:|:-----:|:---------:|:---------:|:-------:|
 |   1   |   1   |     0     |     2     | 0, 1, 2 |
 
-| &nbsp; $s_1$ &nbsp; | &nbsp; $s_2$ &nbsp; | &nbsp; $S_{min}$ &nbsp; | &nbsp; $S_{max}$ &nbsp; |  &nbsp;  $S$  &nbsp;  |
+| &nbsp; $s_1$ &nbsp; | &nbsp; $s_2$ &nbsp; | &nbsp; $S_{\text{min}}$ &nbsp; | &nbsp; $S_{\text{max}}$ &nbsp; |  &nbsp;  $S$  &nbsp;  |
 |:-----:|:-----:|:---------:|:---------:|:-------:|
 |   1   |   1   |     0     |     2     | 0, 1, 2 |
 
@@ -150,11 +152,11 @@ B. Adding $^3P$ and $^1D$
 |    $^3P$    |   1   |   1   |
 |    $^1D$    |   2   |   0   |
 
-| &nbsp; &nbsp; $l_1$ &nbsp; &nbsp; | &nbsp; &nbsp; $l_2$ &nbsp; &nbsp; | &nbsp; &nbsp; $L_{min}$ &nbsp; &nbsp; | &nbsp; &nbsp; $L_{max}$ &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;  $L$ &nbsp; &nbsp; &nbsp; &nbsp;   |
+| &nbsp; &nbsp; $l_1$ &nbsp; &nbsp; | &nbsp; &nbsp; $l_2$ &nbsp; &nbsp; | &nbsp; &nbsp; $L_{\text{min}}$ &nbsp; &nbsp; | &nbsp; &nbsp; $L_{\text{max}}$ &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;  $L$ &nbsp; &nbsp; &nbsp; &nbsp;   |
 |:-----:|:-----:|:---------:|:---------:|:-------:|
 |   1   |   2   |     1     |     3     | 1, 2, 3 |
 
-| &nbsp; $s_1$ &nbsp; | &nbsp; $s_2$ &nbsp; | &nbsp; $S_{min}$ &nbsp; | &nbsp; $S_{max}$ &nbsp; | &nbsp; &nbsp; &nbsp; $S$ &nbsp; &nbsp; &nbsp;   |
+| &nbsp; $s_1$ &nbsp; | &nbsp; $s_2$ &nbsp; | &nbsp; $S_{\text{min}}$ &nbsp; | &nbsp; $S_{\text{max}}$ &nbsp; | &nbsp; &nbsp; &nbsp; $S$ &nbsp; &nbsp; &nbsp;   |
 |:-----:|:-----:|:---------:|:---------:|:-------:|
 |   1   |   0   |     1     |     1     |    1    |
 
@@ -173,11 +175,11 @@ D. Adding $^3P$ and $^1S$
 |    $^3P$    |   1   |   1   |
 |    $^1S$    |   0   |   0   |
 
-| &nbsp; &nbsp; $l_1$ &nbsp; &nbsp; | &nbsp; &nbsp; $l_2$ &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; $L_{min}$ &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; $L_{max}$ &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  $L$ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   |
+| &nbsp; &nbsp; $l_1$ &nbsp; &nbsp; | &nbsp; &nbsp; $l_2$ &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; $L_{\text{min}}$ &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; $L_{\text{max}}$ &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  $L$ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   |
 |:-----:|:-----:|:---------:|:---------:|:-------:|
 |   1   |   0   |     1     |     1     |    1    |
 
-| &nbsp; &nbsp; $s_1$ &nbsp; &nbsp; | &nbsp; &nbsp; $s_2$ &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; $S_{min}$ &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; $S_{max}$ &nbsp; &nbsp; &nbsp; |  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  $S$ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   |
+| &nbsp; &nbsp; $s_1$ &nbsp; &nbsp; | &nbsp; &nbsp; $s_2$ &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; $S_{\text{min}}$ &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; $S_{\text{max}}$ &nbsp; &nbsp; &nbsp; |  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  $S$ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   |
 |:-----:|:-----:|:---------:|:---------:|:-------:|
 |   1   |   0   |     1     |     1     |    1    |
 
@@ -196,11 +198,11 @@ F. Adding $^1D$ and $^1D$
 |    $^1D$    |   2   |   0   |
 |    $^1D$    |   2   |   0   |
 
-| &nbsp; &nbsp; $l_1$ &nbsp; &nbsp; | &nbsp; &nbsp; $l_2$ &nbsp; &nbsp; | &nbsp; &nbsp; $L_{min}$ &nbsp; &nbsp; | &nbsp; &nbsp; $L_{max}$ &nbsp; &nbsp;  |  &nbsp; $L$ &nbsp; |
+| &nbsp; &nbsp; $l_1$ &nbsp; &nbsp; | &nbsp; &nbsp; $l_2$ &nbsp; &nbsp; | &nbsp; &nbsp; $L_{\text{min}}$ &nbsp; &nbsp; | &nbsp; &nbsp; $L_{\text{max}}$ &nbsp; &nbsp;  |  &nbsp; $L$ &nbsp; |
 |:-----:|:-----:|:---------:|:---------:|:-------:|
 |   2   |   2   |     0     |     4     | 0, 1, 2, 3, 4 |
 
-| &nbsp; $s_1$ &nbsp; | &nbsp; $s_2$ &nbsp; | &nbsp; $S_{min}$ &nbsp; | &nbsp; $S_{max}$ &nbsp; | &nbsp;  &nbsp; &nbsp; $S$  &nbsp; &nbsp; &nbsp;  |
+| &nbsp; $s_1$ &nbsp; | &nbsp; $s_2$ &nbsp; | &nbsp; $S_{\text{min}}$ &nbsp; | &nbsp; $S_{\text{max}}$ &nbsp; | &nbsp;  &nbsp; &nbsp; $S$  &nbsp; &nbsp; &nbsp;  |
 |:-----:|:-----:|:---------:|:---------:|:-------:|
 |   0   |   0   |     0     |     0     |    0    |
 
@@ -213,11 +215,11 @@ G. Adding $^1D$ and $^1S$
 |    $^1D$    |   2   |   0   |
 |    $^1S$    |   0   |   0   |
 
-| &nbsp; $l_1$ &nbsp; | &nbsp; $l_2$ &nbsp; | &nbsp; $L_{min}$ &nbsp; | &nbsp; $L_{max}$ &nbsp; |   &nbsp; &nbsp; &nbsp; $L$ &nbsp; &nbsp; &nbsp;   |
+| &nbsp; $l_1$ &nbsp; | &nbsp; $l_2$ &nbsp; | &nbsp; $L_{\text{min}}$ &nbsp; | &nbsp; $L_{\text{max}}$ &nbsp; |   &nbsp; &nbsp; &nbsp; $L$ &nbsp; &nbsp; &nbsp;   |
 |:-----:|:-----:|:---------:|:---------:|:-------:|
 |   2   |   0   |     2     |     2     |    2    |
 
-| &nbsp; $s_1$ &nbsp; | &nbsp; $s_2$ &nbsp; | &nbsp; $S_{min}$ &nbsp; | &nbsp; $S_{max}$ &nbsp; | &nbsp;  &nbsp; &nbsp; $S$  &nbsp; &nbsp; &nbsp;  |
+| &nbsp; $s_1$ &nbsp; | &nbsp; $s_2$ &nbsp; | &nbsp; $S_{\text{min}}$ &nbsp; | &nbsp; $S_{\text{max}}$ &nbsp; | &nbsp;  &nbsp; &nbsp; $S$  &nbsp; &nbsp; &nbsp;  |
 |:-----:|:-----:|:---------:|:---------:|:-------:|
 |   0   |   0   |     0     |     0     |    0    |
 
@@ -236,21 +238,21 @@ I. Adding $^1S$ and $^1S$
 |    $^1S$    |   0   |   0   |
 |    $^1S$    |   0   |   0   |
 
-| &nbsp; $l_1$ &nbsp; | &nbsp; $l_2$ &nbsp; | &nbsp; $L_{min}$ &nbsp; | &nbsp; $L_{max}$ &nbsp; |   &nbsp; &nbsp; &nbsp; $L$ &nbsp; &nbsp; &nbsp;   |
+| &nbsp; $l_1$ &nbsp; | &nbsp; $l_2$ &nbsp; | &nbsp; $L_{\text{min}}$ &nbsp; | &nbsp; $L_{\text{max}}$ &nbsp; |   &nbsp; &nbsp; &nbsp; $L$ &nbsp; &nbsp; &nbsp;   |
 |:-----:|:-----:|:---------:|:---------:|:-------:|
 |   0   |   0   |     0     |     0     |    0    |
 
-| &nbsp; $s_1$ &nbsp; | &nbsp; $s_2$ &nbsp; | &nbsp; $S_{min}$ &nbsp; | &nbsp; $S_{max}$ &nbsp; | &nbsp;  &nbsp; &nbsp; $S$  &nbsp; &nbsp; &nbsp;  |
+| &nbsp; $s_1$ &nbsp; | &nbsp; $s_2$ &nbsp; | &nbsp; $S_{\text{min}}$ &nbsp; | &nbsp; $S_{\text{max}}$ &nbsp; | &nbsp;  &nbsp; &nbsp; $S$  &nbsp; &nbsp; &nbsp;  |
 |:-----:|:-----:|:---------:|:---------:|:-------:|
 |   0   |   0   |     0     |     0     |    0    |
 
 ⇒ $^1S$
 
-As a result, the term symbol for $1s^22s^22p^43p^2$ is:
+As a result, the term symbols for $1s^22s^22p^43p^2$ are:
 
 $^5D$, $^5P$, $^5S$, $^3F$ (two), $^3D$ (three), $^3P$ (five), $^3S$, $^1G$, $^1F$, $^1D$ (four), $^1P$ (two), and $^1S$ (three).
 
-If you count the number of states from these term symbols, it adds up to $225 = 15\times 15$, which checks out as it is equal to the number of microstates for $1s^22s^22p^43p^2$.
+If you count the number of states of each of these term symbols, it adds up to $225 = 15\times 15$, which checks out as it is equal to the number of microstates for $1s^22s^22p^43p^2$.
 
 # Hund's Rule and Ground State
 
@@ -273,7 +275,7 @@ Among those term symbols, all three have the same $L$.
 
 ![Term Symbols](/assets/img/atomic-term-symbols/term_symbols_C_2.png)
 
-Therefore, we move on to the third rule and use $J$ to determine the ground state term symbol. Because the $2p$ subshell is less than half-filled, We choose the term symbol with the smallest value of $J$. 
+Therefore, we move on to the third rule and use $J$ to determine the ground state term symbol. Because the $2p$ subshell is less than half-filled, we choose the term symbol with the smallest value of $J$. 
 
 ![Term Symbols](/assets/img/atomic-term-symbols/term_symbols_C_3.png)
 
@@ -281,7 +283,11 @@ As a result, $^3P_0$ is the ground state term symbol for carbon.
 
 ![Term Symbols](/assets/img/atomic-term-symbols/term_symbols_C_4.png)
 
-When obtaining the ground state term symbol, it is not necessary to obtain *all* term symbols. We first start with the microstates with the largest value of $M_S$, in order to maximize $S$. This is the general chemistry version of Hund's Rules. 
+These term symbols can be shown with an energy diagram similar to that at the end of Part 2.
+
+![Energy Diagram](/assets/img/atomic-term-symbols/energy_diagram_2.png)
+
+When obtaining the ground state term symbol, it is not necessary to obtain *all* term symbols. There is an easier way that involves finding the microstate that is related to the ground state term symbol. We first start with the microstates with the largest value of $M_S$, in order to maximize $S$. This is the general chemistry version of Hund's Rules, and is deeply related to the quantum mechanical, spectroscopic version of Hund's Rules as well.
 
 ![Microstates with parallel spin](/assets/img/atomic-term-symbols/microstates_C_1.png)
 
@@ -299,12 +305,11 @@ We start with the microstate with the largest value of $M_S$.
 
 ![Microstate Mn](/assets/img/atomic-term-symbols/microstate_Mn.png)
 
-
 Incidently enough, there is only one microstate left, which leaves us with $M_L = 0$. Therefore, $L=0$ and the term symbol (without $J$) is $^6S$. 
 
 As the $3d$ subshell is exactly half-filled, it presents a dilemma with determining $J$ using Hund's Rules. However, the only possible value of $J$ is $5/2$, so the ground state term symbol of $J$ is $^6S_{5/2}$. 
 
-Hund's Rules works very well for ground state electron configuration, but may fail for other excited configurations. In addition, Hund's Rules cannot be reliably used to determine the energy order of the term symbols of an electron configuration. In essence, **use Hund's Rules only for the ground state of an atom.**
+Hund's Rules works very well for ground state electron configuration, but may fail for other excited configurations. In addition, Hund's Rules cannot be reliably used to determine the energy order between the term symbols. In essence, **use Hund's Rules only for the ground state of an atom.**
 
 # Conclusion
 
@@ -316,7 +321,7 @@ When obtaining *all* term symbols of an electron configuration:
 3. Calculate the total $L$ and $S$ by adding the $l_i$ and $s_i$ of all subshells (non-equivalent electrons)
 4. Calculate $J$ for each combination of $L$ and $S$
 
-When obtaining the *ground state* term symbol with all term symbols known - Hund's Rules:
+When obtaining the *ground state* term symbol with all term symbols already known - Hund's Rules:
 
 1. The term symbol with the largest value of $S$ is the most stable.
 2. For term symbols with the same value of $S$, the term symbol with the largest value of $L$ is the most stable.
@@ -334,4 +339,4 @@ When obtaining the *ground state* term symbol *without knowing the term symbols*
 
 # Footnotes
 
-[^1]: Most textbooks refer to the most stable term symbol as "the ground state", even though term symbols really refer to energy levels, not energy states. In line with such textbooks, this article refers to such as "the ground state". Thus, it is implicitly understood that "ground state" actually means "ground state term symbol".
+[^1]: Most textbooks refer to the most stable term symbol as "the ground state", even though it should really be refered to as "the ground level". In line with most textbooks, this article refers to such ground level term symbol as "the ground state term symbol".
