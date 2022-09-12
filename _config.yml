@@ -28,10 +28,10 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  kerosenenotforconsumption
 
 # Build settings
-theme: minima
 plugins:
   - jekyll-feed
   - jekyll-polyglot
+theme: minima
 
 # Custom permalink
 permalink: /:categories/:title/
@@ -43,6 +43,8 @@ parallel_localization: false
 
 sass:
     sourcemap: never
+
+google_analytics: G-P094YZ20TC
 
 # Exclude from processing.
 # The following items will not be processed, by default.
