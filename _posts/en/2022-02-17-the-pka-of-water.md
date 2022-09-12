@@ -18,8 +18,7 @@ On the $\text{p}K_{\text{a}}$ of water:
 
 And on $\text{p}K_{\text{a}}$ in general:
 
-- [pKa values in the undergraduate curriculum: introducing pKa values
-measured in DMSO to illustrate solvent effects](https://doi.org/10.1007/s40828-020-00112-z) by Silverstein and Heller
+- [pKa Values in the Undergraduate Curriculum: Introducing pKa Values Measured in DMSO to Illustrate Solvent Effects](https://doi.org/10.1007/s40828-020-00112-z) by Silverstein and Heller
 
 # 14.0 or 15.7
 
@@ -49,13 +48,13 @@ The calculation above is **wrong** for three reasons.
 2. The term 'concentration' for the molar concentration of water implies that water can be viewed as both a solvent and a solute, which is not possible.
 3. Even if this was possible, $ \left [ \text{H}_{2}\text{O} \right ] = 55.3 \text{M}$ is too large to be considered as dilute. Thus, one cannot approximate the activity of water with its molar concentration.
 
-This may seem like a silly mistake, one may ask why such error is very widespread. This is well laid out in the aforementioned ["What is the pKa of water?"](https://chem.libretexts.org/Bookshelves/Organic_Chemistry/Supplemental_Modules_(Organic_Chemistry)/Fundamentals/What_is_the_pKa_of_water) article. In essence, this mistake was first made by prominent chemists like Brønsted who were just as confused as you. After a while, some other physical organic chemists also made the same mistake while trying to indirectly obtain the $\text{p}K_{\text{a}}$ of water. Then it made its way to countless publications, textbooks, and $\text{p}K_{\text{a}}$ tables without being scrutinized, and now thousands and millions of chemistry students are left to suffer from the resulting confusion.
+This may seem like a silly mistake; one may ask why such error is very widespread. This is well laid out in the aforementioned ["What is the pKa of water?"](https://chem.libretexts.org/Bookshelves/Organic_Chemistry/Supplemental_Modules_(Organic_Chemistry)/Fundamentals/What_is_the_pKa_of_water) article. In essence, this mistake was first made by prominent chemists like Brønsted who were just as confused as you. After a while, some other physical organic chemists also made the same mistake while trying to indirectly obtain the $\text{p}K_{\text{a}}$ of water. Then it made its way to countless publications, textbooks, and $\text{p}K_{\text{a}}$ tables without being scrutinized, and now thousands and millions of chemistry students are left to suffer from the resulting confusion.
 
 The **correct** way of obtaining the $\text{p}K_{\text{a}}$ of water continues from $\left [ \text{H}^{+} \right ] = 1.0 \times 10^{-7} \text{M}$ and $\left [ \text{OH}^{-} \right ] = 1.0 \times 10^{-7} \text{M}$.
 
 $$K_\text{a} = \frac{1.0 \times 10^{-14}}{a_{\text{H}_{2}\text{O}}} = 1.0 \times 10^{-14}$$
 
-The activity of water is taken as unity (as $1$), and even though this '$1$' is mathematically insignificant, it is very important in chemistry. It signifies that water is in its *reference state* as a pure liquid. Thus the resulting $\text{p}K_{\text{a}} = 14.0$ ***automatically implies* that water is the solvent and not a solute**. This emphasis on the solvent will prove to be very important for the rest of the article.
+The activity of water is taken as unity (as $1$), and even though this '$1$' is mathematically insignificant, it is very important in chemistry. It signifies that water is in its *reference state* as a pure liquid. Thus, the resulting $\text{p}K_{\text{a}} = 14.0$ ***automatically implies* that water is the solvent and not a solute**. This emphasis on the solvent will prove to be very important for the rest of the article.
 
 # Water as Both Solvent and Acid
 
@@ -75,7 +74,7 @@ In this case, acetylacetone (the 1,3-diketone on the far left) is a stronger aci
 
 ![Dimethyl sulfoxide](/assets/img/the-pka-of-water/dimethyl_sulfoxide.png)
 
-When dissolved in dimethyl sulfoxide (DMSO), acetylacetone and water now have a new $\text{p}K_{\text{a}}$. In practice, this still is refered to as $\text{p}K_{\text{a}}$. However, to reduce confusion, we will denote this new $\text{p}K_{\text{a}}$ as $\text{p}K_{\text{a}}^{\ast}$. 
+When dissolved in dimethyl sulfoxide (DMSO), acetylacetone and water now have a new $\text{p}K_{\text{a}}$. In practice, this still is referred to as $\text{p}K_{\text{a}}$. However, to reduce confusion, we will denote this new $\text{p}K_{\text{a}}$ as $\text{p}K_{\text{a}}^{\ast}$. 
 
 ![DMSO](/assets/img/the-pka-of-water/DMSO.png)
 

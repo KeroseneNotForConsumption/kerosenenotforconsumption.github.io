@@ -9,7 +9,7 @@ lang: en
 
 In the widely used textbook *Principles of Modern Chemistry* by David W. Oxtoby, the hydrogen molecular ion $\text{H}_2^+$ (HMI) is used as a bridge between atomic orbitals (AOs) and molecular orbitals (MOs). The textbook states that the wavefunction of the HMI can be solved exactly as it is a one-electron system[^1]. It, however, does not actually solve the HMI and instead uses its results from someplace else. It then goes on about approximating MOs with the Linear Combination of Atomic Orbital method (LCAO), which is the main takeaway of the chapter.
 
-I've always wondered how the HMI is exactly solved until recently. Now, with a new understanding of quantum mechanics and differential equations, I set out to tackle this long anticipated question. Thankfully, with some papers and resources on obtaining a very accurate solution for the HMI, I was able to approximately calculate the wavefunctions for the HMI with the Jupyter Notebooks in my [Github repo, hydrogen-molecular-ion](https://github.com/KeroseneNotForConsumption/hydrogen-molecular-ion). 
+I have always wondered how the HMI is exactly solved until recently. Now, with a new understanding of quantum mechanics and differential equations, I set out to tackle this long-anticipated question. Thankfully, with some papers and resources on obtaining a very accurate solution for the HMI, I was able to approximately calculate the wavefunctions for the HMI with the Jupyter Notebooks in my [GitHub repo, hydrogen-molecular-ion](https://github.com/KeroseneNotForConsumption/hydrogen-molecular-ion). 
 
 I intend to share some of my findings during this journey, without the complicated mathematics and physics involved. Although this may be entirely useless from a chemistry education standpoint, it nevertheless will be interesting to those who have had the same questions as me.
 
@@ -25,7 +25,7 @@ Why is the spherical coordinate system used for hydrogen? That is because the hy
 
 $$ \hat{H}=-\frac{1}{2}\nabla^{2}-\frac{1}{r} $$
 
-which is dependent and only dependent on $r$: thus the spherical symmetry.
+which is dependent and only dependent on $r$: thus, the spherical symmetry.
 
 We are now ready for the HMI.
 
@@ -51,7 +51,7 @@ What we must recognize is that this is continuous - the wavefunction of the unit
 
 Before we deal with the MOs, let us first think about the coordinate system. As the internuclear distance starts from zero and then increase, the system is no longer spherically symmetric. Thus, we must resort to a newer coordinate system that better reflects the altered symmetry.
 
-The natural symmetry that arises is the prolate spheroidal(an ellipse spun around the major axis) symmetry, with the foci of the prolate spheroid on the two nuclei. To exploit this new symmetry, we use the prolate spheroidal coordinate system, which we will shorten it to 'spheroidal coordinates'.
+The natural symmetry that arises is the prolate spheroidal (an ellipse spun around the major axis) symmetry, with the foci of the prolate spheroid on the two nuclei. To exploit this new symmetry, we use the prolate spheroidal coordinate system, which we will shorten it to 'spheroidal coordinates'.
 
 For spheroidal coordinates, we let $D$ be the internuclear distance, and we set the origin to be its midpoint. The internuclear bonding axis is set as the z-axis, and the x and y-axes are set accordingly. 
 
@@ -77,7 +77,7 @@ As $D \to 0$, $\frac{1}{2}D \xi = \frac{1}{2} \left ( r_A + r_B \right )$ approa
 
 ![Spherical coordinates surfaces](/assets/img/hydrogen-molecular-ion/spherical_coordinate_surf.png)
 
-For spherical coordinates, we have spherical harmonics. For prolate spheroidal coordinates, we have the prolate spheroidal harmonics. Where as the wavefunction of the united-atom limit are based on spherical harmoics, the wavefunction of $D > 0$ are based on prolate spheroidal harmonics. As $D \to 0$, prolate spheroidal harmonics converge to spherical harmonics. 
+For spherical coordinates, we have spherical harmonics. For prolate spheroidal coordinates, we have the prolate spheroidal harmonics. Whereas the wavefunction of the united-atom limit are based on spherical harmonics, the wavefunction of $D > 0$ are based on prolate spheroidal harmonics. As $D \to 0$, prolate spheroidal harmonics converge to spherical harmonics. 
 
 Unlike spherical harmonics, prolate spheroidal harmonics are difficult to solve. This is why the actual process of obtaining MOs for the HMI is not covered in the aforementioned textbook.
 
@@ -89,7 +89,7 @@ Coming back to the MOs themselves, below is a graphical representation of how MO
 
 There are two things to note. First, notice how similar the MOs of the united-atom limit is to the actual MOs (with $D = 2.0$). Second, the MOs of the separated-atom limit is the exact same as the combination of AOs used for obtaining LCAO-MOs.
 
-# Now Thinking With Graphs
+# Now Thinking with Graphs
 
 When the internuclear distance changes and the wavefunction of the HMI morphs accordingly, their energies also change. Let us investigate the electronic energy - total energy except repulsion between the two nuclei.
 
@@ -99,7 +99,7 @@ The graph kind of is a mess, but there are three points to be made:
 
 A. At the united-atom limit $(D=0)$, the electronic energy converges to that of hydrogen-like AOs with $Z=2$: $E_{el} = -Z^2 / \left ( 2 n^2 \right ) = -2/n^2$.
 
-B. At the separated-atoms limit, the electronic energy converges to the average of those of the hydrogen-like AOs. The two lowest state converge to 
+B. At the separated-atoms limit, the electronic energy converges to the average of those of the hydrogen-like AOs. The two lowest states converge to 
 
 $$E_{el} = \frac{ -\frac{1}{2} + -\frac{1}{2}}{2}  = -\frac{1}{2} $$
 
@@ -113,7 +113,7 @@ C. The order of the MOs is quite unpredictable. This is also the case for multie
 
 ![MO correlation](/assets/img/hydrogen-molecular-ion/mo_correlation.png)
 
-Here's the total energy graph for good measure.
+Here is the total energy graph for good measure.
 
 ![Total energy](/assets/img/hydrogen-molecular-ion/total_energy_graph.png)
 
