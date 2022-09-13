@@ -24,7 +24,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   Questions about chemistry and chemistry programming projects,
   attempted by an undergrad majoring in chemistry.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://kerosenenotforconsumption.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  kerosenenotforconsumption
 
 # Build settings
@@ -45,6 +45,9 @@ sass:
     sourcemap: never
 
 google_analytics: G-P094YZ20TC
+
+# plugins:
+#   - jekyll-sitemap
 
 # Exclude from processing.
 # The following items will not be processed, by default.
