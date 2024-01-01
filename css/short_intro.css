@@ -1,0 +1,48 @@
+.container {
+    display: flex;
+    align-items: center; /* This will vertically center the items */
+
+    /* Add margins */
+    margin-top: 20px;    /* Top margin */
+    margin-bottom: 20px; /* Bottom margin */
+}
+
+.image-container {
+    flex: 1; /* Adjusts the width of the image container */
+}
+
+.image-container img {
+    width: 100%; /* Adjusts the width of the image to fit the container */
+    height: auto; /* Keeps the aspect ratio of the image */
+}
+
+.right-text-container {
+    flex: 2; /* Adjusts the width of the text container */
+    padding-left: 30px; /* Adds some space between the image and the text */
+    font-size: 16px; /* Example font size */
+}
+
+.left-text-container {
+    flex: 2; /* Adjusts the width of the text container */
+    padding-right: 30px; /* Adds some space between the image and the text */
+    font-size: 16px; /* Example font size */
+}
+
+.normal-container {
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.gray-container {
+    width: 100vw; /* Full viewport width */
+    position: relative; /* Relative positioning */
+    left: 50%; /* Move to the center */
+    margin-left: -50vw; /* Pull back to the left edge */
+    padding-top: 5px;
+    padding-bottom: 10px;
+    background-color: #eeeeee;
+}
+
+.text-shuffle-container {
+    font-size: 2em;
+}

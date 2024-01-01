@@ -18,13 +18,12 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Kerosene, not for consumption
-email: kerosenenotforconsumption@gmail.com
+title: Shinyoung Park
+email: s.y.park@kaist.ac.kr
 description: >- # this means to ignore newlines until "baseurl:"
-  Questions about chemistry and chemistry programming projects,
-  attempted by an undergrad majoring in chemistry.
+  Personal website and blog
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://kerosenenotforconsumption.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://sypark-chem.me" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  kerosenenotforconsumption
 
 # Build settings
@@ -38,7 +37,7 @@ permalink: /:categories/:title/
 
 languages: ["en", "ko"]
 default_lang: "en"
-exclude_from_localization: ["assets/css", "assets/img"]
+exclude_from_localization: ["assets/css", "assets/img", "css", "js"]
 parallel_localization: false
 
 sass:

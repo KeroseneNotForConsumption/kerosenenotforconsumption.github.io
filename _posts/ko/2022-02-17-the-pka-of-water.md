@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "물의 pKa + α"
-categories: organic-chemistry
+categories: general-chemistry
 lang: ko
 ---
 

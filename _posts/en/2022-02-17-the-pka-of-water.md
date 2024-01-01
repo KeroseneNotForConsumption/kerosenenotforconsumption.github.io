@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "The pKa of Water ... and more"
-categories: organic-chemistry
+categories: general-chemistry
 lang: en
 ---
 

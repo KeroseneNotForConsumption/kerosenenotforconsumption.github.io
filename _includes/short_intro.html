@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>Short Introduction of Myself</title>
+    <link rel="stylesheet" type="text/css" href="css/short_intro.css">
+</head>
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img src="assets/img/me.png" alt="Shinyoung Park">
+        </div>
+        <div class="right-text-container">
+            <p>
+                {% capture markdown_content %}
+                    {% include short_intro.md %}
+                {% endcapture %}
+                {{ markdown_content | markdownify }}
+            </p>
+        </div>
+    </div>
+</body>
+</html>

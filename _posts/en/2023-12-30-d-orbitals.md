@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "A Very Informal Derivation of d Orbitals"
-categories: physical-chemistry
+categories: general-chemistry
 lang: en
 published: true
 ---

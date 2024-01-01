@@ -1,0 +1,9 @@
+{% assign section_name = include.section_name %}
+{% assign markdown_content = include.markdown_content %}
+
+{% assign start_marker = "<!-- " | append: section_name | append: ":start -->" %}
+{% assign end_marker = "<!-- " | append: section_name | append: ":end -->" %}
+{% assign start_pos = markdown_content | split: start_marker | last %}
+{% assign end_pos = start_pos | split: end_marker | first %}
+
+{{ end_pos | markdownify }}

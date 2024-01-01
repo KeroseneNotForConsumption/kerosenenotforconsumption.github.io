@@ -1,7 +1,7 @@
 ---
 layout: page
-title: 글쓴이 소개
-permalink: /about/me
+title: 소개
+permalink: /about
 lang: ko
 ---
 

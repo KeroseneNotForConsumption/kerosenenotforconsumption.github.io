@@ -8,3 +8,4 @@ list_title: "Posts"
 permalink: "/"
 ---
 
+{% include short_intro.html %}
