@@ -25,7 +25,9 @@ s.y.park@kaist.ac.kr / [Download CV as PDF](/assets/CV_shinyoungpark_blog.pdf){:
         <i>Expected August 2025</i>
     </div>
 </div>
-- GPA: 4.28/4.30 (Major GPA: 4.30/4.30)
+<div style="font-size: 14px;">
+    &nbsp;&nbsp;&nbsp;&nbsp; • GPA: 4.28/4.30 (Major GPA: 4.30/4.30)
+</div>
 <!-- education:end -->
 <!-- research:start -->
 ### Research Experience
@@ -93,7 +95,7 @@ s.y.park@kaist.ac.kr / [Download CV as PDF](/assets/CV_shinyoungpark_blog.pdf){:
             <b>Dean's List</b>
         </div>
         <div style="text-align: right;">
-            <i>Spring 2022, Fall 2022, Spring 2023</i>
+            <i>Spring 2022, Fall 2022, Spring 2023, Fall 2023</i>
         </div>
     </div>
     <div style="font-size: 14px;">
@@ -119,7 +121,7 @@ s.y.park@kaist.ac.kr / [Download CV as PDF](/assets/CV_shinyoungpark_blog.pdf){:
 <div style="margin-bottom: 10px;">
     <b>Programming and other Languages</b>
     <div style="font-size: 14px;">
-        &nbsp;&nbsp;&nbsp;&nbsp;Python (most proficient), LaTeX, Markdown, MATLAB, JavaScript
+        &nbsp;&nbsp;&nbsp;&nbsp;Python, LaTeX, Markdown, MATLAB, JavaScript
     </div>
 </div>
 <div style="margin-bottom: 10px;">
@@ -143,7 +145,7 @@ s.y.park@kaist.ac.kr / [Download CV as PDF](/assets/CV_shinyoungpark_blog.pdf){:
 <div style="margin-bottom: 10px;">
     <b>Graphic Design Tools</b>
     <div style="font-size: 14px;">
-        &nbsp;&nbsp;&nbsp;&nbsp;Adobe Photoshop, Adobe Illustrator
+        &nbsp;&nbsp;&nbsp;&nbsp;Photoshop, Illustrator
     </div>
 </div>
 <!-- skills:end -->
@@ -165,6 +167,23 @@ s.y.park@kaist.ac.kr / [Download CV as PDF](/assets/CV_shinyoungpark_blog.pdf){:
         <i>2023</i>
     </div>
 </div>
+<div style="font-size: 14px;">
+    <ul>
+        <li>
+            Provided Korean-English translation of 
+            key announcements and materials for international students.
+        </li>
+        <li>
+            Served as a Korean-English interpreter 
+            at departmental events, fostering inclusivity 
+            within the chemistry student community.
+        </li>
+        <li>
+            Gathered feedback from international students on the Student Council and created            
+            <a href="https://docs.google.com/document/d/1Hyor_w2OxCaH4-l8lbEXmHokLHJ50-0KLozCi69tr8c/edit?usp=sharing">‘A Guide to the Department of Chemistry’</a> — a comprehensive resource featuring various essential information, links, and advices for students interested in chemistry.
+        </li>
+    </ul>
+</div>
 <div style="display: flex; justify-content: space-between;">
     <div style="text-align: left;">
         Member of the Design Team and Academic Affairs Team
@@ -172,6 +191,19 @@ s.y.park@kaist.ac.kr / [Download CV as PDF](/assets/CV_shinyoungpark_blog.pdf){:
     <div style="text-align: right;">
         <i>2022 – 2023</i>
     </div>
+</div>
+<div style="font-size: 14px;">
+    <ul>
+        <li>
+            Planned and designed promotional materials for activities held by the Student Council, including a
+            pamphlet introducing the various labs of the Department of Chemistry and their research to
+            <a href="https://drive.google.com/file/d/1nr9f6e0wuJP0eG0zDnIvJoKZf6fNje--/view?usp=sharing">prospective undergraduate</a> and <a href="https://drive.google.com/file/d/1nF9uVZV89qrqHHxwZyz3Fx5MJhuxC4Wh/view?usp=sharing">graduate students</a>.
+        </li>
+        <li>
+            Facilitated <i>2022 KAIST Chemie Camp</i>, where high school students country-wide 
+            were invited to explore and experience the state-of-the-art chemistry research and education at KAIST.
+        </li>
+    </ul>
 </div>
 <!-- service:end -->
 <!-- publications:start -->

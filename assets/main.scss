@@ -1,10 +1,119 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
+
 ---
 
 @charset "utf-8";
 
 /* Put any custom CSS here */
+
+#progress-container {
+    width: 100%;
+    height: 5px; /* Height of the progress bar */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99; /* Ensures the bar stays on top */
+    background-color: #ffffff; /* Background color of the progress bar */
+}
+
+#progress-bar {
+    height: 100%;
+    background-color: #000000; /* Color of the progress */
+    width: 0%; /* Initial width of the progress bar */
+    transition: width 0.25s ease-out; /* Smooth transition for width change */
+}
+
+.container {
+    display: flex;
+    align-items: center; /* This will vertically center the items */
+
+    /* Add margins */
+    margin-top: 20px;    /* Top margin */
+    margin-bottom: 20px; /* Bottom margin */
+}
+
+.image-container {
+    flex: 1; /* Adjusts the width of the image container */
+}
+
+.image-container img {
+    width: 100%; /* Adjusts the width of the image to fit the container */
+    height: auto; /* Keeps the aspect ratio of the image */
+}
+
+.right-text-container {
+    flex: 2; /* Adjusts the width of the text container */
+    padding-left: 30px; /* Adds some space between the image and the text */
+    font-size: 16px; /* Example font size */
+}
+
+.left-text-container {
+    flex: 2; /* Adjusts the width of the text container */
+    padding-right: 30px; /* Adds some space between the image and the text */
+    font-size: 16px; /* Example font size */
+}
+
+.normal-container {
+    padding-top: 5px;
+    padding-bottom: 12px;
+}
+
+.gray-container {
+    width: 100vw; /* Full viewport width */
+    position: relative; /* Relative positioning */
+    left: 50%; /* Move to the center */
+    margin-left: -50vw; /* Pull back to the left edge */
+    padding-top: 5px;
+    padding-bottom: 15px;
+    background-color: #eeeeee;
+}
+
+.text-shuffle-container {
+    font-size: 2em;
+}
+
+.image-link-container {
+  position: relative;
+  display: inline-block; /* Or display: block; for a full-width container */
+}
+ 
+.image-link-container img {
+    display: block; /* Remove default inline spacing */
+    width: 100vw; /* Full viewport width */
+    height: auto; /* Maintain aspect ratio */
+    filter: blur(2px); /* Apply blur effect */
+    transition: filter 0.1s ease; /* Smooth transition for the blur effect */
+}
+
+.image-link-container:hover img {
+    filter: none; /* Remove blur when hovering */
+}
+  
+.image-link-container a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none; /* Optional: removes underline from text */
+}
+  
+.image-link-container a span {
+    background: rgba(238, 238, 238, 1); 
+    text-align: center; /* Center the text within the span */
+    width: 100vw; /* Span the full width of the image container */
+    position: absolute; /* Relative positioning */
+    left: 50%; /* Move to the center */
+    margin-left: -50vw; /* Pull back to the left edge */
+    padding: 5px 0;
+    color: black; /* Text color */
+    font-size: 30px; /* Increased font size */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Optional: adds shadow for depth */
+}
+
 /* noto-serif-kr-regular - latin_korean */
 @font-face {
     font-family: 'Noto Serif KR';

@@ -10,13 +10,11 @@ lang: en
 {% endcapture %}
 
 
-Last updated: 2024-01-01
+Last updated: 2024-03-10
 
 <html>
 <head>
     <title>More about me</title>
-    <link rel="stylesheet" type="text/css" href="css/short_intro.css">
-</head>
 <body style="overflow-x: hidden;">
     <div class="container">
         <div class="image-container">
@@ -63,6 +61,12 @@ Last updated: 2024-01-01
         <p>
             {% include section_extractor.html section_name="publications" markdown_content=markdown_content %}
         </p>
+    </div>
+    <div class="image-link-container">
+        <img src="assets/img/gallery/periodic_table_front.png" alt="Gallery">
+        <a href="{{ '/gallery' | relative_url }}" target="">
+        <span>Gallery</span>
+        </a>
     </div>
 </body>
 </html>

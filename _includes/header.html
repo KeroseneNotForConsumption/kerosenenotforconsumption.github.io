@@ -2,11 +2,28 @@
 
   {% I18n_Headers %}
 
+  <div id="progress-container">
+    <div id="progress-bar"></div>
+  </div>
+
+  <script>
+    // Function to update the progress bar
+    function updateProgressBar() {
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        var scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrollPercent = (scrollTop / scrollHeight) * 100;
+        document.getElementById('progress-bar').style.width = scrollPercent + '%';
+    }
+
+    // Event listener for scroll event
+    window.addEventListener('scroll', updateProgressBar);
+  </script>
+
   <div class="wrapper">
     {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
     <!--<a class="site-title" rel="author" href="{{ "/" | relative_url }}" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">{{ site.data.l10n.title | escape }}</a>-->
-    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">
+    <a class="site-title" rel="author" href="{{ '/' | relative_url }}">
       <img src="/assets/img/name.png" width="200" style="padding: 10px 10px 13px 10px;">
     </a>
 
