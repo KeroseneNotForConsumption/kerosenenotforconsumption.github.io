@@ -21,3 +21,5 @@ lang: ko
 
 ![Banner for Student Council](/assets/img/gallery/chemistry_dept_banner.png)
 
+![Banner for Student Council](/assets/img/gallery/chemistry_dept_banner_2.png)
+
