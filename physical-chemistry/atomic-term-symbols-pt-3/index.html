@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Atomic Term Symbols: Part 3 - Hund’s Rule and More" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="Introduction" />
+<meta property="og:description" content="Introduction" />
+<link rel="canonical" href="https://sypark-chem.me/physical-chemistry/atomic-term-symbols-pt-3/" />
+<meta property="og:url" content="https://sypark-chem.me/physical-chemistry/atomic-term-symbols-pt-3/" />
+<meta property="og:site_name" content="Shinyoung Park" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-08-22T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Atomic Term Symbols: Part 3 - Hund’s Rule and More" />
+<script type="application/ld+json">
+{"headline":"Atomic Term Symbols: Part 3 - Hund’s Rule and More","dateModified":"2022-08-22T00:00:00+00:00","datePublished":"2022-08-22T00:00:00+00:00","description":"Introduction","url":"https://sypark-chem.me/physical-chemistry/atomic-term-symbols-pt-3/","mainEntityOfPage":{"@type":"WebPage","@id":"https://sypark-chem.me/physical-chemistry/atomic-term-symbols-pt-3/"},"@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<title>Shinyoung Park</title>
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="shortcut icon" type="image/png" href="favicon.png"><link type="application/atom+xml" rel="alternate" href="https://sypark-chem.me/feed.xml" title="Shinyoung Park" /><!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P094YZ20TC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P094YZ20TC');
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css" integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css" integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+  <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          renderMathInElement(document.body, {
+            // customised options
+            // • auto-render specific keys, e.g.:
+            delimiters: [
+                {left: '$', right: '$', display: false},
+            ],
+            // • rendering keys, e.g.:
+            throwOnError : false
+          });
+      });
+  </script>
+
+</head>
+<body><header class="site-header" role="banner" style="background-color: #222; color: white;">
+
+  <meta http-equiv="Content-Language" content="en">
+<link rel="alternate" hreflang="en" href="https://sypark-chem.me/physical-chemistry/atomic-term-symbols-pt-3/"/>
+<link rel="alternate" hreflang="ko" href="https://sypark-chem.me/ko/physical-chemistry/atomic-term-symbols-pt-3/"/>
+
+
+  <div id="progress-container">
+    <div id="progress-bar"></div>
+  </div>
+
+  <script>
+    // Function to update the progress bar
+    function updateProgressBar() {
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        var scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrollPercent = (scrollTop / scrollHeight) * 100;
+        document.getElementById('progress-bar').style.width = scrollPercent + '%';
+    }
+
+    // Event listener for scroll event
+    window.addEventListener('scroll', updateProgressBar);
+  </script>
+
+  <div class="wrapper"><!--<a class="site-title" rel="author" href="/" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Shinyoung Park</a>-->
+    <a class="site-title" rel="author" href="/">
+      <img src="/assets/img/name.png" width="200" style="padding: 10px 10px 13px 10px;">
+    </a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about" style="font-size:80%; color: white;">More about me</a><a class="page-link" href="/gallery" style="font-size:80%; color: white;">Gallery</a>
+    
+    
+<span style="margin-right:20px; font-size: 80%; color:#bfbfbf;">English</span>
+    
+
+    
+    
+        
+<a href="/ko/physical-chemistry/atomic-term-symbols-pt-3/" style="margin-right:20px; color:#ffffff; font-size:80%;">한국어</a>
+        
+    
+</div>
+        
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper"><article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Atomic Term Symbols: Part 3 - Hund&#39;s Rule and More</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2022-08-22T00:00:00+00:00" itemprop="datePublished">Aug 22, 2022
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h1 id="introduction">Introduction</h1>
+
+<p>This article is an in-depth explanation on atomic term symbols based on <em>Quantum Chemistry</em> by Levine to supplement chapter 8 of <em>Physical Chemistry: A Molecular Approach</em> by McQuarrie. A good understanding of preceding chapters, notably chapters 6 and 7, is required.</p>
+
+<p>The notation used in this article is based on the latter textbook.</p>
+
+<p>In the preceding Part 1 and 2, we went over the theoretical background of multi-electron atoms and term symbols. In this article, we are going to go over tips and tricks regarding term symbols, as well as Hund’s rule.</p>
+
+<h1 id="example-carbon-1s22s22p2">Example: Carbon $1s^22s^22p^2$</h1>
+<p>$1s^22s^22p^2$ carbon consists of 6 electrons, which is a lot compared to our previous examples. The following are some of the microstates of $1s^22s^22p^2$.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/microstates_1.png" alt="Microstate 1" /></p>
+
+<p>For all microstates, the four electrons of $1s$ and $2s$ subshells are the same. In addition, for these four electrons, the $M_L = m_{l1} + m_{l2} + \cdots = 0$ and $M_S = m_{s1} + m_{s2} + \cdots = 0$ as they cancel each other out.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/microstates_cancel_1.png" alt="Canceling out" /></p>
+
+<p>This is true for any filled subshells, like the $3d$ subshell below.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/microstates_cancel_2.png" alt="Canceling out" /></p>
+
+<p>Therefore,</p>
+
+<blockquote>
+  <p>Completely filled subshells do not contribute to the overall $M_L$ and $M_S$. Therefore, they can be ignored when determining term symbols.</p>
+</blockquote>
+
+<p>As for the remaining two electrons of the $2p$ subshell, they can occupy any of the six spin orbitals in a way that obeys the Pauli exclusion principle, as shown below.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/microstates_all.png" alt="All Microstates" /></p>
+
+<p>This results in 15 microstates. Mathematically speaking, assigning 2 equivalent electrons to 6 spin orbitals is the same as choosing 2 spin orbitals (without repetition nor order) out of a total of 6. In general, $N$ equivalent electrons and $G$ spin orbitals results in the following number of microstates.</p>
+
+\[\frac{G!}{N!(G-N)!}\]
+
+<p>The number of microstates is equal to the number of actual states, as shown in part 2. Similar to approach 2 of part 2, we organize these microstates into a table, according to their $M_L$ and $M_S$. For each term symbol, we cancel one microstate from each of the the possible $M_L$ and $M_S$ for that term symbol. We finish when there are no microstates remaining (thus no states remaining as well).</p>
+
+<p><img src="/assets/img/atomic-term-symbols/table_1.png" alt="Microstate Table" /></p>
+
+<p>Before we deal with term symbols, notice how this table is symmetric vertically and horizontally. The entries of $M_L$ and $M_S$, of $-M_L$ and $M_S$, of $M_L$ and $-M_S$, and finally of $-M_L$ and $-M_S$ only differ in the sign of $m_l$ and $m_s$ of each electron.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/table_symmetry.png" alt="Symmetry of Table" /></p>
+
+<p>Therefore,</p>
+
+<blockquote>
+  <p>When setting up a table of microstates:</p>
+
+  <ol>
+    <li>Fill in the entries for one quadrant (ex. $M_L \leq 0$ and $M_S \leq 0$)</li>
+    <li>Fill the remaining quadrants by exploiting the vertical and horizontal symmetry of the table.</li>
+    <li>Finish by counting all the entries and checking if the total number of microstates is correct.</li>
+  </ol>
+</blockquote>
+
+<p>Note that the process of drawing electron configurations and then filling in the table of microstates is somewhat redundant; save time by just starting with the table of microstates.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/table_2.png" alt="Table" /></p>
+
+<p>The first term symbol that arises from this table is $^3P$, as the largest value of $M_S = +1$ (which implies $S = 1$) and simultaneously, the largest possible value of $M_L = +1$ (which implies $L = 1$). We cross out one entry from each $M_L$ and $M_S$ possible for $^3P$.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/table_4.png" alt="Table" /></p>
+
+<p>The next term symbol is $^1D$, as $M_S = 0$ (which implies $S = 0$) and the largest value of $M_L = +2$ (which implies $L = 2$).</p>
+
+<p><img src="/assets/img/atomic-term-symbols/table_6.png" alt="Table" /></p>
+
+<p>The last term symbol is $^1S$, where $M_S = 0$ and $M_L = 0$ thus $S = 0$ and $L = 0$.</p>
+
+<p>These are the term symbols:</p>
+
+<p><img src="/assets/img/atomic-term-symbols/term_symbols_1.png" alt="Term Symbols" /></p>
+
+<p>We have yet to fully specify these term symbols, notably the value of $J$. Recall how $J$ can have the values $\left|L - S\right|,\,\cdots,\,L + S$.</p>
+
+<p>For $^3P$ ($L = 1$ and $S = 1$), $J_{\text{min}} = 0$ and $J_{\text{max}} = 2$. Therefore, $J = 2,\, 1,\, 0$ and the term symbols are $^3P_2$, $^3P_1$, and $^3P_0$.</p>
+
+<p>For $^1D$ ($L = 2$ and $S = 0$), $J_{\text{min}} = 2$ and $J_{\text{max}} = 2$. Therefore, $J = 2$ and the term symbol is $^1D_2$.</p>
+
+<p>For $^1S$ ($L = 0$ and $S = 0$), $J_{\text{min}} = 0$ and $J_{\text{max}} = 0$. Therefore, $J = 0$ and the term symbol is $^1S_0$.</p>
+
+<p>Therefore, the term symbols for $1s^22s^22p^2$ carbon, or $np^2$ in general, are as follows.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/term_symbols_2.png" alt="Term Symbols" /></p>
+
+<h1 id="table-of-possible-term-symbols">Table of Possible Term Symbols</h1>
+
+<p>With the above procedure, a table of the term symbols for various electron configurations can be prepared.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Electron configuration</th>
+      <th>Term symbols (excluding $J$)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$s^1$</td>
+      <td>$^2S$</td>
+    </tr>
+    <tr>
+      <td>$p^1$; $p^5$</td>
+      <td>$^2P$</td>
+    </tr>
+    <tr>
+      <td>$p^2$; $p^4$</td>
+      <td>$^3P$, $^1D$, $^1S$</td>
+    </tr>
+    <tr>
+      <td>$p^3$</td>
+      <td>$^4S$, $^2D$, $^2P$</td>
+    </tr>
+    <tr>
+      <td>$d^1$; $d^9$</td>
+      <td>$^2D$</td>
+    </tr>
+    <tr>
+      <td>$d^2$; $d^8$</td>
+      <td>$^3F$, $^3P$, $^1G$, $^1D$, $^1S$</td>
+    </tr>
+    <tr>
+      <td>$d^3$; $d^7$</td>
+      <td>$^4F$, $^4P$, $^2H$, $^2G$, $^2F$, $^2D(\text{two})$, $^2P$</td>
+    </tr>
+    <tr>
+      <td>$d^4$; $d^6$</td>
+      <td>$^5D$, $^3H$, $^3G$, $^3F(\text{two})$, $^3D$, $^3P(\text{two})$, $^1I$, $^1G(\text{two})$, $^1F$, $^1D(\text{two})$, $^1S(\text{two})$</td>
+    </tr>
+    <tr>
+      <td>$d^5$</td>
+      <td>$^6S$, $^4G$, $^4F$, $^4D$, $^4P$, $^2I$, $^2H$, $^2G(\text{two})$, $^2F(\text{two})$, $^2D(\text{three})$, $^2P$, $^2S$</td>
+    </tr>
+    <tr>
+      <td>$s^2$; $\,p^6$; $\,d^{10}$; $\,\cdots$</td>
+      <td>$^1S$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>There are three things to note about this table.</p>
+
+<p>First, some electron configuration produces two or more of the same term symbol. This is the exception where two or more energy states of the same electron configuration can have the same $L$, $M_L$, $S$, and $M_S$. For these cases, electron configuration alone is not a suitable substitute to energy when describing energy states (and levels).</p>
+
+<p>Second, electron configurations consisting of only filled subshells are always $^1S$, as all $m_l$ and $m_s$ cancel out between all electrons, resulting in $M_L = 0$ and $M_S = 0$. In fact, like $M_L$ and $M_S$, $M_J$ always equals zero. Thus, $J = 0$ and their term symbol is indeed always $^1S_0$.</p>
+
+<p>The last and most important point is about electron holes, which are the absense of electrons. Electron configurations with some electron holes (lack of electrons) have the same term symbols as those with the same number of electrons in the same subshell. In other words, adding $n$ electrons to an empty subshell is the same (with respect to angular momentum) as removing $n$ electrons from a full subshell. Holes act like electrons; they contribute to the overall angular momenta in the same way.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/holes.png" alt="Holes" /></p>
+
+<p>Therefore, not only is it acceptable to replace electron holes with electrons to calculate $L$ and $S$, it is often easier to do so.</p>
+
+<h1 id="example-2-excited-1s22s22p43p2-neon">Example 2: Excited $1s^22s^22p^43p^2$ Neon</h1>
+
+<p>Let us apply three useful points that we have learned until now on an excited neon configuration of $1s^22s^22p^43p^2$.</p>
+
+<ol>
+  <li>Completely filled subshells do not contribute to the overall $M_L$ and $M_S$, and thus can be ignored when determining term symbols.</li>
+  <li>Replace electron holes with electrons when calculating $L$ and $S$.</li>
+  <li>(From part 2) The addition of two angular momenta characterized by quantum numbers $j_1$ and $j_2$ results in a total angular momentum whose quantum number $J$ has the possible values $ J=\left|j_1 - j_2\right|,\,\cdots,\,j_1 + j_2$</li>
+</ol>
+
+<p>From the $1s^22s^22p^43p^2$ configuration, we can ignore completely filled subshells and only deal with $2p^43p^2$ - all thanks to point 1.</p>
+
+<p>With point 2, the $2p^43p^2$ configuration can be replaced with the $2p^23p^2$ configuration by replacing electron holes in the $2p$ subshell with electrons.</p>
+
+<p>We are left with the $2p^23p^2$ configuration. This configuration consist of the $2p^2$ configuration and the $3p^2$ configuration. For a $np^2$ configuration (equivalent electrons), the term symbols are (without $J$) $^3P$, $^1P$, and $^1S$ (as we have calculated for ground state carbon). Between $2p^2$ and $3p^2$ subshells (which are non-equivalent electrons), the $L$ and $S$ of the term symbols (denoted $l_i$ and $s_i$ below) can be “added” according to point 3 to produce new term symbols characterizing $2p^23p^2$ as a whole.</p>
+
+<p>A. Adding $^3P$ and $^3P$</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Term Symbol</th>
+      <th style="text-align: center">    $l_i$    </th>
+      <th style="text-align: center">    $s_i$    </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">$^3P$</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$^3P$</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">  $l_1$  </th>
+      <th style="text-align: center">  $l_2$  </th>
+      <th style="text-align: center">  $L_{\text{min}}$  </th>
+      <th style="text-align: center">  $L_{\text{max}}$  </th>
+      <th style="text-align: center">  $L$    </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">0, 1, 2</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">  $s_1$  </th>
+      <th style="text-align: center">  $s_2$  </th>
+      <th style="text-align: center">  $S_{\text{min}}$  </th>
+      <th style="text-align: center">  $S_{\text{max}}$  </th>
+      <th style="text-align: center">   $S$   </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">0, 1, 2</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>⇒ $^5D$, $^5P$, $^5S$, $^3D$, $^3P$, $^3S$, $^1D$, $^1P$, and $^1S$</p>
+
+<p>B. Adding $^3P$ and $^1D$</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Term Symbol</th>
+      <th style="text-align: center">    $l_i$    </th>
+      <th style="text-align: center">    $s_i$    </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">$^3P$</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$^1D$</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">0</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">    $l_1$    </th>
+      <th style="text-align: center">    $l_2$    </th>
+      <th style="text-align: center">    $L_{\text{min}}$    </th>
+      <th style="text-align: center">    $L_{\text{max}}$    </th>
+      <th style="text-align: center">         $L$        </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">3</td>
+      <td style="text-align: center">1, 2, 3</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">  $s_1$  </th>
+      <th style="text-align: center">  $s_2$  </th>
+      <th style="text-align: center">  $S_{\text{min}}$  </th>
+      <th style="text-align: center">  $S_{\text{max}}$  </th>
+      <th style="text-align: center">      $S$      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>⇒ $^3F$, $^3D$, and $^3P$</p>
+
+<p>C. Adding $^1D$ and $^3P$</p>
+
+<p>Same as B. Adding $^3P$ and $^1D$.</p>
+
+<p>⇒ $^3F$, $^3D$, and $^3P$</p>
+
+<p>D. Adding $^3P$ and $^1S$</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Term Symbol</th>
+      <th style="text-align: center">    $l_i$    </th>
+      <th style="text-align: center">    $s_i$    </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">$^3P$</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$^1S$</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">    $l_1$    </th>
+      <th style="text-align: center">    $l_2$    </th>
+      <th style="text-align: center">      $L_{\text{min}}$      </th>
+      <th style="text-align: center">      $L_{\text{max}}$      </th>
+      <th style="text-align: center">           $L$          </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">    $s_1$    </th>
+      <th style="text-align: center">    $s_2$    </th>
+      <th style="text-align: center">      $S_{\text{min}}$      </th>
+      <th style="text-align: center">      $S_{\text{max}}$      </th>
+      <th style="text-align: center">           $S$          </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>⇒ $^3P$</p>
+
+<p>E. Adding $^1S$ and $^3P$</p>
+
+<p>Same as D. Adding $^3P$ and $^1S$.</p>
+
+<p>⇒ $^3P$</p>
+
+<p>F. Adding $^1D$ and $^1D$</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Term Symbol</th>
+      <th style="text-align: center">    $l_i$    </th>
+      <th style="text-align: center">    $s_i$    </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">$^1D$</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$^1D$</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">0</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">    $l_1$    </th>
+      <th style="text-align: center">    $l_2$    </th>
+      <th style="text-align: center">    $L_{\text{min}}$    </th>
+      <th style="text-align: center">    $L_{\text{max}}$    </th>
+      <th style="text-align: center">  $L$  </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">0, 1, 2, 3, 4</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">  $s_1$  </th>
+      <th style="text-align: center">  $s_2$  </th>
+      <th style="text-align: center">  $S_{\text{min}}$  </th>
+      <th style="text-align: center">  $S_{\text{max}}$  </th>
+      <th style="text-align: center">       $S$       </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>⇒ $^1G$, $^1F$, $^1D$, $^1P$, and $^1S$</p>
+
+<p>G. Adding $^1D$ and $^1S$</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Term Symbol</th>
+      <th style="text-align: center">    $l_i$    </th>
+      <th style="text-align: center">    $s_i$    </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">$^1D$</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$^1S$</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">  $l_1$  </th>
+      <th style="text-align: center">  $l_2$  </th>
+      <th style="text-align: center">  $L_{\text{min}}$  </th>
+      <th style="text-align: center">  $L_{\text{max}}$  </th>
+      <th style="text-align: center">      $L$      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">2</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">  $s_1$  </th>
+      <th style="text-align: center">  $s_2$  </th>
+      <th style="text-align: center">  $S_{\text{min}}$  </th>
+      <th style="text-align: center">  $S_{\text{max}}$  </th>
+      <th style="text-align: center">       $S$       </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>⇒ $^1D$</p>
+
+<p>H. Adding $^1S$ and $^1D$</p>
+
+<p>Same as G. Adding $^1D$ and $^1S$.</p>
+
+<p>⇒ $^1D$</p>
+
+<p>I. Adding $^1S$ and $^1S$</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Term Symbol</th>
+      <th style="text-align: center">    $l_i$    </th>
+      <th style="text-align: center">    $s_i$    </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">$^1S$</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$^1S$</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">  $l_1$  </th>
+      <th style="text-align: center">  $l_2$  </th>
+      <th style="text-align: center">  $L_{\text{min}}$  </th>
+      <th style="text-align: center">  $L_{\text{max}}$  </th>
+      <th style="text-align: center">      $L$      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">  $s_1$  </th>
+      <th style="text-align: center">  $s_2$  </th>
+      <th style="text-align: center">  $S_{\text{min}}$  </th>
+      <th style="text-align: center">  $S_{\text{max}}$  </th>
+      <th style="text-align: center">       $S$       </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>⇒ $^1S$</p>
+
+<p>As a result, the term symbols for $1s^22s^22p^43p^2$ are:</p>
+
+<p>$^5D$, $^5P$, $^5S$, $^3F$ (two), $^3D$ (three), $^3P$ (five), $^3S$, $^1G$, $^1F$, $^1D$ (four), $^1P$ (two), and $^1S$ (three).</p>
+
+<p>If you count the number of states of each of these term symbols, it adds up to $225 = 15\times 15$, which checks out as it is equal to the number of microstates for $1s^22s^22p^43p^2$.</p>
+
+<h1 id="hunds-rule-and-ground-state">Hund’s Rule and Ground State</h1>
+
+<p>Until now, we were occupied with finding out <em>all</em> possible term symbols from an electron configuration. An important question to ask is “what is the <em>most stable</em> term symbol among all term symbols?” In other words, “what is the ground state of an atom?”<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup></p>
+
+<p>Three empirical rules by spectroscopist Friederich Hund allow us to obtain the ground state term symbol.</p>
+
+<ol>
+  <li>The term symbol with the largest value of $S$ is the most stable.</li>
+  <li>For term symbols with the same value of $S$, the term symbol with the largest value of $L$ is the most stable.</li>
+  <li>
+    <p>For term symbols with the same value of $S$ and $L$, $J$ is used to determine the most stable term symbol.</p>
+
+    <ol>
+      <li>For a subshell less than half-filled, the term symbol with the <em>smallest</em> $J$ is the most stable.</li>
+      <li>For a subshell more than half-filled, the term symbol with the <em>largest</em> $J$ is the most stable.</li>
+    </ol>
+  </li>
+</ol>
+
+<p>As an example, the term symbols of ground configuration $1s^22s^22p^2$ carbon are $^1S_0$, $^3P_2$, $^3P_1$, $^3P_0$, and $^1D_2$. The term symbols with the largest $S$ are $^3P_2$, $^3P_1$, and $^3P_0$.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/term_symbols_C_1.png" alt="Term Symbols" /></p>
+
+<p>Among those term symbols, all three have the same $L$.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/term_symbols_C_2.png" alt="Term Symbols" /></p>
+
+<p>Therefore, we move on to the third rule and use $J$ to determine the ground state term symbol. Because the $2p$ subshell is less than half-filled, we choose the term symbol with the smallest value of $J$.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/term_symbols_C_3.png" alt="Term Symbols" /></p>
+
+<p>As a result, $^3P_0$ is the ground state term symbol for carbon.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/term_symbols_C_4.png" alt="Term Symbols" /></p>
+
+<p>These term symbols can be shown with an energy diagram similar to that at the end of Part 2.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/energy_diagram_2.png" alt="Energy Diagram" /></p>
+
+<p>When obtaining the ground state term symbol, it is not necessary to obtain <em>all</em> term symbols. There is an easier way that involves finding the microstate that is related to the ground state term symbol. We first start with the microstates with the largest value of $M_S$, in order to maximize $S$. This is the general chemistry version of Hund’s Rules, and is deeply related to the quantum mechanical, spectroscopic version of Hund’s Rules as well.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/microstates_C_1.png" alt="Microstates with parallel spin" /></p>
+
+<p>Of those microstates, we choose the microstate with the largest value of $M_L$, in order to maximize $L$.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/microstates_C_2.png" alt="Microstate with maximum L" /></p>
+
+<p>As $S = 1$ and $L = 1$, the term symbol without $J$ is $^3P$. Calculating the remaining $J$ and choosing the right value according to Hund’s Law leaves us with the same ground state term symbol: $^3P_0$.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/microstates_C_3.png" alt="Microstate with J" /></p>
+
+<p>A more complicated example would be manganese, with a ground state electron configuration of $\left[\text{Ar}\right]3d^54s^2$. In total, there are 252 microstates for this configuration, which results in 16 term symbols. It is an incredibly difficult and error-prone task to obtain the ground state term symbol by calculating all possible term symbols. However, if we use the method above, we can obtain the ground state term symbol of manganese with incredible ease.</p>
+
+<p>We start with the microstate with the largest value of $M_S$.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/microstate_Mn.png" alt="Microstate Mn" /></p>
+
+<p>Incidently enough, there is only one microstate left, which leaves us with $M_L = 0$. Therefore, $L=0$ and the term symbol (without $J$) is $^6S$.</p>
+
+<p>As the $3d$ subshell is exactly half-filled, it presents a dilemma with determining $J$ using Hund’s Rules. However, the only possible value of $J$ is $5/2$, so the ground state term symbol of $J$ is $^6S_{5/2}$.</p>
+
+<p>Hund’s Rules works very well for ground state electron configuration, but may fail for other excited configurations. In addition, Hund’s Rules cannot be reliably used to determine the energy order between the term symbols. In essence, <strong>use Hund’s Rules only for the ground state of an atom.</strong></p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>When obtaining <em>all</em> term symbols of an electron configuration:</p>
+
+<ol>
+  <li>Ignore all filled subshells.</li>
+  <li>For each subshell, if the subshell is more than half-filled, replace electron holes with electrons.</li>
+  <li>Calculate $l_i$ and $s_i$ for subshells with equivalent electrons by setting up a table of microstates or by using the table of term symbols provided in your textbook.</li>
+  <li>Calculate the total $L$ and $S$ by adding the $l_i$ and $s_i$ of all subshells (non-equivalent electrons)</li>
+  <li>Calculate $J$ for each combination of $L$ and $S$</li>
+</ol>
+
+<p>When obtaining the <em>ground state</em> term symbol with all term symbols already known - Hund’s Rules:</p>
+
+<ol>
+  <li>The term symbol with the largest value of $S$ is the most stable.</li>
+  <li>For term symbols with the same value of $S$, the term symbol with the largest value of $L$ is the most stable.</li>
+  <li>
+    <p>For term symbols with the same value of $S$ and $L$, $J$ is used to determine the most stable term symbol.</p>
+
+    <ol>
+      <li>For a subshell <em>less than</em> half-filled, the term symbol with the <em>smallest</em> $J$ is the most stable.</li>
+      <li>For a subshell <em>more than</em> half-filled, the term symbol with the <em>largest</em> $J$ is the most stable.</li>
+    </ol>
+  </li>
+</ol>
+
+<p>When obtaining the <em>ground state</em> term symbol <em>without knowing the term symbols</em>:</p>
+
+<ol>
+  <li>Start with microstates with the maximum value of $M_S$. This $M_S = S$.</li>
+  <li>Choose the microstate with the maximum value of $M_L$. This $M_L = L$.</li>
+  <li>Calculate $J$ with $L$ and $S$. Choose the correct $J$ according to Hund’s Rules.</li>
+</ol>
+
+<h1 id="footnotes">Footnotes</h1>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>Most textbooks refer to the most stable term symbol as “the ground state”, even though it should really be refered to as “the ground level”. In line with most textbooks, this article refers to such ground level term symbol as “the ground state term symbol”. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </div><a class="u-url" href="/physical-chemistry/atomic-term-symbols-pt-3/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card" style="background-color: #222; color: white;">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-heading" style="overflow: auto;">
+      <a class="site-title" rel="author" href="/">
+        <img src="/assets/img/name.png" height="60">
+      </a>
+    </div>
+
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name" style="font-size:90%">Shinyoung Park<li style="font-size:90%">s.y.park@kaist.ac.kr</li></ul>
+        <div style="font-size:90%"><ul class="social-media-list"><li><a href="https://github.com/kerosenenotforconsumption"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">kerosenenotforconsumption</span></a></li></ul>
+</div>
+        <div class="lang-switcher">
+    
+    
+<span style="margin-right:20px; font-size: 80%; color:#bfbfbf;">English</span>
+    
+
+    
+    
+        
+<a href="/ko/physical-chemistry/atomic-term-symbols-pt-3/" style="margin-right:20px; color:#ffffff; font-size:80%;">한국어</a>
+        
+    
+</div>
+      </div>
+
+      <div class="footer-col footer-col-2">
+         
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p style="font-size:90%; text-align: right;">Personal website and blog</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

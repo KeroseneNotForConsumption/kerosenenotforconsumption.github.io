@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Atomic Term Symbols: Part 1 - The Preliminaries" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="Introduction" />
+<meta property="og:description" content="Introduction" />
+<link rel="canonical" href="https://sypark-chem.me/physical-chemistry/atomic-term-symbols-pt-1/" />
+<meta property="og:url" content="https://sypark-chem.me/physical-chemistry/atomic-term-symbols-pt-1/" />
+<meta property="og:site_name" content="Shinyoung Park" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-08-10T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Atomic Term Symbols: Part 1 - The Preliminaries" />
+<script type="application/ld+json">
+{"headline":"Atomic Term Symbols: Part 1 - The Preliminaries","dateModified":"2022-08-10T00:00:00+00:00","datePublished":"2022-08-10T00:00:00+00:00","description":"Introduction","url":"https://sypark-chem.me/physical-chemistry/atomic-term-symbols-pt-1/","mainEntityOfPage":{"@type":"WebPage","@id":"https://sypark-chem.me/physical-chemistry/atomic-term-symbols-pt-1/"},"@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<title>Shinyoung Park</title>
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="shortcut icon" type="image/png" href="favicon.png"><link type="application/atom+xml" rel="alternate" href="https://sypark-chem.me/feed.xml" title="Shinyoung Park" /><!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P094YZ20TC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P094YZ20TC');
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css" integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css" integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+  <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          renderMathInElement(document.body, {
+            // customised options
+            // • auto-render specific keys, e.g.:
+            delimiters: [
+                {left: '$', right: '$', display: false},
+            ],
+            // • rendering keys, e.g.:
+            throwOnError : false
+          });
+      });
+  </script>
+
+</head>
+<body><header class="site-header" role="banner" style="background-color: #222; color: white;">
+
+  <meta http-equiv="Content-Language" content="en">
+<link rel="alternate" hreflang="en" href="https://sypark-chem.me/physical-chemistry/atomic-term-symbols-pt-1/"/>
+<link rel="alternate" hreflang="ko" href="https://sypark-chem.me/ko/physical-chemistry/atomic-term-symbols-pt-1/"/>
+
+
+  <div id="progress-container">
+    <div id="progress-bar"></div>
+  </div>
+
+  <script>
+    // Function to update the progress bar
+    function updateProgressBar() {
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        var scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrollPercent = (scrollTop / scrollHeight) * 100;
+        document.getElementById('progress-bar').style.width = scrollPercent + '%';
+    }
+
+    // Event listener for scroll event
+    window.addEventListener('scroll', updateProgressBar);
+  </script>
+
+  <div class="wrapper"><!--<a class="site-title" rel="author" href="/" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Shinyoung Park</a>-->
+    <a class="site-title" rel="author" href="/">
+      <img src="/assets/img/name.png" width="200" style="padding: 10px 10px 13px 10px;">
+    </a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about" style="font-size:80%; color: white;">More about me</a><a class="page-link" href="/gallery" style="font-size:80%; color: white;">Gallery</a>
+    
+    
+<span style="margin-right:20px; font-size: 80%; color:#bfbfbf;">English</span>
+    
+
+    
+    
+        
+<a href="/ko/physical-chemistry/atomic-term-symbols-pt-1/" style="margin-right:20px; color:#ffffff; font-size:80%;">한국어</a>
+        
+    
+</div>
+        
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper"><article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Atomic Term Symbols: Part 1 - The Preliminaries</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2022-08-10T00:00:00+00:00" itemprop="datePublished">Aug 10, 2022
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h1 id="introduction">Introduction</h1>
+
+<p>This article is an in-depth explanation on atomic term symbols based on <em>Quantum Chemistry</em> by Levine to supplement chapter 8 of <em>Physical Chemistry: A Molecular Approach</em> by McQuarrie. A good understanding of preceding chapters, notably chapters 6 and 7, is required.</p>
+
+<p>The notation used in this article is based on the latter textbook.</p>
+
+<p>Part 1 deals with the quantum mechanics of multi-electron atoms, while Part 2 and Part 3 are devoted to atomic term symbols.</p>
+
+<h1 id="the-atomic-hamiltonian">The Atomic Hamiltonian</h1>
+
+<p>We start with the Hamiltonian for multi-electron atoms. The Hamiltonian for an atom with $n$ electrons and a nuclear charge of $Z$, in atomic units, is as follows.</p>
+
+\[\hat{H} = \sum_{i\,=\,1}^{n}\left ( -\frac{1}{2}\nabla_i^2 \right ) + \sum_{i\,=\,1}^{n}\left ( -\frac{Z}{r_i} \right ) + \sum_{i}\sum_{j\,&gt;\,i} \left ( \frac{1}{r_{ij}} \right )\]
+
+<p>For now, the potential term of $\hat{H}$ only includes Coulombic interactions. We ignore terms arising from interactions such as spin-orbit interaction or spin-spin interaction, as their contributions are small.<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup></p>
+
+<p>The eigenfunctions of $\hat{H}$, $\psi \left(r_1, \theta_1, \phi_1, \sigma_1;\,r_2, \theta_2, \phi_2, \sigma_2;\, \cdots ;\,r_n, \theta_n, \phi_n, \sigma_n \right)$,<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup> are the energy states of helium. This $\psi$ can be obtained numerically (with near-exact results) or with approximations such as the Hartree-Fock self-consistent-field (SCF) method with Slater-type orbitals (STOs), which retains the orbital concept.</p>
+
+<p>However, for our discussion of multi-electron atoms, there is no need to obtain such $\psi$. The exact details of $\psi$ are not important; what is important is the fact that $\psi$ is an <strong>eigenfunction of the operator $\hat{H}$</strong>. This will prove to be very important, as we discover other properties of $\hat{H}$ and $\psi$.</p>
+
+<h1 id="complete-set-of-commuting-observables">Complete Set of Commuting Observables</h1>
+
+<p>Consider a hydrogen-like atom with one electron. The $\psi$ of this system are the atomic orbitals. As you may know, $\hat{H}$ commutes not with $\bold{\hat{l}}$, the orbital angular momentum operator, but with its square, $\hat{l}^2$.<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup> As a result, $\psi$ can be <em>chosen</em> to be an eigenfunction of both $\hat{H}$ and $\hat{l}^2$. Even if $\psi$, an eigenfunction of $\hat{H}$, happens to not be an eigenfunction of $\hat{l}^2$, a suitable linear combination involving $\psi$ must be an eigenfunction of $\hat{l}^2$.</p>
+
+<p>Physically, this means that particular energy states have a definite value of the observable $\left| \bold{l} \right|^2$ in addition to $E$, the energy.</p>
+
+<p>The same can be said with $\hat{l}_z$,<sup id="fnref:3:1" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup> the z-component of $\bold{\hat{l}}$, which commutes with $\hat{H}$. Furthermore, $\hat{l}_z$ commutes with $\hat{l}^2$. In total, this means that a $\psi$ can be chosen to be an eigenfunction of $\hat{H}$, $\hat{l}^2$, and $\hat{l}_z$ simultaneously. Physically, this means that particular energy states have a definite value of $E$, $\left| \bold{l} \right|^2$, and $l_z$ at the same time.</p>
+
+<p>The electronic spin operators are similar in this regard. $\hat{H}$ commutes with $\hat{s}^2$ and $\hat{s}_z$<sup id="fnref:3:2" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup> as $\hat{H}$ is not dependent on electronic spin. $\hat{s}^2$ and $\hat{s}_z$ commute with each other (more precisely, are defined in a way such that they commute with each other). Any orbital angular momentum operator ($\hat{l}^2$ or $\hat{l}_z$) commutes with any spin operator ($\hat{s}^2$ or $\hat{s}_z$) because the former is dependent on spatial variables only, while the latter is dependent on spin variables.</p>
+
+<p>As a result, the operators $\hat{H}$, $\hat{l}^2$, $\hat{l}_z$, $\hat{s}^2$, and $\hat{s}_z$ all commute with each other as shown below.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/pentagram_1.png" alt="Commuting Operators" /></p>
+
+<p>Mathematically, this means that particular wave functions ($\psi$) are eigenfunctions of $\hat{H}$, $\hat{l}^2$, $\hat{l}_z$, $\hat{s}^2$, and $\hat{s}_z$; thus, they satisfy the following.</p>
+
+\[\hat{H} \psi = E \psi\]
+
+\[\hat{l}^2 \psi = \left| \bold{l} \right|^2 \psi\]
+
+\[\hat{l}_z \psi = l_z \psi\]
+
+\[\hat{s}^2 \psi = \left| \bold{s} \right|^2 \psi\]
+
+\[\hat{s}_z \psi = s_z \psi\]
+
+<p>Physically, this means that such energy states have a definite value of observables $E$, $\left| \bold{l} \right|^2$, $l_z$, $\left| \bold{s} \right|^2$, and $s_z$. For example, the wave function $\psi = \frac{Z^\frac{3}{2}}{\sqrt{\pi}}e^{-Zr} \alpha(\sigma)$ (which translates to one electron in a $1s$ orbital, spin up) has a definite value of $E = -Z^2 m_e e^4/8\epsilon_0^2h^2$, $\left| \bold{l} \right|^2 = 0$, $l_z = 0$, $\left| \bold{s} \right|^2 =  3\hbar^2/4$, and $s_z = +\hbar/2$ (in SI units).</p>
+
+<p><img src="/assets/img/atomic-term-symbols/hydrogen.png" alt="Hydrogen" /></p>
+
+<p><strong>Any energy state can be expressed as a linear combination of degenerate energy states with a definite value of $E$, $\left| \bold{l} \right|^2$, $l_z$, $\left| \bold{s} \right|^2$, and $s_z$.</strong> For example, consider the wave function $\psi = \frac{Z^\frac{3}{2}}{\sqrt{\pi}}e^{-Zr} \times \frac{1}{\sqrt{2}}\left(\alpha(\sigma) + \beta(\sigma)\right)$.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/hydrogen_superposition_1.png" alt="Superposition" /></p>
+
+<p>This wave function is an energy state, as it has a definite value of $E$, which is the same as the previous example. In fact, $\left| \bold{l} \right|^2$, $l_z$, and $\left| \bold{s} \right|^2$ of this wave function is the same as the previous example.</p>
+
+<p>However, the spin of the electron ($s_z$) is not definite, as it is a superposition of spin up ($\alpha(\sigma)$, $s_z = +\frac{\hbar}{2}$) and spin down ($\beta(\sigma)$, $s_z = -\frac{\hbar}{2}$). Upon observation of $s_z$, 50% of the time it is spin up, and 50% of the time it is spin down.</p>
+
+<p>Cases like this infinitely exist. However, all of these wave functions can be expressed as linear combinations of wave functions with definite $E$, $\left| \bold{l} \right|^2$, $l_z$, $\left| \bold{s} \right|^2$, and $s_z$. For $\psi = \frac{Z^\frac{3}{2}}{\sqrt{\pi}}e^{-Zr} \times \frac{1}{\sqrt{2}}\left(\alpha(\sigma) + \beta(\sigma)\right)$, this wave function is a linear combination of $\psi = \frac{Z^\frac{3}{2}}{\sqrt{\pi}}e^{-Zr} \alpha(\sigma)$ (always spin up) and $\psi = \frac{Z^\frac{3}{2}}{\sqrt{\pi}}e^{-Zr} \beta(\sigma)$ (always spin down). Mathematically, these two are part of the eigenbasis of $\hat{H}$.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/hydrogen_superposition_2.png" alt="Superposition" /></p>
+
+<p>When explaining the various facets of quantum mechanics, it is much easier to deal with wave functions that have a definite value of $E$, $\left| \bold{l} \right|^2$, $\cdots$, etc. than wave functions that do not. As a simple example, let us ask a question like “what is the degeneracy of this energy level (number of energy states with the same energy)?” The technical answer would be:</p>
+
+<blockquote>
+  <p>Infinitely many energy states have the same energy, but those states can be decomposed into two (for example, $\psi = \frac{Z^\frac{3}{2}}{\sqrt{\pi}}e^{-Zr} \alpha(\sigma)$ and $\psi = \frac{Z^\frac{3}{2}}{\sqrt{\pi}}e^{-Zr} \beta(\sigma)$) independent energy states.</p>
+</blockquote>
+
+<p>This is a bit cumbersome compared to:</p>
+<blockquote>
+  <p>The degeneracy of this energy level is 2.</p>
+</blockquote>
+
+<p>Therefore, for the sake of convenience and readability, we will now <strong>limit our discussion of energy states to ONLY energy states with a definite value of $E$, $\left| \bold{l} \right|^2$, $l_z$, $\left| \bold{s} \right|^2$, and $s_z$</strong>. On that note,</p>
+
+<blockquote>
+  <p>An energy state of a hydrogen-like atom is completely characterized by</p>
+
+\[E,\: \left| \bold{l} \right|^2,\: l_z,\: \left| \bold{s} \right|^2,\: \text{and}\: s_z\]
+</blockquote>
+
+<p>This means that instead of describing $\psi$ by its functional form $(\frac{Z^\frac{3}{2}}{\sqrt{\pi}}e^{-Zr} \alpha(\sigma))$, we can describe it by specifying its $E$, $\left| \bold{l} \right|^2$, $l_z$, $\left| \bold{s} \right|^2$, and $s_z$. These observables are special in this regard, and thus they have a special name: <strong>a complete set of commuting observables(CSCO)</strong>.</p>
+
+<p>In practice, it is a bit awkward to list the exact value of the five observables everytime we want to refer to an energy state. Instead, we can call these values (and thus the energy state) with the associated <strong>quantum numbers</strong>: $n, l, m_l, s, m_s$.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/observables_qnumbers_1.png" alt="Observables and Quantum Numbers" /></p>
+
+<p>These quantum numbers arise from the derivation of $\psi$, and as a consequence of the boundary conditions imposed on $\psi$, they are integers or half-integers.</p>
+
+<p>Following are the relationship between observables and their quantum numbers for hydrogen-like atoms, in SI units.</p>
+
+\[\hat{H} \psi = E \psi = -\frac{Z^2m_ee^4}{8\epsilon_0^2h^2n^2} \psi\]
+
+\[\hat{l}^2 \psi = \left| \bold{l} \right|^2 \psi =l\left(l+1\right)\hbar^2 \psi\]
+
+\[\hat{l}_z \psi = l_z \psi = m_h \hbar \, \psi\]
+
+\[\hat{s}^2 \psi = \left| \bold{s} \right|^2 \psi =s\left(s+1\right)\hbar^2 \psi\]
+
+\[\hat{s}_z \psi = s_z \psi = m_s \hbar \, \psi\]
+
+<p>When specifying a particular $\psi$, we can substitute $E$ with the principle quantum number $n = 1,\, 2,\, 3,\, \cdots$, as</p>
+
+\[E = -\frac{Z^2m_ee^4}{8\epsilon_0^2h^2n^2}\]
+
+<p>We can substitute $\left| \bold{l} \right|^2$ with the (orbital) angular momentum quantum number $l = 0, \,1, \,2, \,\cdots,\, n$, as</p>
+
+\[\left| \bold{l} \right|^2=l\left(l+1\right)\hbar^2\]
+
+<p>We can substitute $l_z$ with the magnetic quantum number $m_l = -l,\, -l+1,\, \cdots, \,0, \,\cdots, \,+l-1, \,+l$, as</p>
+
+\[l_z = m_h \hbar\]
+
+<p>We can substitute $\left| \bold{s} \right|^2$ with $s$, as</p>
+
+\[\left| \bold{s} \right|^2 =s\left(s+1\right)\hbar^2\]
+
+<p>As there is only a single electron for hydrogen-like atoms, $s=1/2$. Therefore, in general chemistry and elsewhere, $s$ is often omitted as it does not convey any additional information. The reason this is here is because we will deal with multi-electron atoms with more complicated electron spin, at a later date.</p>
+
+<p>Lastly, we can substitute $s_z$ with the spin quantum number $m_s$, as</p>
+
+\[s_z = m_s \hbar\]
+
+<p>Like $m_l$, $m_s = -s,\, -s+1,\, \cdots, \,+s-1, \,+s$. As $s = 1/2$, $m_s$ must be either $+1/2$ (spin up) or $-1/2$ (spin down).</p>
+
+<p>Our last example dealt with a $1s$ orbital, spin up energy state $\psi$. This energy state was described either with its functional form (of $(\frac{Z^\frac{3}{2}}{\sqrt{\pi}}e^{-Zr} \alpha(\sigma))$), or by its complete set of commuting observables $E$, $\left| \bold{l} \right|^2$, $l_z$, $\left| \bold{s} \right|^2$, and $s_z$. Now, we can describe it very concisely with a set of quantum numbers: $\left(n, l, m_l, s, m_s\right) = (1, 0, 0, 1/2, +1/2)$.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/hydrogen_quantum_numbers.png" alt="Quantum Numbers" /></p>
+
+<p>We can adopt the <strong>bra-ket notation</strong>, where a vector (a wave function) is denoted by a bra($|$) and a ket($ \rangle $). A very apt name for an energy state would be a list of its quantum numbers ($n\,l\,m_l\,s\,m_s$). This name goes inbetween the bra and the ket to denote the energy state $\psi$.</p>
+
+\[\psi = \psi_{\left(n, \,l, \,m_l,\, s,\, m_s\right)} = \left |\, n\,l\,m_l\,s\,m_s\,\right \rangle\]
+
+<p>Thus, the $1s$ orbital, spin up energy state $\psi$ is equivalent to $\left |\, 1\,0\,0\,\frac{1}{2}\,+\frac{1}{2}\,\right \rangle$.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/hydrogen_bra_ket.png" alt="Bra-ket Notation" /></p>
+
+<p>To conclude, this section can be condensed into a single statement:</p>
+
+<blockquote>
+  <p>An energy state of a hydrogen-like atom is characterized by orbital and spin quantum quantum numbers. With the bra-ket notation:</p>
+
+\[\psi = \left |\, n\,l\,m_l\,s\,m_s\,\right \rangle\]
+</blockquote>
+
+<h1 id="multi-electron-atom">Multi-electron Atom</h1>
+
+<p>It would be nice if the energy states of multi-electron atoms are described completely by quantum numbers similar to those of hydrogen-like atoms.</p>
+
+<p>One speculation one might have is that such energy states are described by quantum numbers for <em>each</em> electron. For example, an energy state of a neutral helium atom might be described as $ \left |\, n_1\,l_1\,m_{l1}\,s_1\,m_{s1};\,n_2\,l_2\,m_{l2}\,s_2\,m_{s2}\,\right \rangle$, as there are two electrons. For the ground state helium atom, perhaps $ \left |\, 1\,0\,0\,\frac{1}{2}\,+\frac{1}{2};\,1\,0\,0\,\frac{1}{2}\,-\frac{1}{2}\,\right \rangle$ is appropriate?</p>
+
+<p><img src="/assets/img/atomic-term-symbols/helium_1.png" alt="Helium" /></p>
+
+<p>If this seems too convenient, this is because it is incorrect. There are two complementary reasons why energy states cannot be described by quantum numbers of <em>each</em> electron.</p>
+
+<p>First, we go back to our discussion of hydrogen-like atoms. For an energy state to be described by quantum numbers, the operator associated with the observable/quantum number (i.e. $\hat{s}_z$ for $m_s$) must <em>commute</em> with the Hamiltonian, $\hat{H}$.</p>
+
+<p>For a helium atom to be denoted $ \left |\, n_1\,l_1\,m_{l1}\,s_1\,m_{s1};\,n_2\,l_2\,m_{l2}\,s_2\,m_{s2}\,\right \rangle$, operators $ \hat{H} _{1} $, $ \hat{l} _{1} ^{2} $, $ \hat{l} _{1z} $, $  \hat{s} _{1} ^{2} $, $ \hat{s} _{1z} $, $ \hat{H} _{2} $, $\hat{l} _2 ^2$, $\hat{l} _{2z}$, $\hat{s} _2 ^2$, and $\hat{s} _{2z}$ must commute with $\hat{H}$. Even ignoring $\hat{H} _1$ and $\hat{H} _2$,<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup> operators $\hat{l} _1^2$, $\hat{l} _{1z}$, $\hat{s} _1^2$, $\hat{s} _{1z}$, $\hat{l}_2^2$, $\hat{l} _{2z}$, $\hat{s} _2^2$, and $\hat{s} _{2z}$ <em>do not commute</em> with $\hat{H}$.</p>
+
+<p>This means that such helium energy state does not have definite values of observables $E$, $\left| \bold{l} _1 \right| ^2$, $l _{1z}$, $\left| \bold{s} _1 \right| ^2$, $s _{1z}$, $\left| \bold{l} _2 \right| ^2$, $l _{2z}$, $\left| \bold{s} _2 \right| ^2$ and $s _{2z}$, as such energy state is <em>not an eigenfunction</em> of all of the operators listed above. Consequently, it is not possible to assign the quantum numbers $l _1\,m _{l1}\,s _1\,m _{s1};\,l _2\,m _{l2}\,s _2\,m _{s2}$, and the notation $ \left |\, n _1\,l _1\,m _{l1}\,s _1\,m _{s1};\,n _2\,l _2\,m _{l2}\,s _2\,m _{s2}\,\right \rangle$ is wrong.</p>
+
+<p>Second, the scheme $ \left |\, n_1\,l_1\,m_{l1}\,s_1\,m_{s1};\,n_2\,l_2\,m_{l2}\,s_2\,m_{s2}\,\right \rangle$ implies that we can distinguish the two electrons: one is spin up and one is spin down. However, all electrons are identical and it is impossible to distinguish between any electrons in an atom. For the ground state helium, (1) there is no “electron 1” and “electron 2” and (2) no electron is simply spin up or down, but any electron can be spin up or spin down upon measurement.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/helium_2.png" alt="Helium" /></p>
+
+<p>If so, what are the quantum numbers that completely describe an energy state of a multi-electron atom? Another way of saying this would be <strong>“which operators commute with the Hamiltonian and with each other to form a complete set of commuting observables?”</strong></p>
+
+<p>In classical mechanics, angular momentum is a vector and therefore adds vectorally. In equation form, it would look something like this.</p>
+
+\[\bold{L} = \sum_i \bold{l}_i\]
+
+<p>Quantum mechanics has angular momentum <em>operators</em>, which also adds vectorally. For starters, the total[^7] orbital angular momentum operator $\hat{L}$ is defined as the sum of all orbital angular momentum operator $\hat{l}_i$ for all electrons.</p>
+
+\[\hat{L} = \sum_i \hat{l}_i\]
+
+<p>This is the orbital angular momentum operator of the entire atom. The operators derived from $\hat{L}$, $\hat{L}^2$ and $\hat{L} _z$, commute with each other, as well as with $\hat{H}$. Note that as $\hat{L} _z$ is the z-component of $\hat{L}$ and $\hat{l} _{iz}$ is the z-component of $\hat{l} _{i}$</p>
+
+\[\hat{L}_z = \sum_i \hat{l}_{iz}\]
+
+<p>The total[^7] spin operator $\hat{S}$ is defined as the sum of all spin operators $\hat{s}_i$ for all electrons.</p>
+
+\[\hat{S} = \sum_i \hat{s}_i\]
+
+<p>This is the spin operator of the entire atom. The operator $\hat{S}^2$ and $\hat{S}_z$ commute with each other, as well as with $\hat{H}$. Also note that</p>
+
+\[\hat{S}_z = \sum_i \hat{s}_{iz}\]
+
+<p>As expected, any orbital angular momentum operator ($\hat{L}^2$ or $\hat{L}_z$) commutes with any spin operator ($\hat{S}^2$ or $\hat{S}_z$). Similar to hydrogen-like atoms, the operators $\hat{H}$, $\hat{L}^2$, $\hat{L}_z$, $\hat{S}^2$, and $\hat{S}_z$ all commute with each other as shown below.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/pentagram_2.png" alt="Commuting Operators" /></p>
+
+<p>This means that energy state $\psi \left(r_1, \theta_1, \phi_1, \sigma_1;\,r_2, \theta_2, \phi_2, \sigma_2;\, \cdots ;\,r_n, \theta_n, \phi_n, \sigma_n \right)$ can be described completely by the observables of $\hat{H}$, $\hat{L}^2$, $\hat{L}_z$, $\hat{S}^2$, and $\hat{S}_z$, as $\psi$ is an eigenfunction of all of the operators above.</p>
+
+\[\hat{H} \psi = E \psi\]
+
+\[\hat{L}^2 \psi = \left| \bold{L} \right|^2 \psi\]
+
+\[\hat{L}_z \psi = L_z \psi\]
+
+\[\hat{S}^2 \psi = \left| \bold{S} \right|^2 \psi\]
+
+\[\hat{S}_z \psi = S_z \psi\]
+
+<p>Among the quantum numbers associated to these operators and observables, the multi-electron atom equivalent of the principle quantum number $n$ requires special treatment and will be discussed at the very end. For all other quantum numbers, in SI units,</p>
+
+\[\hat{L}^2 \psi = \left| \bold{L} \right|^2 \psi =L\left(L+1\right)\hbar^2 \psi\]
+
+\[\hat{L}_z \psi = L_z \psi = M_L \hbar \, \psi\]
+
+\[\hat{S}^2 \psi = \left| \bold{S} \right|^2 \psi =S\left(S+1\right)\hbar^2 \psi\]
+
+\[\hat{S}_z \psi = S_z \psi = M_S \hbar \, \psi\]
+
+<p>We substitute the observable $\left| \bold{L} \right|^2$ with the total orbital angular momentum quantum number $L = 0, \,1, \,2,\, \cdots$ as</p>
+
+\[\left| \bold{L} \right|^2 =L\left(L+1\right)\hbar^2\]
+
+<p>We substitute the observable $L_z$ with $M_L = -L,\, -L+1,\, \cdots, \,+L-1, \,+L$<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup> as</p>
+
+\[L_z = M_L \hbar\]
+
+<p>We substitute the observable $\left| \bold{S} \right|^2$ with the total orbital angular momentum quantum number $S = 0, \,1/2,\, 1,\, 3/2,\, \cdots$ as</p>
+
+\[\left| \bold{S} \right|^2 =S\left(S+1\right)\hbar^2\]
+
+<p>Unlike $L$, $S$ can take on half-integer values, and unlike hydrogen-like atoms, $S$ can take on a variety of values as there are many electrons.</p>
+
+<p>We substitute the observable $S_z$ with $M_S = -S, \,-S+1, \,\cdots, \,+S-1, \,+S$<sup id="fnref:5:1" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup> as</p>
+
+\[S_z = M_S \hbar\]
+
+<p>Depending on the value of $S$, $M_S$ can take integer values (e.g. $M_S = -1,\, 0,\, +1$ for $S = 1$) or half-integer values (e.g. $M_S = -1/2, \,+1/2$ for $S = 1/2$).</p>
+
+<p>The observable $E$, energy, is problematic as although it is discrete, there is no formula to relate a quantum number to its corresponding observable. In fact, there is not much pattern at all! Instead of using quantum numbers like hydrogen-like atoms, we need a different scheme to describe energy in an easy way.</p>
+
+<p>Luckily, for many electron configurations (ex. $1s^22s^22p^3$), no two energy states has the same $L$, $M_L$, $S$, and $M_S$. Therefore, in many cases, we can substitute $E$ with the electron configuration.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/observables_qnumbers_2.png" alt="Observables and Quantum Numbers" /></p>
+
+<p>To sum up, for all cases, $E$, $L$, $M_L$, $S$, and $M_S$ can be used to specify an energy state. For many frequently encountered cases:</p>
+
+<blockquote>
+  <p>An energy state of a multi-electron atom is characterized by its electron configuration and orbital and spin quantum quantum numbers. With the bra-ket notation:</p>
+
+\[\psi = \left |\, (e^- \text{ config)}\,L\,M_L\,S\,M_S\,\right \rangle\]
+</blockquote>
+
+<p>As an example, the ground state helium atom can be expressed as $\left |\, 1s^2\,0\,0\,0\,0\,\right \rangle$ with an electron configuration of $1s^2$, $L=0$, $M_L=0$, $S=0$, and $M_S=0$ (we haven’t explained how these values were calculated for now).</p>
+
+<p><img src="/assets/img/atomic-term-symbols/helium_3.png" alt="Helium" /></p>
+
+<h1 id="footnotes">Footnotes</h1>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>We are also ignoring nuclear mass and motion (rather considering them to be fixed in space) and nuclear spin. The wavefunction is technically an <strong>electronic</strong> wavefunction. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>The variable $\sigma_i$ is the spin variable of the $i^{\text{th}}$ electron. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p>$\bold{\hat{L}}$, $\hat{L}^2$, $\hat{L}_z$, $\bold{\hat{S}}$, $\hat{S}^2$, $\hat{S}_z$ in the textbook for both hydrogen-like atoms and multi-electron atoms. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:3:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a> <a href="#fnref:3:2" class="reversefootnote" role="doc-backlink">&#8617;<sup>3</sup></a></p>
+    </li>
+    <li id="fn:4" role="doc-endnote">
+      <p>Defining these two operators is also problematic. <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:5" role="doc-endnote">
+      <p>For some reason, $M_L$ and $M_S$ do not have proper names and are just called $M_L$ and $M_S$. <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:5:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+  </ol>
+</div>
+
+  </div><a class="u-url" href="/physical-chemistry/atomic-term-symbols-pt-1/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card" style="background-color: #222; color: white;">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-heading" style="overflow: auto;">
+      <a class="site-title" rel="author" href="/">
+        <img src="/assets/img/name.png" height="60">
+      </a>
+    </div>
+
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name" style="font-size:90%">Shinyoung Park<li style="font-size:90%">s.y.park@kaist.ac.kr</li></ul>
+        <div style="font-size:90%"><ul class="social-media-list"><li><a href="https://github.com/kerosenenotforconsumption"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">kerosenenotforconsumption</span></a></li></ul>
+</div>
+        <div class="lang-switcher">
+    
+    
+<span style="margin-right:20px; font-size: 80%; color:#bfbfbf;">English</span>
+    
+
+    
+    
+        
+<a href="/ko/physical-chemistry/atomic-term-symbols-pt-1/" style="margin-right:20px; color:#ffffff; font-size:80%;">한국어</a>
+        
+    
+</div>
+      </div>
+
+      <div class="footer-col footer-col-2">
+         
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p style="font-size:90%; text-align: right;">Personal website and blog</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
