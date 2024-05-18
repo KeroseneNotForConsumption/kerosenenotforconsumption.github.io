@@ -248,7 +248,7 @@ $M_J$의 최댓값은 $j_1+j_2$입니다.
 
 따라서 가능한 $J$의 최댓값은 $j_1+j_2$입니다. 앞서 배운 각운동량 양자수와 동일하게 $M_J$는 $-J, \,-J+1,\,\cdots,\, +J-1, +J$와 같은 값이 가능합니다. 
 
-![j1과 j2](/assets/img/atomic-term-symbols/j52.png)
+![j1과 j2](/assets/img/atomic-term-symbols/J52.png)
 
 $J_{\text{max}} = j_1 + j_2$임을 알았다면 $J_{\text{min}}$는 무엇일까요? $M_J$의 최솟값은 $m_{j1}$과 $m_{j2}$의 최댓값의 합이 아닌 차입니다. 이는 $j_1$와 $j_2$의 차와 같습니다.
 
@@ -256,7 +256,7 @@ $J_{\text{max}} = j_1 + j_2$임을 알았다면 $J_{\text{min}}$는 무엇일까
 
 따라서 $M_J$의 최댓값의 최솟값은 $\left\|j_1 - j_2\right\|$이며, $J$의 최솟값은 $\left\|j_1 - j_2\right\|$입니다.
 
-![j1과 j2](/assets/img/atomic-term-symbols/j12.png)
+![j1과 j2](/assets/img/atomic-term-symbols/J12.png)
 
 그리하여 $J_{\text{min}} = \left\|j_1 - j_2\right\|$이며, 가능한 $J$의 값은 $\left\|j_1 - j_2\right\|,\,\cdots,\,j_1 + j_2$입니다. 확인차 microstate의 총 가짓수(가능한 $j_1$, $m_{j1}$, $j_2$, $m_{j2}$ 조합의 가짓수)와 에너지 상태의 총 가짓수(가능한 $j_1$, $j_2$, $J$, $M_J$ 조합의 가짓수)를 해야려봅시다. $j_1$, $j_2$는 상수이므로 전자는 $\left(2j_1+1\right)\left(2j_2+1\right)$입니다. 후자는 $\sum_J \left(2J+1\right)$를 $J = \left\|j_1 - j_2\right\|,\,\cdots,\,j_1 + j_2$에 걸쳐 계산한 합입니다.
 

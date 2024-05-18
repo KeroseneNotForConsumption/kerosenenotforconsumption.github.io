@@ -239,23 +239,23 @@ Although approach 2 is a lot quicker than approach 1, there is yet a faster way 
 
 Now consider an addition of a general angular momentum quantum numbers $j_1$ and $m_{j1}$ with $j_2$ and $m_{j2}$, resulting in $J$ and $M_J$ (alongside $j_1$ and $j_2$, which are implicitly understood) (the image below has $j_1 = \frac{3}{2}$ and $j_2 = 1$).
 
-![j1 and j2](/assets/img/atomic-term-symbols/j1j2.png)
+![j1 and j2 1](/assets/img/atomic-term-symbols/j1j2.png)
 
 The largest value of $M_J$ is $j_1+j_2$. 
 
-![j1 and j2](/assets/img/atomic-term-symbols/j1j2_add.png)
+![j1 and j2 2](/assets/img/atomic-term-symbols/j1j2_add.png)
 
 The largest possible $J$ is therefore $j_1+j_2$. Like all angular momentum quantum numbers, $M_J$ can have the values $+J, \,+J-1,\,\cdots,\, -J+1, -J$. 
 
-![j1 and j2](/assets/img/atomic-term-symbols/j52.png)
+![j1 and j2 3](/assets/img/atomic-term-symbols/J52.png)
 
 If $J_{\text{max}} = j_1 + j_2$, then what is $J_{\text{min}}$? The smallest maximum value of $M_J$ is given by the difference of the largest values of $m_{j1}$ and $m_{j2}$. This is equal to the difference between $j_1$ and $j_2$.
 
-![j1 and j2](/assets/img/atomic-term-symbols/j1j2_sub.png)
+![j1 and j2 4](/assets/img/atomic-term-symbols/j1j2_sub.png)
 
 Thus, the smallest maximum value of $M_J$ is $\left\|j_1 - j_2\right\|$. Therefore, smallest possible $J$ is $\left\|j_1 - j_2\right\|$.
 
-![j1 and j2](/assets/img/atomic-term-symbols/j12.png)
+![j1 and j2 5](/assets/img/atomic-term-symbols/J12.png)
 
 Therefore, $J_{\text{min}} = \left\|j_1 - j_2\right\|$. Thus, the possible $J$ are $\left\|j_1 - j_2\right\|,\,\cdots,\,j_1 + j_2$. Just as a check, let us compare the total number of microstates (total number of combinations of $j_1$, $m_{j1}$, $j_2$, $m_{j2}$), with the total number of states (total number of combinations of $j_1$, $j_2$, $J$ and $M_J$). As $j_1$ and $j_2$ are fixed, the former is equal to $\left(2j_1+1\right)\left(2j_2+1\right)$. The latter is equal to $\sum_J \left(2J+1\right)$, summed over $J = \left\|j_1 - j_2\right\|,\,\cdots,\,j_1 + j_2$.
 
