@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="A (More or Less) Complete Explanation on s-p Mixing" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="A Quick Review on LCAO" />
+<meta property="og:description" content="A Quick Review on LCAO" />
+<link rel="canonical" href="https://sypark-chem.me/general-chemistry/s-p-mixing/" />
+<meta property="og:url" content="https://sypark-chem.me/general-chemistry/s-p-mixing/" />
+<meta property="og:site_name" content="Shinyoung Park" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-02-05T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="A (More or Less) Complete Explanation on s-p Mixing" />
+<script type="application/ld+json">
+{"headline":"A (More or Less) Complete Explanation on s-p Mixing","dateModified":"2022-02-05T00:00:00+00:00","datePublished":"2022-02-05T00:00:00+00:00","description":"A Quick Review on LCAO","url":"https://sypark-chem.me/general-chemistry/s-p-mixing/","mainEntityOfPage":{"@type":"WebPage","@id":"https://sypark-chem.me/general-chemistry/s-p-mixing/"},"@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<title>Shinyoung Park</title>
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="shortcut icon" type="image/png" href="favicon.png"><link type="application/atom+xml" rel="alternate" href="https://sypark-chem.me/feed.xml" title="Shinyoung Park" /><!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P094YZ20TC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P094YZ20TC');
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css" integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css" integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+  <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          renderMathInElement(document.body, {
+            // customised options
+            // • auto-render specific keys, e.g.:
+            delimiters: [
+                {left: '$', right: '$', display: false},
+            ],
+            // • rendering keys, e.g.:
+            throwOnError : false
+          });
+      });
+  </script>
+
+</head>
+<body><header class="site-header" role="banner" style="background-color: #222; color: white;">
+
+  <meta http-equiv="Content-Language" content="en">
+<link rel="alternate" hreflang="en" href="https://sypark-chem.me/general-chemistry/s-p-mixing/"/>
+<link rel="alternate" hreflang="ko" href="https://sypark-chem.me/ko/general-chemistry/s-p-mixing/"/>
+
+
+  <div id="progress-container">
+    <div id="progress-bar"></div>
+  </div>
+
+  <script>
+    // Function to update the progress bar
+    function updateProgressBar() {
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        var scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrollPercent = (scrollTop / scrollHeight) * 100;
+        document.getElementById('progress-bar').style.width = scrollPercent + '%';
+    }
+
+    // Event listener for scroll event
+    window.addEventListener('scroll', updateProgressBar);
+  </script>
+
+  <div class="wrapper"><!--<a class="site-title" rel="author" href="/" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Shinyoung Park</a>-->
+    <a class="site-title" rel="author" href="/">
+      <img src="/assets/img/name.png" width="200" style="padding: 10px 10px 13px 10px;">
+    </a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about" style="font-size:80%; color: white;">More about me</a><a class="page-link" href="/gallery" style="font-size:80%; color: white;">Gallery</a>
+    
+    
+<span style="margin-right:20px; font-size: 80%; color:#bfbfbf;">English</span>
+    
+
+    
+    
+        
+<a href="/ko/general-chemistry/s-p-mixing/" style="margin-right:20px; color:#ffffff; font-size:80%;">한국어</a>
+        
+    
+</div>
+        
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper"><article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">A (More or Less) Complete Explanation on s-p Mixing</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2022-02-05T00:00:00+00:00" itemprop="datePublished">Feb 5, 2022
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h1 id="a-quick-review-on-lcao">A Quick Review on LCAO</h1>
+
+<p>The molecular orbitals (MOs) of homonuclear diatomic molecules can be constructed with the Linear Combination of Atomic Orbital method (LCAO). Let’s take $\text{O}_2$ as an example.</p>
+
+<p>First, the $1s$ orbitals of each fluorine atom contribute very little to bonding as they hardly overlap.</p>
+
+<p><img src="/assets/img/s-p-mixing/1s-orbitals.png" alt="1s orbitals" /></p>
+
+<p>Thus, we will ignore the $1s$ orbitals and only consider the $2s$ and $2p$ orbitals.</p>
+
+<p>For the $2s$ orbitals, the $2s$ orbitals can form either a bonding MO $(\sigma _{g2s})$ or an antibonding MO $(\sigma _{u2s}^\ast)$.</p>
+
+<p><img src="/assets/img/s-p-mixing/2s-orbitals.png" alt="2s orbitals" /></p>
+
+<p>The resulting correlation diagram is as follows.</p>
+
+<p><img src="/assets/img/s-p-mixing/correlation-2s.png" alt="2s correlation" /></p>
+
+<p>$2p_{x}$ orbitals overlap side-by-side to form either the bonding MO $\pi_{u2p_{x}}$ or the antibonding MO $\pi_{g2p_{x}} ^{\ast}$. The same is true for $2p_{y}$ orbitals, resulting in the formation of bonding MO $\pi_{u2p_{y}}$ and antibonding MO $\pi_{g2p_{y}} ^{\ast}$.</p>
+
+<p><img src="/assets/img/s-p-mixing/2pxy.png" alt="2pxy orbitals" /></p>
+
+<p>The resulting correlation diagram is as follows.</p>
+
+<p><img src="/assets/img/s-p-mixing/correlation-2pxy.png" alt="2pxy correlation" /></p>
+
+<p>Lastly, the $2p_z$ orbitals overlap end-on to form either a bonding MO $(\sigma _{g2p_z})$ or an antibonding MO $(\sigma _{u2p_z}^{\ast})$.</p>
+
+<p><img src="/assets/img/s-p-mixing/2pz.png" alt="2pz orbitals" /></p>
+
+<p>Because the overlap between AOs is large, the energy split between the two MOs is larger than before.</p>
+
+<p><img src="/assets/img/s-p-mixing/correlation-2pz.png" alt="2pz correlation" /></p>
+
+<p>After filling in the MOs with electrons according to the Aufbau principle, the correlation diagram is complete. Note the unpaired electrons which cause $\text{O}_2$ to be paramagnetic.</p>
+
+<p><img src="/assets/img/s-p-mixing/correlation-o2.png" alt="O2 correlation" /></p>
+
+<p>The correlation diagram of $\text{F}_2$ is similar. However, for other second-period elements $(\text{Li}$ to $\text{N})$, the order among $\pi _{u2p_x} / \pi _{u2p_y}$ and $\sigma _{g2p_z}$ is <strong>reversed</strong>: the energy of $\pi _{u2p_x} / \pi _{u2p_y}$ is nearly constant, but the energy of $\sigma _{g2p_z}$ is raised considerably.</p>
+
+<p><img src="/assets/img/s-p-mixing/all-correlation.png" alt="All correlation" /></p>
+
+<p>Most introductory textbooks on chemistry attribute this to <em>s-p mixing</em>: the mixing of $2s$ and $2p_z$, due to their small difference in energy. Although this explanation is correct, it is certainly inadequate. It is the purpose of this article is to explain this anomaly in a way that is complete, and most of all, satisfying.</p>
+
+<h1 id="the-criteria-for-orbital-mixing---revisited">The Criteria for Orbital Mixing - Revisited</h1>
+
+<p>Before we begin, let us clear up some convention used in this article. The two nuclei are called A and B, with their coordinate systems arranged as shown below.</p>
+
+<p><img src="/assets/img/s-p-mixing/convention.png" alt="Convention" /></p>
+
+<p>Note how the local coordinate system for nucleus B is left-handed, instead of the usual right-handed system like that of nucleus A. This is done so that the addition of AOs in constructive interference, while the subtraction of one AO from the other results in destructive interference.</p>
+
+<p>In simpler terms, <em>addition results in bonding MOs and subtraction results in antibonding MOs</em>.</p>
+
+<p>We must first return to the principles of LCAO. Technically speaking, when constructing any molecular orbital, we can use as much atomic orbitals as we want.</p>
+
+\[\Psi = c_{1}\psi _{1s \vert \text{A}} + c_{2}\psi _{1s \vert \text{B}} + c_{3}\psi _{2s \vert \text{A}} + c_{4}\psi _{2s \vert \text{B}} + c_{5}\psi _{2p_{\text{z}} \vert \text{A}} + c_{6}\psi _{2p_{\text{z}} \vert \text{B}} + \cdots\]
+
+<p>In a slightly more legible notation:</p>
+
+\[\Psi = c_{1}1s^{\text{A}} + c_{2}1s^{\text{B}} + c_{3}2s^{\text{A}} + c_{4}2s^{\text{B}} + c_{5}2p_{z}^{\text{A}} + c_{6}2p_{z}^{\text{B}} + \cdots\]
+
+<p>In fact, as we use more atomic orbitals, we get better and better results. However, using too many atomic orbitals is problematic for these two reasons.</p>
+
+<ol>
+  <li>It becomes harder to solve, let alone understand.</li>
+  <li>It is overkill for obtaining approximate/qualitative solutions.</li>
+</ol>
+
+<p>Therefore, we try to work with the <strong>smallest</strong> number of AOs at a time - just enough to construct the roughly correct MOs and their energies<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>. Two criteria - derived from advanced quantum calculations - are helpful in this regard.</p>
+
+<h3 id="a-significant-overlap">A. Significant Overlap</h3>
+
+<p>The first criterion is that in order for AOs to mix<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>, they must have overlap significantly. For example, consider $2s^A$ and $2p_x^B$ orbitals.</p>
+
+<p><img src="/assets/img/s-p-mixing/insignificant-overlap.png" alt="Insignificant overlap" /></p>
+
+<p>$2s^A$ and $2p_x^B$ do not mix well because (A) there is little overlap, and (B) there is roughly the same amount of constructive and destructive interference, which leads to neither bonding nor antibonding. From this, we can safely ignore the mixing of those two orbitals.</p>
+
+<p>To elaborate on this point, only the <strong>AOs with the right axial symmetry</strong> is considered when mixing.</p>
+
+<p>First, we deal with AOs (not MOs) of $\sigma$ symmetry - invariant under any rotation about the internuclear axis. They consist of $1s$, $2s$, and $2p_z$, and these AOs linearly combine to form $\sigma$ MOs. Below is an example with $2s^A$ and $2p_z^B$.</p>
+
+<p><img src="/assets/img/s-p-mixing/significant-overlap.png" alt="Significant overlap" /></p>
+
+<p>Second, we turn our attention to AOs of $\pi$ symmetry - which reverse phase under $180^{\circ}$ rotation. Consisting of $2p_x$ and $2p_y$, $2p_x^A$ mixes with $2p_x^B$ and $2p_y^A$ mixes with $2p_y^B$ to form the $\pi$ MOs.</p>
+
+<h3 id="b-similar-energy-level">B. Similar Energy Level</h3>
+
+<p>The second criterion requires AOs of similar energy for mixing. In general, AOs with energy difference <em>greater than</em> $10 \sim 14 \text{ eV}$ <em>do not mix</em>. Below is a graph of energy of $2s$ and $2p$ orbitals.</p>
+
+<p><img src="/assets/img/s-p-mixing/orbital-energies.png" alt="Orbital Energies" /></p>
+
+<p>Going back to the AOs of $\sigma$ symmetry ($1s$, $2s$, and $2p_z$), it is clear that the energy difference between $1s$ and $2s$ / $2p_z$ is very large - much larger than the $10 \sim 14 \text{ eV}$ threshold. We can now safely ignore the $1s$ orbitals when constructing MOs.</p>
+
+<p>However, the energy difference between $2s$ and $2p_z$ is unclear and requires our attention. Below is the calculation of the energy difference between the two AOs for some second-period elements.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Element</th>
+      <th style="text-align: center">Energy of $2s$ ($\text{eV}$)</th>
+      <th style="text-align: center">Energy of $2p$ ($\text{eV}$)</th>
+      <th style="text-align: center">Difference in Energy ($\text{eV}$)</th>
+      <th style="text-align: center">Mixing between $2s$ and $2p_z$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">$\text{C}$</td>
+      <td style="text-align: center">-19.43</td>
+      <td style="text-align: center">-10.66</td>
+      <td style="text-align: center">8.77</td>
+      <td style="text-align: center">Yes</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\text{N}$</td>
+      <td style="text-align: center">-25.56</td>
+      <td style="text-align: center">-13.18</td>
+      <td style="text-align: center">12.38</td>
+      <td style="text-align: center">Yes</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\text{O}$</td>
+      <td style="text-align: center">-32.38</td>
+      <td style="text-align: center">-15.85</td>
+      <td style="text-align: center">16.53</td>
+      <td style="text-align: center">No</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\text{F}$</td>
+      <td style="text-align: center">-40.17</td>
+      <td style="text-align: center">-18.65</td>
+      <td style="text-align: center">21.52</td>
+      <td style="text-align: center">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>It seems that mixing between $2s$ and $2p_z$ occurs for elements $\text{N}$<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup> and earlier. This is the <strong>s-p mixing</strong> that was previously mentioned.</p>
+
+<p>Thus, for $ \text{Li}_ 2 \sim \text{N}_ 2 $, to construct the two bonding $\sigma_g$ MOs (substitutes for the original $\sigma_{g2s}$ and $\sigma_{u2p_{z}}$), we use the following LCAO instead.</p>
+
+\[\Psi = c_{1}2s^{\text{A}} + c_{1}2s^{\text{B}} + c_{2}2p_{z}^{\text{A}} + c_{2}2p_{z}^{\text{B}}\]
+
+<p>For the two antibonding $\sigma_u^{\ast}$ MOs (substitutes for the original $\sigma_{g2s}$ and $\sigma_{u2p_{z}}$), we use the following LCAO instead.</p>
+
+\[\Psi = c_{3}2s^{\text{A}} - c_{3}2s^{\text{B}} + c_{4}2p_{z}^{\text{A}} - c_{4}2p_{z}^{\text{B}}\]
+
+<p>In total, four MOs were constructed from four AOs. <strong>This is the most important takeaway of this article: more than one pair of AOs can be used to construct more than one pair of MOs.</strong></p>
+
+<p>Anyway, note that the coefficients $c_1 \sim c_4$ are all positive. The coefficients are shared between the same kind of orbitals as we are dealing with the homonuclear case. In other words, we see equal contribution from the same kind of orbitals from each atom.</p>
+
+<p>The coefficients $c_1 \sim c_4$ can be calculated through some quantum calculation, and indeed the energy of $\sigma_{g2p_z}$ will be higher than that of $\pi_{u2p_x}$ and $\pi_{u2p_y}$. Case closed.
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+This conclusion should definitely irk you. Couldn’t there be a better, more tangible explanation?</p>
+
+<h1 id="mixing-molecular-orbitals-instead-of-atomic-orbitals">Mixing Molecular Orbitals Instead of Atomic Orbitals</h1>
+
+<p>We’ve seen how atomic orbitals mix. Now is the time to <strong>mix molecular orbitals</strong>. Instead of mixing $2s$ and $2p_z$ orbitals, what if we mixed the ‘four original LCAO-MOs’ to obtain ‘four newer and better MOs’? (they will be designated as ‘improved’ to avoid confusion)</p>
+
+<p>The four original LCAO-MOs are as follows ($a_{1} \sim a_{4}$ are normalization constants).</p>
+
+\[\sigma_{g2s} = a_{1} \left ( 2s^{\text{A}} + 2s^{\text{B}} \right ) \qquad \sigma_{u2s}^{\ast} = a_{2} \left ( 2s^{\text{A}} - 2s^{\text{B}} \right )\]
+
+\[\sigma_{g2p_z} = a_{3} \left ( 2p_{z}^{\text{A}} + 2p_{z}^{\text{B}} \right ) \qquad \sigma_{u2p_{z}}^{\ast} = a_{4} \left ( 2p_{z}^{\text{A}} - 2p_{z}^{\text{B}} \right )\]
+
+<p>By mixing the two  $\sigma_g$ MOs, we obtain two new $\sigma_{g \, \vert \, \text{improved}}$ MOs: $\sigma_{g2s \, \vert \, \text{improved}}$ and $\sigma_{g2p_{z} \vert \, \text{improved}}$</p>
+
+\[\Psi = c_{1}2s^{\text{A}} + c_{1}2s^{\text{B}} + c_{2}2p_{z}^{\text{A}} + c_{2}2p_{z}^{\text{B}} = c_{1} \left ( 2s^{\text{A}} + 2s^{\text{B}} \right) + c_{2} \left (2p_{z}^{\text{A}} + 2p_{z}^{\text{B}} \right )\]
+
+\[\therefore \Psi = \tilde{c_1} \sigma_{g2s} + \tilde{c_2} \sigma_{g2p_z}\]
+
+<p>where $\tilde{c_1} = a_1 / c_1,  \tilde{c_2} = a_2 / c_2$.</p>
+
+<p><img src="/assets/img/s-p-mixing/bonding-mos.png" alt="Bonding MOs" /></p>
+
+<p>With $\sigma_{g2s}$ as the baseline, the electron density of $\sigma_{g2s \, \vert \, \text{improved}}$ between the two nuclei is significantly larger. This in turn stabilizes the MO.</p>
+
+<p>On the other hand, compared to $\sigma_{g2p_{z}}$, the electron density of  $\sigma_{g2p_{z} \vert \, \text{improved}}$ between the two nuclei is significantly smaller. This in turn destabilizes the MO.</p>
+
+<p>In plain terms, $\sigma_{g2s}$ decreases in energy, while $\sigma_{g2p_{z}}$ increases in energy. The updated correlation diagram below reflects these changes.</p>
+
+<p><img src="/assets/img/s-p-mixing/bonding-correlation.png" alt="Bonding Correlation" /></p>
+
+<p>Due to the drastic increase in energy of $\sigma_{g2p_{z}}$, the order among $\sigma_{g2p_{z}}$ and $\pi_{u2p_x} / \pi_{u2p_y}$ is now reversed, as expected.
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+By mixing the two $\sigma_u$ MOs, we obtain two new $\sigma_{u \, \vert \, \text{improved}}$ MOs:  $\sigma_{u2s \, \vert \, \text{improved}}^{\ast}$ and $\sigma_{u2p_{z} \vert \, \text{improved}}^{\ast}$</p>
+
+\[\Psi^{\ast} = c_{3}2s^{\text{A}} - c_{3}2s^{\text{B}} + c_{4}2p_{z}^{\text{A}} - c_{4}2p_{z}^{\text{B}} = c_{3} \left ( 2s^{\text{A}} - 2s^{\text{B}} \right ) + c_{4} \left ( 2p_{z}^{\text{A}} - 2p_{z}^{\text{B}} \right )\]
+
+\[\therefore \Psi^{\ast} = \tilde{c_3} \sigma_{u2s}^{\ast} + \tilde{c_4} \sigma_{u2p_z}^{\ast}\]
+
+<p>where $\tilde{c_3} = a_3 / c_3,  \tilde{c_4} = a_4 / c_4$.</p>
+
+<p><img src="/assets/img/s-p-mixing/antibonding-mos.png" alt="Antibonding MOs" /></p>
+
+<p>Like the $\sigma_g$ MOs, $\sigma_{u2s}^{\ast}$ decreases in energy as $\sigma_{u2p_{z}}^{\ast}$ increases in energy.</p>
+
+<p><img src="/assets/img/s-p-mixing/antibonding-correlation.png" alt="Antibonding Correlation" /></p>
+
+<p>Unlike the $\sigma_g$ MOs, the changes in energy is barely noticable. This is because $\sigma_{u2s}^{\ast}$ and $\sigma_{u2p_{z}}^{\ast}$ overlap poorly - by inspection, roughly equal amounts of constructive and destructive interference is to be predicted. In hindsight, the mixing of the two  was not necessary.</p>
+
+<h1 id="summary">Summary</h1>
+
+<p>From $ \text{Li}_2 $ to $ \text{N}_2 $, the energy levels of $ 2s $ and $ 2p_z $ orbitals are close enough for mixing to occur. Instead of directly mixing the $ 2s $ and $ 2p_z $ orbitals, their $\sigma _{g}$ LCAO-MOs ($\sigma _{g2s}$ and $\sigma _{g2p_z}$) can be further mixed to produce more accurate MOs. As $\sigma _{g2s}$ and $\sigma _{g2p_z}$ are mixed, the energy levels of $\sigma _{g2p_z}$ and $\pi _{u2p_x}$ / $\pi _{u2p_y}$ become reversed.</p>
+
+<h1 id="footnotes">Footnotes</h1>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>For all LCAO below, we have sneakily ignored AOs of $n = 3$ and above (ex. $3s$, $3p$, $3d$, $4s$, etc.). This is because AOs of higher energy contribute very little to the MOs we are interested in; these AOs are also unnecessary for our explanation. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>The term “mix” is really a short-hand way of saying “interfere”. For example, “the AOs $2s^A$ and $2s^B$ mix to form bonding and antibonding MOs” really mean “the AOs $2s^A$ and $2s^B$ interfere constructively (to form a bonding MO) and destructively (to form an antibonding MO)” <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p>Nitrogen seems like a borderline case, but the fact that their AOs overlap very well (a point indirectly made later in the article) makes up for its large energy difference. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </div><a class="u-url" href="/general-chemistry/s-p-mixing/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card" style="background-color: #222; color: white;">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-heading" style="overflow: auto;">
+      <a class="site-title" rel="author" href="/">
+        <img src="/assets/img/name.png" height="60">
+      </a>
+    </div>
+
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name" style="font-size:90%">Shinyoung Park<li style="font-size:90%">s.y.park@kaist.ac.kr</li></ul>
+        <div style="font-size:90%"><ul class="social-media-list"><li><a href="https://github.com/kerosenenotforconsumption"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">kerosenenotforconsumption</span></a></li></ul>
+</div>
+        <div class="lang-switcher">
+    
+    
+<span style="margin-right:20px; font-size: 80%; color:#bfbfbf;">English</span>
+    
+
+    
+    
+        
+<a href="/ko/general-chemistry/s-p-mixing/" style="margin-right:20px; color:#ffffff; font-size:80%;">한국어</a>
+        
+    
+</div>
+      </div>
+
+      <div class="footer-col footer-col-2">
+         
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p style="font-size:90%; text-align: right;">Personal website and blog</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

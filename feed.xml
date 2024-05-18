@@ -1,0 +1,2118 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="https://sypark-chem.me/feed.xml" rel="self" type="application/atom+xml" /><link href="https://sypark-chem.me/" rel="alternate" type="text/html" /><updated>2024-05-18T08:26:28+00:00</updated><id>https://sypark-chem.me/feed.xml</id><title type="html">Shinyoung Park</title><subtitle>Personal website and blog</subtitle><entry xml:lang="en"><title type="html">A Very Informal Derivation of d Orbitals</title><link href="https://sypark-chem.me/general-chemistry/d-orbitals/" rel="alternate" type="text/html" title="A Very Informal Derivation of d Orbitals" /><published>2023-12-30T00:00:00+00:00</published><updated>2023-12-30T00:00:00+00:00</updated><id>https://sypark-chem.me/general-chemistry/d-orbitals</id><content type="html" xml:base="https://sypark-chem.me/general-chemistry/d-orbitals/"><![CDATA[<p>Partially adapted from various Inorganic Chemistry lectures and Professor <a href="https://www.m-design-lab.net/">Hyungjun Kim</a>’s CH502 Quantum Chemistry I lecture.</p>
+
+<h1 id="introduction">Introduction</h1>
+
+<p>Among atomic orbitals, the most interesting orbitals are arguably the $d$ orbitals. Not only are they important in inorganic chemistry and organometallic chemistry, they also look more interesting than the simpler $s$ or $p$ orbitals without being too complicated like the $f$ orbitals.</p>
+
+<p>Among a set of five $d$ orbitals, the orbital with the most interesting shape is the $d_{z^2}$ orbital. How come other $d$ orbitals have four symmetrical lobes, where as the $d_{z^2}$ orbital has two opposing lobes with a ring in the middle? In this article, we figure out why the $d_{z^2}$ orbital has this unusual shape by deriving it in a very simple way.</p>
+
+<h1 id="a-simple-trend">A Simple Trend?</h1>
+<p>Let’s look at the trend of the orbital shapes as we go from $1s$ → $2p$ → $3d$. We will only consider the angular properties of orbitals while ignoring any radial aspects. The $s$ orbital is just a sphere - same from all angles with no angular nodes. The three $p$ orbitals each consist of two opposing lobes, pointing at $x$, $y$, and $z$ directions. They each have one angular node that separates the two lobes (the nodal planes being $x = 0$, $y = 0$, $z = 0$). From this observation, you would expect the $d$ orbitals to each have four symmetric lobes with two angular nodal planes inbetween them.</p>
+
+<p><img src="/assets/img/d-orbitals/all_orbitals.png" alt="Family of orbitals" /></p>
+
+<p>Indeed, some of the $d$ orbitals follow this line of thought. We have the $d_{xy}$, $d_{yz}$, and $d_{xz}$ orbitals, sharing the same nodal planes as the $p$ orbitals. You also have the $d_{x^2 - y^2}$ orbital by slightly rotating the $d_{xy}$ orbital by 45 degrees. However, unlike in general chemistry, you could also have the $d_{z^2 - x^2}$ orbital and the $d_{z^2 - y^2}$ orbital. If so, why do we have the $d_{z^2}$ orbital instead of the two other $d$ orbitals? Why are there five $d$ orbitals instead of six?</p>
+
+<p>To answer these questions, we must know a bit about linear algebra and the concept of linear independence. First, functions can either be multiplied by a constant or be added to each other to form a new function. In other words, you can create a new function by <em>linearly combining</em> various functions. This is because functions are “linear objects”. Coordinate vectors in 3D are also “linear objects”. This is because they can be multiplied by a constant (which adjusts their magnitude or flips their direction) and be added to each other (like with the parallelogram method).</p>
+
+<p>We have a particular name for “linear objects” that can form linear combinations: vectors. You may think that the term “vector” is synonymous with “coordinate vector”, but coordinate vectors are just one type of vectors. Functions are vectors, <strong>and as orbitals are 3D functions, they are also vectors as well.</strong></p>
+
+<p>Moving on to linear independence, suppose we have a set of vectors. When any vector in that set of vectors cannot be produced by a linear combination of the rest of the vectors, then that set is linearly independent. The concept of being linearly independent is best shown with 3D coordinate vectors.</p>
+
+<p><img src="/assets/img/d-orbitals/unit_vectors.png" alt="unit vectors" /></p>
+
+<p>The set of three unit vectors $\hat{x}$, $\hat{y}$, and $\hat{j}$, each in the $x$, $y$, or $z$ direction respectively, is linearly independent. This is because you cannot obtain the unit vector $\hat{x}$ with any linear combination of unit vectors $\hat{y}$ and $\hat{z}$, as $\hat{y}$ and $\hat{z}$ are perpendicular to $\hat{x}$. Any linear combination of $\hat{y}$ and $\hat{z}$ would be perpendicular to $\hat{x}$, so the linear combination cannot form the $\hat{x}$ unit vector. The same goes for $\hat{y}$ and for $\hat{z}$, making the set $\left\{\hat{x},\, \hat{y},\, \hat{z}\right\}$ linearly independent<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>.</p>
+
+<p>This is the same for atomic orbitals. Take a set of $p$ orbitals for example. Roughly speaking, the $p_x$ orbital corresponds to the unit vector $\hat{x}$, the $p_y$ orbital to $\hat{y}$, and the $p_z$ orbital to $\hat{z}$. Therefore, roughly speaking, a set of $p$ orbitals should be linearly independent. To really check if a set of $p$ orbital is linearly independent, we need to have a way to determine if two orbitals are perpendicular (more precisely, orthogonal) or not.</p>
+
+<p>The formal definition of orthogonality between two orbitals $f(x, y, z)$ and $g(x, y, z)$ is something like the following<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>:</p>
+
+\[\int_{\text{all space}} f(x, \, y, \, z)\times g(x, \, y,\, z) \,dV = 0\]
+
+<p>For highly symmetric functions like atomic orbitals, it is possible to determine orthogonality based on the symmetry of $f(x, y, z)$ and $g(x, y, z)$, instead of fully carrying out the integration above. <strong>If the product of $f(x, y, z)$ and $g(x, y, z)$ result in equal amounts of positive parts (red) and negative parts (blue), then they are orthogonal,</strong> because the integration over all space cancels out.</p>
+
+<p><img src="/assets/img/d-orbitals/px_py_product.png" alt="product of p_x and p_y" /></p>
+
+<p>For $p_x$ and $p_y$ orbitals, the product has two positive parts and two negative parts, all equally sized. Therefore, the two orbitals are orthogonal. Likewise, $p_y$ and $p_z$ are orthogonal, and $p_x$ and $p_z$ are orthogonal as well. Therefore, just like the set of three unit vectors, the set of three $p$ orbitals is linearly independent.</p>
+
+<h1 id="d-orbitals"><em>d</em> orbitals</h1>
+
+<p>With the mathematical details out of the way, let us discuss about $d$ orbitals. Like $p$ orbitals, a set of $d$ orbitals should be linearly independent. Previously, we supposed that a set of $d$ orbitals could contain six $d$ orbitals rather than five: $d_{xy}$, $d_{yz}$, $d_{xz}$, $d_{x^2 - y^2}$, $d_{z^2 - x^2}$, $d_{z^2 - y^2}$. The question is, are these $d$ orbitals linearly independent?</p>
+
+<p>To begin with, let us start with a set of three $d$ orbitals: $\left\{d_{xy},\, d_{yz},\, d_{xz}\right\}$. The picture below shows that the $d_{xz}$ orbital and $d_{yz}$ orbital are orthogonal.</p>
+
+<p><img src="/assets/img/d-orbitals/dxz_dyz_product.png" alt="product of d_xz and d_yz" /></p>
+
+<p>Likewise, the three $d$ orbitals are mutually orthogonal, and like the set of three p orbitals, this set is also linearly independent. Let’s add the $d_{x^2 - y^2}$ to the set and consider $\left\{d_{xy},\, d_{yz},\, d_{xz},\, d_{x^2 - y^2}\right\}$. $d_{x^2 - y^2}$ is orthogonal with $d_{xy}$, as shown with the picture below.</p>
+
+<p><img src="/assets/img/d-orbitals/dxy_dx2_y2_product.png" alt="product of d_xy and d_{x2-y2}" /></p>
+
+<p><img src="/assets/img/d-orbitals/dxz_dx2_y2_product.png" alt="product of d_xz and d_{x2-y2}" /></p>
+
+<p>$d_{x^2 - y^2}$ is also orthogonal with $d_{xz}$ (as shown above), as well as $d_{yz}$ (not shown). As the orbitals of the set $\left\{d_{xy},\, d_{yz},\, d_{xz},\, d_{x^2 - y^2}\right\}$ are all mutually orthogonal, the set of four $d$ orbitals is also linearly independent.</p>
+
+<p>What happens if we add the $d_{z^2 - x^2}$ orbital and $d_{z^2 - y^2}$ orbital to the set $\left\{d_{xy},\, d_{yz},\, d_{xz},\, d_{x^2 - y^2}\right\}$, resulting in a set of six $d$ orbitals $\left\{d_{xy},\, d_{yz},\, d_{xz},\, d_{x^2 - y^2},\, d_{z^2 - x^2},\, d_{z^2 - y^2}\right\}$? Like $d_{x^2 - y^2}$, the two new $d$ orbitals should be orthogonal to $d_{xy}$, $d_{yz}$, $d_{xz}$, and $d_{x^2 - y^2}$. Below is the product of $d_{z^2 - x^2}$ and $d_{x^2 - y^2}$ and the product of $d_{z^2 - y^2}$ and $d_{x^2 - y^2}$.</p>
+
+<p><img src="/assets/img/d-orbitals/nonzero_product.png" alt="product of new d orbitals" /></p>
+
+<p>Unfortunately, <strong>the $d_{z^2 - x^2}$ and $d_{z^2 - y^2}$ orbitals are not orthogonal with $d_{x^2 - y^2}$.</strong> The product of $d_{z^2 - x^2}$ and $d_{x^2 - y^2}$ has more negative lobes than positive lobes. The product of $d_{z^2 - y^2}$ and $d_{x^2 - y^2}$ has more positive lobes than negative lobes.</p>
+
+<p><img src="/assets/img/d-orbitals/nonzero_product_sum.png" alt="sum of products of new d orbitals" /></p>
+
+<p>Looking closely, the two products are basically the same except for their sign. This could mean that the linear combination of $d_{z^2 - x^2}$ and $d_{z^2 - y^2}$ by equal amounts are orthogonal to $d_{x^2 - y^2}$, because the positive parts and the negative parts may cancel out. To test this, below is the product between the sum of $d_{z^2 - x^2}$ and $d_{z^2 - y^2}$ (thus $d_{2z^2 - x^2 - y^2}$) and $d_{x^2 - y^2}$.</p>
+
+<p><img src="/assets/img/d-orbitals/dz2_dx2_y2_product.png" alt="product of d_z2 and d_{x2-y2}" /></p>
+
+<p><strong>Indeed, $d_{2z^2 - x^2 - y^2}$ and $d_{x^2 - y^2}$ are orthogonal, as their product has equal amounts of positive and negative parts. At this point, instead of labeling this new $d$ orbital $d_{2z^2 - x^2 - y^2}$, we call this new $d$ orbital $d_{z^2}$, as it has a similar symmetry as the function $f(x, y, z) = z^2$. For this reason, there are five d orbitals ($d_{xy}$, $d_{yz}$, $d_{xz}$, $d_{x^2 - y^2}$, $d_{z^2}$), instead of six $d$ orbitals.</strong></p>
+
+<p><img src="/assets/img/d-orbitals/all_orbitals_conclusion.png" alt="Conclusion" /></p>
+
+<p>The exact way of obtaining $d_{z^2}$ is to sum $d_{z^2 - x^2}$ and $d_{z^2 - y^2}$, then to normalize that sum to be equal to one like any other atomic orbitals. Due to this normalization, $d_{z^2}$ can be thought of as an average of $d_{z^2 - x^2}$ and $d_{z^2 - y^2}$. We’ll refer to this relationship between $d_{z^2}$, $d_{z^2 - x^2}$, and $d_{z^2 - y^2}$ as an “average” rather than a “sum”. Here’s a small .gif image that shows that $d_{z^2}$ is the average of $d_{z^2 - x^2}$ and $d_{z^2 - y^2}$.</p>
+
+<p><img src="/assets/img/d-orbitals/dz2.gif" alt="gif" /></p>
+
+<h1 id="application-crystal-field-theory">Application: Crystal Field Theory</h1>
+
+<p>The fact that the average of $d_{z^2 - x^2}$ and $d_{z^2 - y^2}$ is $d_{z^2}$ can be applied to intuitively understand the crystal field splitting patterns, without resorting to group theory.</p>
+
+<p>Let’s first look at octahedral splitting. There are two types of repulsions between ligands (denoted by green lines and circles) and the $d$ orbitals: small repulsions and large repulsions. For small repulsions, the $d$ orbitals are only weakly destablized by the ligands. $d$ orbitals that feel small repulsions are $d_{xy}$, $d_{yz}$, and $d_{xz}$ as shown below.</p>
+
+<p><img src="/assets/img/d-orbitals/o_small_rep.png" alt="Octahedral splitting small repulsions" /></p>
+
+<p>For large repulsions, the $d$ orbitals are strongly destablized by the ligands. By inspection, the $d$ orbitals (excluding $d_{z^2}$) that feel large repulsions are $d_{x^2 - y^2}$, $d_{z^2 - x^2}$, and $d_{z^2 - y^2}$, as four lobes of each $d$ orbital are directed towards the ligands. As the three $d$ orbitals experience the same amount of destablization, and as $d_{z^2}$ is the average of $d_{z^2 - x^2}$ and $d_{z^2 - y^2}$, $d_{z^2}$ also experience the same amount of destablization as the rest.</p>
+
+<p><img src="/assets/img/d-orbitals/o_large_rep.png" alt="Octahedral splitting large repulsions" /></p>
+
+<p>This results in the familiar $e_g$ and $t_{2g}$ octahedral splitting pattern.</p>
+
+<p><img src="/assets/img/d-orbitals/octahedral_splitting.png" alt="Octahedral splitting" /></p>
+
+<p>For tetrahedral splitting, the large repulsion cases are the same $d$ orbitals as the small repulsion cases of octahedral splitting. As shown below, the four lobes of each $d$ orbital is somewhat directed to the four ligands. Therefore, the $d$ orbitals that feel large repulsions are $d_{xy}$, $d_{yz}$, $d_{xz}$. As the lobes are directed at a 45 degree angle from the four ligands, tetrahedral splitting is smaller than octahedral splitting.</p>
+
+<p><img src="/assets/img/d-orbitals/t_large_rep.png" alt="Tetrahedral splitting large repulsions" /></p>
+
+<p>The $d$ orbitals with small repulsions are the same $d$ orbitals as the ones with large repulsions for octahedral splitting. Therefore, they are $d_{x^2 - y^2}$, $d_{z^2 - x^2}$, $d_{z^2 - y^2}$, and as a result, $d_{z^2}$.</p>
+
+<p><img src="/assets/img/d-orbitals/t_small_rep.png" alt="Tetrahedral splitting small repulsions" /></p>
+
+<p>This results in the inverted $t_{2g}$ and $e_g$ tetrahedral splitting pattern.
+<img src="/assets/img/d-orbitals/tetrahedral_splitting.png" alt="Tetrahedral splitting" /></p>
+
+<p>By knowing that $d_{z^2}$ is the average of $d_{z^2 - x^2}$ and $d_{z^2 - y^2}$, other splitting patterns can be easily derived without group theory.</p>
+
+<h1 id="footnotes">Footnotes</h1>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>Although orthogonality is not a requirement for linear independence, a set of mutually orthogonal vectors is always linearly independent. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>In reality, orbitals can be complex-valued functions. In this case, the orthogonality conditions is something like $\int_{\text{all space}} f^{*}\, g \,dV = 0$. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name></name></author><category term="general-chemistry" /><summary type="html"><![CDATA[Partially adapted from various Inorganic Chemistry lectures and Professor Hyungjun Kim’s CH502 Quantum Chemistry I lecture.]]></summary></entry><entry xml:lang="en"><title type="html">Atomic Term Symbols: Part 3 - Hund’s Rule and More</title><link href="https://sypark-chem.me/physical-chemistry/atomic-term-symbols-pt-3/" rel="alternate" type="text/html" title="Atomic Term Symbols: Part 3 - Hund’s Rule and More" /><published>2022-08-22T00:00:00+00:00</published><updated>2022-08-22T00:00:00+00:00</updated><id>https://sypark-chem.me/physical-chemistry/atomic-term-symbols-pt-3</id><content type="html" xml:base="https://sypark-chem.me/physical-chemistry/atomic-term-symbols-pt-3/"><![CDATA[<h1 id="introduction">Introduction</h1>
+
+<p>This article is an in-depth explanation on atomic term symbols based on <em>Quantum Chemistry</em> by Levine to supplement chapter 8 of <em>Physical Chemistry: A Molecular Approach</em> by McQuarrie. A good understanding of preceding chapters, notably chapters 6 and 7, is required.</p>
+
+<p>The notation used in this article is based on the latter textbook.</p>
+
+<p>In the preceding Part 1 and 2, we went over the theoretical background of multi-electron atoms and term symbols. In this article, we are going to go over tips and tricks regarding term symbols, as well as Hund’s rule.</p>
+
+<h1 id="example-carbon-1s22s22p2">Example: Carbon $1s^22s^22p^2$</h1>
+<p>$1s^22s^22p^2$ carbon consists of 6 electrons, which is a lot compared to our previous examples. The following are some of the microstates of $1s^22s^22p^2$.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/microstates_1.png" alt="Microstate 1" /></p>
+
+<p>For all microstates, the four electrons of $1s$ and $2s$ subshells are the same. In addition, for these four electrons, the $M_L = m_{l1} + m_{l2} + \cdots = 0$ and $M_S = m_{s1} + m_{s2} + \cdots = 0$ as they cancel each other out.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/microstates_cancel_1.png" alt="Canceling out" /></p>
+
+<p>This is true for any filled subshells, like the $3d$ subshell below.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/microstates_cancel_2.png" alt="Canceling out" /></p>
+
+<p>Therefore,</p>
+
+<blockquote>
+  <p>Completely filled subshells do not contribute to the overall $M_L$ and $M_S$. Therefore, they can be ignored when determining term symbols.</p>
+</blockquote>
+
+<p>As for the remaining two electrons of the $2p$ subshell, they can occupy any of the six spin orbitals in a way that obeys the Pauli exclusion principle, as shown below.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/microstates_all.png" alt="All Microstates" /></p>
+
+<p>This results in 15 microstates. Mathematically speaking, assigning 2 equivalent electrons to 6 spin orbitals is the same as choosing 2 spin orbitals (without repetition nor order) out of a total of 6. In general, $N$ equivalent electrons and $G$ spin orbitals results in the following number of microstates.</p>
+
+\[\frac{G!}{N!(G-N)!}\]
+
+<p>The number of microstates is equal to the number of actual states, as shown in part 2. Similar to approach 2 of part 2, we organize these microstates into a table, according to their $M_L$ and $M_S$. For each term symbol, we cancel one microstate from each of the the possible $M_L$ and $M_S$ for that term symbol. We finish when there are no microstates remaining (thus no states remaining as well).</p>
+
+<p><img src="/assets/img/atomic-term-symbols/table_1.png" alt="Microstate Table" /></p>
+
+<p>Before we deal with term symbols, notice how this table is symmetric vertically and horizontally. The entries of $M_L$ and $M_S$, of $-M_L$ and $M_S$, of $M_L$ and $-M_S$, and finally of $-M_L$ and $-M_S$ only differ in the sign of $m_l$ and $m_s$ of each electron.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/table_symmetry.png" alt="Symmetry of Table" /></p>
+
+<p>Therefore,</p>
+
+<blockquote>
+  <p>When setting up a table of microstates:</p>
+
+  <ol>
+    <li>Fill in the entries for one quadrant (ex. $M_L \leq 0$ and $M_S \leq 0$)</li>
+    <li>Fill the remaining quadrants by exploiting the vertical and horizontal symmetry of the table.</li>
+    <li>Finish by counting all the entries and checking if the total number of microstates is correct.</li>
+  </ol>
+</blockquote>
+
+<p>Note that the process of drawing electron configurations and then filling in the table of microstates is somewhat redundant; save time by just starting with the table of microstates.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/table_2.png" alt="Table" /></p>
+
+<p>The first term symbol that arises from this table is $^3P$, as the largest value of $M_S = +1$ (which implies $S = 1$) and simultaneously, the largest possible value of $M_L = +1$ (which implies $L = 1$). We cross out one entry from each $M_L$ and $M_S$ possible for $^3P$.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/table_4.png" alt="Table" /></p>
+
+<p>The next term symbol is $^1D$, as $M_S = 0$ (which implies $S = 0$) and the largest value of $M_L = +2$ (which implies $L = 2$).</p>
+
+<p><img src="/assets/img/atomic-term-symbols/table_6.png" alt="Table" /></p>
+
+<p>The last term symbol is $^1S$, where $M_S = 0$ and $M_L = 0$ thus $S = 0$ and $L = 0$.</p>
+
+<p>These are the term symbols:</p>
+
+<p><img src="/assets/img/atomic-term-symbols/term_symbols_1.png" alt="Term Symbols" /></p>
+
+<p>We have yet to fully specify these term symbols, notably the value of $J$. Recall how $J$ can have the values $\left|L - S\right|,\,\cdots,\,L + S$.</p>
+
+<p>For $^3P$ ($L = 1$ and $S = 1$), $J_{\text{min}} = 0$ and $J_{\text{max}} = 2$. Therefore, $J = 2,\, 1,\, 0$ and the term symbols are $^3P_2$, $^3P_1$, and $^3P_0$.</p>
+
+<p>For $^1D$ ($L = 2$ and $S = 0$), $J_{\text{min}} = 2$ and $J_{\text{max}} = 2$. Therefore, $J = 2$ and the term symbol is $^1D_2$.</p>
+
+<p>For $^1S$ ($L = 0$ and $S = 0$), $J_{\text{min}} = 0$ and $J_{\text{max}} = 0$. Therefore, $J = 0$ and the term symbol is $^1S_0$.</p>
+
+<p>Therefore, the term symbols for $1s^22s^22p^2$ carbon, or $np^2$ in general, are as follows.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/term_symbols_2.png" alt="Term Symbols" /></p>
+
+<h1 id="table-of-possible-term-symbols">Table of Possible Term Symbols</h1>
+
+<p>With the above procedure, a table of the term symbols for various electron configurations can be prepared.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Electron configuration</th>
+      <th>Term symbols (excluding $J$)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$s^1$</td>
+      <td>$^2S$</td>
+    </tr>
+    <tr>
+      <td>$p^1$; $p^5$</td>
+      <td>$^2P$</td>
+    </tr>
+    <tr>
+      <td>$p^2$; $p^4$</td>
+      <td>$^3P$, $^1D$, $^1S$</td>
+    </tr>
+    <tr>
+      <td>$p^3$</td>
+      <td>$^4S$, $^2D$, $^2P$</td>
+    </tr>
+    <tr>
+      <td>$d^1$; $d^9$</td>
+      <td>$^2D$</td>
+    </tr>
+    <tr>
+      <td>$d^2$; $d^8$</td>
+      <td>$^3F$, $^3P$, $^1G$, $^1D$, $^1S$</td>
+    </tr>
+    <tr>
+      <td>$d^3$; $d^7$</td>
+      <td>$^4F$, $^4P$, $^2H$, $^2G$, $^2F$, $^2D(\text{two})$, $^2P$</td>
+    </tr>
+    <tr>
+      <td>$d^4$; $d^6$</td>
+      <td>$^5D$, $^3H$, $^3G$, $^3F(\text{two})$, $^3D$, $^3P(\text{two})$, $^1I$, $^1G(\text{two})$, $^1F$, $^1D(\text{two})$, $^1S(\text{two})$</td>
+    </tr>
+    <tr>
+      <td>$d^5$</td>
+      <td>$^6S$, $^4G$, $^4F$, $^4D$, $^4P$, $^2I$, $^2H$, $^2G(\text{two})$, $^2F(\text{two})$, $^2D(\text{three})$, $^2P$, $^2S$</td>
+    </tr>
+    <tr>
+      <td>$s^2$; $\,p^6$; $\,d^{10}$; $\,\cdots$</td>
+      <td>$^1S$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>There are three things to note about this table.</p>
+
+<p>First, some electron configuration produces two or more of the same term symbol. This is the exception where two or more energy states of the same electron configuration can have the same $L$, $M_L$, $S$, and $M_S$. For these cases, electron configuration alone is not a suitable substitute to energy when describing energy states (and levels).</p>
+
+<p>Second, electron configurations consisting of only filled subshells are always $^1S$, as all $m_l$ and $m_s$ cancel out between all electrons, resulting in $M_L = 0$ and $M_S = 0$. In fact, like $M_L$ and $M_S$, $M_J$ always equals zero. Thus, $J = 0$ and their term symbol is indeed always $^1S_0$.</p>
+
+<p>The last and most important point is about electron holes, which are the absense of electrons. Electron configurations with some electron holes (lack of electrons) have the same term symbols as those with the same number of electrons in the same subshell. In other words, adding $n$ electrons to an empty subshell is the same (with respect to angular momentum) as removing $n$ electrons from a full subshell. Holes act like electrons; they contribute to the overall angular momenta in the same way.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/holes.png" alt="Holes" /></p>
+
+<p>Therefore, not only is it acceptable to replace electron holes with electrons to calculate $L$ and $S$, it is often easier to do so.</p>
+
+<h1 id="example-2-excited-1s22s22p43p2-neon">Example 2: Excited $1s^22s^22p^43p^2$ Neon</h1>
+
+<p>Let us apply three useful points that we have learned until now on an excited neon configuration of $1s^22s^22p^43p^2$.</p>
+
+<ol>
+  <li>Completely filled subshells do not contribute to the overall $M_L$ and $M_S$, and thus can be ignored when determining term symbols.</li>
+  <li>Replace electron holes with electrons when calculating $L$ and $S$.</li>
+  <li>(From part 2) The addition of two angular momenta characterized by quantum numbers $j_1$ and $j_2$ results in a total angular momentum whose quantum number $J$ has the possible values $ J=\left|j_1 - j_2\right|,\,\cdots,\,j_1 + j_2$</li>
+</ol>
+
+<p>From the $1s^22s^22p^43p^2$ configuration, we can ignore completely filled subshells and only deal with $2p^43p^2$ - all thanks to point 1.</p>
+
+<p>With point 2, the $2p^43p^2$ configuration can be replaced with the $2p^23p^2$ configuration by replacing electron holes in the $2p$ subshell with electrons.</p>
+
+<p>We are left with the $2p^23p^2$ configuration. This configuration consist of the $2p^2$ configuration and the $3p^2$ configuration. For a $np^2$ configuration (equivalent electrons), the term symbols are (without $J$) $^3P$, $^1P$, and $^1S$ (as we have calculated for ground state carbon). Between $2p^2$ and $3p^2$ subshells (which are non-equivalent electrons), the $L$ and $S$ of the term symbols (denoted $l_i$ and $s_i$ below) can be “added” according to point 3 to produce new term symbols characterizing $2p^23p^2$ as a whole.</p>
+
+<p>A. Adding $^3P$ and $^3P$</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Term Symbol</th>
+      <th style="text-align: center">    $l_i$    </th>
+      <th style="text-align: center">    $s_i$    </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">$^3P$</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$^3P$</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">  $l_1$  </th>
+      <th style="text-align: center">  $l_2$  </th>
+      <th style="text-align: center">  $L_{\text{min}}$  </th>
+      <th style="text-align: center">  $L_{\text{max}}$  </th>
+      <th style="text-align: center">  $L$    </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">0, 1, 2</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">  $s_1$  </th>
+      <th style="text-align: center">  $s_2$  </th>
+      <th style="text-align: center">  $S_{\text{min}}$  </th>
+      <th style="text-align: center">  $S_{\text{max}}$  </th>
+      <th style="text-align: center">   $S$   </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">0, 1, 2</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>⇒ $^5D$, $^5P$, $^5S$, $^3D$, $^3P$, $^3S$, $^1D$, $^1P$, and $^1S$</p>
+
+<p>B. Adding $^3P$ and $^1D$</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Term Symbol</th>
+      <th style="text-align: center">    $l_i$    </th>
+      <th style="text-align: center">    $s_i$    </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">$^3P$</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$^1D$</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">0</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">    $l_1$    </th>
+      <th style="text-align: center">    $l_2$    </th>
+      <th style="text-align: center">    $L_{\text{min}}$    </th>
+      <th style="text-align: center">    $L_{\text{max}}$    </th>
+      <th style="text-align: center">         $L$        </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">3</td>
+      <td style="text-align: center">1, 2, 3</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">  $s_1$  </th>
+      <th style="text-align: center">  $s_2$  </th>
+      <th style="text-align: center">  $S_{\text{min}}$  </th>
+      <th style="text-align: center">  $S_{\text{max}}$  </th>
+      <th style="text-align: center">      $S$      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>⇒ $^3F$, $^3D$, and $^3P$</p>
+
+<p>C. Adding $^1D$ and $^3P$</p>
+
+<p>Same as B. Adding $^3P$ and $^1D$.</p>
+
+<p>⇒ $^3F$, $^3D$, and $^3P$</p>
+
+<p>D. Adding $^3P$ and $^1S$</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Term Symbol</th>
+      <th style="text-align: center">    $l_i$    </th>
+      <th style="text-align: center">    $s_i$    </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">$^3P$</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$^1S$</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">    $l_1$    </th>
+      <th style="text-align: center">    $l_2$    </th>
+      <th style="text-align: center">      $L_{\text{min}}$      </th>
+      <th style="text-align: center">      $L_{\text{max}}$      </th>
+      <th style="text-align: center">           $L$          </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">    $s_1$    </th>
+      <th style="text-align: center">    $s_2$    </th>
+      <th style="text-align: center">      $S_{\text{min}}$      </th>
+      <th style="text-align: center">      $S_{\text{max}}$      </th>
+      <th style="text-align: center">           $S$          </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>⇒ $^3P$</p>
+
+<p>E. Adding $^1S$ and $^3P$</p>
+
+<p>Same as D. Adding $^3P$ and $^1S$.</p>
+
+<p>⇒ $^3P$</p>
+
+<p>F. Adding $^1D$ and $^1D$</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Term Symbol</th>
+      <th style="text-align: center">    $l_i$    </th>
+      <th style="text-align: center">    $s_i$    </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">$^1D$</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$^1D$</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">0</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">    $l_1$    </th>
+      <th style="text-align: center">    $l_2$    </th>
+      <th style="text-align: center">    $L_{\text{min}}$    </th>
+      <th style="text-align: center">    $L_{\text{max}}$    </th>
+      <th style="text-align: center">  $L$  </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">0, 1, 2, 3, 4</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">  $s_1$  </th>
+      <th style="text-align: center">  $s_2$  </th>
+      <th style="text-align: center">  $S_{\text{min}}$  </th>
+      <th style="text-align: center">  $S_{\text{max}}$  </th>
+      <th style="text-align: center">       $S$       </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>⇒ $^1G$, $^1F$, $^1D$, $^1P$, and $^1S$</p>
+
+<p>G. Adding $^1D$ and $^1S$</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Term Symbol</th>
+      <th style="text-align: center">    $l_i$    </th>
+      <th style="text-align: center">    $s_i$    </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">$^1D$</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$^1S$</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">  $l_1$  </th>
+      <th style="text-align: center">  $l_2$  </th>
+      <th style="text-align: center">  $L_{\text{min}}$  </th>
+      <th style="text-align: center">  $L_{\text{max}}$  </th>
+      <th style="text-align: center">      $L$      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">2</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">  $s_1$  </th>
+      <th style="text-align: center">  $s_2$  </th>
+      <th style="text-align: center">  $S_{\text{min}}$  </th>
+      <th style="text-align: center">  $S_{\text{max}}$  </th>
+      <th style="text-align: center">       $S$       </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>⇒ $^1D$</p>
+
+<p>H. Adding $^1S$ and $^1D$</p>
+
+<p>Same as G. Adding $^1D$ and $^1S$.</p>
+
+<p>⇒ $^1D$</p>
+
+<p>I. Adding $^1S$ and $^1S$</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Term Symbol</th>
+      <th style="text-align: center">    $l_i$    </th>
+      <th style="text-align: center">    $s_i$    </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">$^1S$</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$^1S$</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">  $l_1$  </th>
+      <th style="text-align: center">  $l_2$  </th>
+      <th style="text-align: center">  $L_{\text{min}}$  </th>
+      <th style="text-align: center">  $L_{\text{max}}$  </th>
+      <th style="text-align: center">      $L$      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">  $s_1$  </th>
+      <th style="text-align: center">  $s_2$  </th>
+      <th style="text-align: center">  $S_{\text{min}}$  </th>
+      <th style="text-align: center">  $S_{\text{max}}$  </th>
+      <th style="text-align: center">       $S$       </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>⇒ $^1S$</p>
+
+<p>As a result, the term symbols for $1s^22s^22p^43p^2$ are:</p>
+
+<p>$^5D$, $^5P$, $^5S$, $^3F$ (two), $^3D$ (three), $^3P$ (five), $^3S$, $^1G$, $^1F$, $^1D$ (four), $^1P$ (two), and $^1S$ (three).</p>
+
+<p>If you count the number of states of each of these term symbols, it adds up to $225 = 15\times 15$, which checks out as it is equal to the number of microstates for $1s^22s^22p^43p^2$.</p>
+
+<h1 id="hunds-rule-and-ground-state">Hund’s Rule and Ground State</h1>
+
+<p>Until now, we were occupied with finding out <em>all</em> possible term symbols from an electron configuration. An important question to ask is “what is the <em>most stable</em> term symbol among all term symbols?” In other words, “what is the ground state of an atom?”<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup></p>
+
+<p>Three empirical rules by spectroscopist Friederich Hund allow us to obtain the ground state term symbol.</p>
+
+<ol>
+  <li>The term symbol with the largest value of $S$ is the most stable.</li>
+  <li>For term symbols with the same value of $S$, the term symbol with the largest value of $L$ is the most stable.</li>
+  <li>
+    <p>For term symbols with the same value of $S$ and $L$, $J$ is used to determine the most stable term symbol.</p>
+
+    <ol>
+      <li>For a subshell less than half-filled, the term symbol with the <em>smallest</em> $J$ is the most stable.</li>
+      <li>For a subshell more than half-filled, the term symbol with the <em>largest</em> $J$ is the most stable.</li>
+    </ol>
+  </li>
+</ol>
+
+<p>As an example, the term symbols of ground configuration $1s^22s^22p^2$ carbon are $^1S_0$, $^3P_2$, $^3P_1$, $^3P_0$, and $^1D_2$. The term symbols with the largest $S$ are $^3P_2$, $^3P_1$, and $^3P_0$.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/term_symbols_C_1.png" alt="Term Symbols" /></p>
+
+<p>Among those term symbols, all three have the same $L$.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/term_symbols_C_2.png" alt="Term Symbols" /></p>
+
+<p>Therefore, we move on to the third rule and use $J$ to determine the ground state term symbol. Because the $2p$ subshell is less than half-filled, we choose the term symbol with the smallest value of $J$.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/term_symbols_C_3.png" alt="Term Symbols" /></p>
+
+<p>As a result, $^3P_0$ is the ground state term symbol for carbon.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/term_symbols_C_4.png" alt="Term Symbols" /></p>
+
+<p>These term symbols can be shown with an energy diagram similar to that at the end of Part 2.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/energy_diagram_2.png" alt="Energy Diagram" /></p>
+
+<p>When obtaining the ground state term symbol, it is not necessary to obtain <em>all</em> term symbols. There is an easier way that involves finding the microstate that is related to the ground state term symbol. We first start with the microstates with the largest value of $M_S$, in order to maximize $S$. This is the general chemistry version of Hund’s Rules, and is deeply related to the quantum mechanical, spectroscopic version of Hund’s Rules as well.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/microstates_C_1.png" alt="Microstates with parallel spin" /></p>
+
+<p>Of those microstates, we choose the microstate with the largest value of $M_L$, in order to maximize $L$.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/microstates_C_2.png" alt="Microstate with maximum L" /></p>
+
+<p>As $S = 1$ and $L = 1$, the term symbol without $J$ is $^3P$. Calculating the remaining $J$ and choosing the right value according to Hund’s Law leaves us with the same ground state term symbol: $^3P_0$.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/microstates_C_3.png" alt="Microstate with J" /></p>
+
+<p>A more complicated example would be manganese, with a ground state electron configuration of $\left[\text{Ar}\right]3d^54s^2$. In total, there are 252 microstates for this configuration, which results in 16 term symbols. It is an incredibly difficult and error-prone task to obtain the ground state term symbol by calculating all possible term symbols. However, if we use the method above, we can obtain the ground state term symbol of manganese with incredible ease.</p>
+
+<p>We start with the microstate with the largest value of $M_S$.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/microstate_Mn.png" alt="Microstate Mn" /></p>
+
+<p>Incidently enough, there is only one microstate left, which leaves us with $M_L = 0$. Therefore, $L=0$ and the term symbol (without $J$) is $^6S$.</p>
+
+<p>As the $3d$ subshell is exactly half-filled, it presents a dilemma with determining $J$ using Hund’s Rules. However, the only possible value of $J$ is $5/2$, so the ground state term symbol of $J$ is $^6S_{5/2}$.</p>
+
+<p>Hund’s Rules works very well for ground state electron configuration, but may fail for other excited configurations. In addition, Hund’s Rules cannot be reliably used to determine the energy order between the term symbols. In essence, <strong>use Hund’s Rules only for the ground state of an atom.</strong></p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>When obtaining <em>all</em> term symbols of an electron configuration:</p>
+
+<ol>
+  <li>Ignore all filled subshells.</li>
+  <li>For each subshell, if the subshell is more than half-filled, replace electron holes with electrons.</li>
+  <li>Calculate $l_i$ and $s_i$ for subshells with equivalent electrons by setting up a table of microstates or by using the table of term symbols provided in your textbook.</li>
+  <li>Calculate the total $L$ and $S$ by adding the $l_i$ and $s_i$ of all subshells (non-equivalent electrons)</li>
+  <li>Calculate $J$ for each combination of $L$ and $S$</li>
+</ol>
+
+<p>When obtaining the <em>ground state</em> term symbol with all term symbols already known - Hund’s Rules:</p>
+
+<ol>
+  <li>The term symbol with the largest value of $S$ is the most stable.</li>
+  <li>For term symbols with the same value of $S$, the term symbol with the largest value of $L$ is the most stable.</li>
+  <li>
+    <p>For term symbols with the same value of $S$ and $L$, $J$ is used to determine the most stable term symbol.</p>
+
+    <ol>
+      <li>For a subshell <em>less than</em> half-filled, the term symbol with the <em>smallest</em> $J$ is the most stable.</li>
+      <li>For a subshell <em>more than</em> half-filled, the term symbol with the <em>largest</em> $J$ is the most stable.</li>
+    </ol>
+  </li>
+</ol>
+
+<p>When obtaining the <em>ground state</em> term symbol <em>without knowing the term symbols</em>:</p>
+
+<ol>
+  <li>Start with microstates with the maximum value of $M_S$. This $M_S = S$.</li>
+  <li>Choose the microstate with the maximum value of $M_L$. This $M_L = L$.</li>
+  <li>Calculate $J$ with $L$ and $S$. Choose the correct $J$ according to Hund’s Rules.</li>
+</ol>
+
+<h1 id="footnotes">Footnotes</h1>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>Most textbooks refer to the most stable term symbol as “the ground state”, even though it should really be refered to as “the ground level”. In line with most textbooks, this article refers to such ground level term symbol as “the ground state term symbol”. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name></name></author><category term="physical-chemistry" /><summary type="html"><![CDATA[Introduction]]></summary></entry><entry xml:lang="en"><title type="html">Atomic Term Symbols: Part 2 - Term Symbols and Spin-Orbit Coupling</title><link href="https://sypark-chem.me/physical-chemistry/atomic-term-symbols-pt-2/" rel="alternate" type="text/html" title="Atomic Term Symbols: Part 2 - Term Symbols and Spin-Orbit Coupling" /><published>2022-08-12T00:00:00+00:00</published><updated>2022-08-12T00:00:00+00:00</updated><id>https://sypark-chem.me/physical-chemistry/atomic-term-symbols-pt-2</id><content type="html" xml:base="https://sypark-chem.me/physical-chemistry/atomic-term-symbols-pt-2/"><![CDATA[<h1 id="introduction">Introduction</h1>
+
+<p>This article is an in-depth explanation on atomic term symbols based on <em>Quantum Chemistry</em> by Levine to supplement chapter 8 of <em>Physical Chemistry: A Molecular Approach</em> by McQuarrie. A good understanding of preceding chapters, notably chapters 6 and 7, is required.</p>
+
+<p>The notation used in this article is based on the latter textbook.</p>
+
+<p>In Part 1, we looked at how quantum numbers can describe an atomic energy state. In this article, we will see how term symbols can describe an energy level. In Part 3, we will go over more complex examples of term symbols, as well as Hund’s Rules.</p>
+
+<h1 id="energy-state-and-energy-level">Energy State and Energy Level</h1>
+
+<p>In physical chemistry and quantum mechanics, we talk a lot about energy states and energy level - oftentimes interchangably. However, a clear distinction should be made between the two in order to clear up confusion.</p>
+
+<p>An <strong>energy state</strong> is a <em>wave function</em> with a definite energy. It satisfies the time-independent Schrödinger equation $\hat{H}\psi = E\psi$. They are also called stationary states due to the fact that the wave function does not change with time (apart from its phase).</p>
+
+<p>An <strong>energy level</strong> is a value of energy that a system can have. It can consist of a <strong>single energy state</strong> or <strong>many</strong>, with the latter case being regarded as <strong>degenerate</strong>.</p>
+
+<h1 id="why-electron-configuration--energy-state-nor-level">Why Electron Configuration ≠ Energy State Nor Level</h1>
+
+<p>In general chemistry, two representations of electron configurations are taught, as shown below for ground-state carbon.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/e_config.png" alt="Electron Configuration" /></p>
+
+<p>It is frequently understood that the two forms, (1) and (2), indicate the energy state or the energy level. That is incorrect.</p>
+
+<p>For (1), many energy states (wave functions) have this electron configuration. Even worse, these states from a single electron configuration can correspond to <strong>several different energy levels</strong>.</p>
+
+<p>The diagram (2) is misleading as $\psi$ constructed exactly in this way would not follow the Pauli antisymmetry principle. In fact, you would need to have a linear combination of such $\psi$ to obtain proper energy state. As a result, <strong>an overwhelming number of such diagram</strong> has to be used to express <strong>a single energy level</strong>.</p>
+
+<p>It is clear that either electron configurations ((1) and (2)) are inadequate at expressing either <em>energy state</em> or <em>energy level</em>. On the other hand, we ended Part 1 with a way to express an energy state, in the form of</p>
+
+\[\psi = \left |\, (e^- \text{ config)}\,L\,M_L\,S\,M_S\,\right \rangle\]
+
+<p>In Part 2, we introduce atomic term symbols, which is a convenient way to express an energy level of an atom.</p>
+
+<h1 id="atomic-term-symbols">Atomic Term Symbols</h1>
+
+<p>Before we begin, we need to know what determines the energy of an energy state $\left |\, (e^- \text{ config)}\,L\,M_L\,S\,M_S\,\right \rangle$. First, the electron configuration is the biggest factor in determining the energy. Second, $S$ also affects the energy; recall Hund’s rule from general chemistry where the lowest energy electron configuration is the one with the most parallel spins. At last, $L$ affects the energy, albeit to a lesser degree than the two aforementioned factors. This is closely related to how the orbital energy of multi-electron atoms are determined in part by $l$ ($s &lt; p &lt; d &lt; f &lt; \cdots$), unlike hydrogen-like atoms ($s = p = d = f = \cdots$).</p>
+
+<p>$M_L$ and $M_S$ <strong>do not</strong> have any effect on the energy. In other words, energy states with (1) the same electron configuration, (2) the same $L$, and (3) the same $S$ are degenerate. This leads to an interesting conclusion:</p>
+
+<blockquote>
+  <p>The energy level of an atom is determined by the electron configuration, the total orbital angular momentum quantum number $L$, and the total spin quantum number $S$.</p>
+</blockquote>
+
+<p>To express the energy level of an atom, we introduce atomic term symbols,<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> which express $L$ and $S$ in the following form.</p>
+
+\[^{2S+1}L\]
+
+<p>Instead of substituting $L$ with a number, we use letters similar to that of atomic orbitals:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">$L \,=$</th>
+      <th style="text-align: center">0</th>
+      <th style="text-align: center">1</th>
+      <th style="text-align: center">2</th>
+      <th style="text-align: center">3</th>
+      <th style="text-align: center">4</th>
+      <th style="text-align: center">5</th>
+      <th style="text-align: center">$\cdots$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">$S$</td>
+      <td style="text-align: center">$P$</td>
+      <td style="text-align: center">$D$</td>
+      <td style="text-align: center">$F$</td>
+      <td style="text-align: center">$G$</td>
+      <td style="text-align: center">$H$</td>
+      <td style="text-align: center">$\cdots$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Instead of $S$, we denote the <strong>spin multiplicity</strong>, which is equal to $2S+1$. As $M_S = -S, \,-S+1,\, \cdots ,\,+S-1,\,+S$, $2S+1$ is in fact the total number of $M_S$ and is the degeneracy due to spin. Keep in mind that $M_L = -L, \,-L+1,\, \cdots ,\,+L-1,\,+L$, and that a total of $2L+1$ different $M_L$ are possible for a particular value of $L$. Thus, $2L+1$ is the degeneracy due to orbital angular momentum.</p>
+
+<p>Therefore,</p>
+
+<blockquote>
+  <p>The degeneracy of an energy level of an atom is equal to
+\(\left(2L+1\right)\left(2S+1\right)\)</p>
+</blockquote>
+
+<p>Let us work on some example to understand term symbols. The ground level of hydrogen is expressed as $1s^1 : ^2S$. This means that $S = 1/2$ (as $2S+1 = 2$) and $L = 0$. Energy <em>states</em> for this ground level can have $M_L = 0$ and $M_S = +1/2, -1/2$. Therefore, in bra-ket notation, the energy states $\left |\, 1s^1\,0\,0\,\frac{1}{2}\,+\frac{1}{2}\,\right \rangle$ and $\left |\, 1s^1\,0\,0\,\frac{1}{2}\,-\frac{1}{2}\,\right \rangle$ both have the same energy level $1s^1 : ^2S$. This energy level has a degeneracy of 2, which can be obtained by inspection, and also by multiplying the spin multiplicity $2S+1$ by $2L+1$.</p>
+
+<p>Note that the term symbol $^2S$ is read “doublet $S$”, owing to its spin multiplicity. Here are names for other spin multiplicities.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">$S$</th>
+      <th style="text-align: center">Spin Multiplicity: $2S+1$</th>
+      <th style="text-align: center">Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">$0$</td>
+      <td style="text-align: center">$1$</td>
+      <td style="text-align: center">Singlet</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\frac{1}{2}$</td>
+      <td style="text-align: center">$2$</td>
+      <td style="text-align: center">Doublet</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$1$</td>
+      <td style="text-align: center">$3$</td>
+      <td style="text-align: center">Triplet</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\frac{3}{2}$</td>
+      <td style="text-align: center">$4$</td>
+      <td style="text-align: center">Quartet</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$2$</td>
+      <td style="text-align: center">$5$</td>
+      <td style="text-align: center">Quintet</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\frac{5}{2}$</td>
+      <td style="text-align: center">$6$</td>
+      <td style="text-align: center">Sextet</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>A more complicated example is ground level nitrogen with $1s^22s^22p^3 : ^3P$ (read as “triplet $P$”). From the term symbol, $L=1$ and $S=1$. The degeneracy of this energy level is $(2\times1+1)(2\times1+1) = 9$. All nine energy states are ground states of nitrogen.</p>
+
+<h1 id="the-value-of-l-and-s-1s1-2s1">The Value of $L$ and $S$: $1s^1 2s^1$</h1>
+
+<p>Say you want to know the term symbols associated with an excited helium atom with an electron configuration of $1s^1 2s^1$. The easiest way to obtain the term symbols (i.e. energy levels) would be to first identify all wave functions (i.e. energy states). In the process of identifying all energy states $\left |\, (e^- \text{ config)}\,L\,M_L\,S\,M_S\,\right \rangle$, the $L$ and $S$ required for the term symbol are automatically revealed.</p>
+
+<p>Therefore, we first construct the wave functions (more precisely, spin orbitals) of $1s^1 2s^1$.</p>
+
+<h2 id="approach-1-the-naive-approach">Approach 1: the naive approach</h2>
+
+<p>One thing to note about electronic wave functions is that they are <em>antisymmetric</em>: the exchange of two electrons results in the same wave function with the opposite sign. With this in mind, let us start by naïvely constructing wave functions from electron configurations, also called microstates<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/microstates_helium_1.png" alt="All Microstates" /></p>
+
+<p>A plausible wave function for the first microstate, with both electrons spin up, is $1s(1)\alpha(1)\,2s(2)\alpha(2)$ (this means electron 1 is in $1s$ with spin up, electron 2 is in $2s$ with spin up).<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup> Due to the indistinguishability of electrons, the $2s$ electron can be electron 1 as well. This results in another potential wave function: $2s(1)\alpha(1)\,1s(2)\alpha(2)$.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/microstates_helium_2.png" alt="Microstate 1" /></p>
+
+<p>Are these two wave functions, $1s(1)\alpha(1)\,2s(2)\alpha(2)$ and $2s(1)\alpha(1)\,1s(2)\alpha(2)$, valid electronic wave functions? The answer is no as they are not antisymmetric. However, the exchange of two electrons rather results in the wave function taking the form of the other wave function. Taking inspiration from this strange property, we can make a new wave function that is antisymmetric from the linear combination of the two: $1s(1)\alpha(1)2s(2)\,\alpha(2)-2s(1)\alpha(1)\,1s(2)\alpha(2)$. Note that Slater determinants can be used to set up antisymmetric wavefunctions with ease.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/microstates_helium_3.png" alt="Microstate 1" /></p>
+
+<p>The wave function for the second microstate, with both electrons spin down, can be made by changing both electrons to be spin down: $1s(1)\beta(1)\,2s(2)\beta(2)-2s(1)\beta(1)\,1s(2)\beta(2)$.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/microstates_helium_4.png" alt="Microstate 2" /></p>
+
+<p>The third and fourth microstate are a bit different. The third microstate, with the $1s$ electron spin up and the $2s$ electron spin down, results in two plausible wave functions: $1s(1)\alpha(1)\,2s(2)\beta(2)$ and $2s(1)\beta(1)\,1s(2)\alpha(2)$. The fourth microstate, with the $1s$ electron spin down and the $2s$ electron spin up, results in $1s(1)\beta(1)\,2s(2)\alpha(2)$ and $2s(1)\alpha(1)\,1s(2)\beta(2)$.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/microstates_helium_5.png" alt="Microstate 3 and 4" /></p>
+
+<p>You might assume that the third microstate produces the wave function $1s(1)\alpha(1)\,2s(2)\beta(2) - 2s(1)\beta(1)\,1s(2)\alpha(2)$, and the fourth microstate produces the wave function $1s(1)\beta(1)\,2s(2)\alpha(2)-2s(1)\alpha(1)\,1s(2)\beta(2)$, both of which are suitable antisymmetric wave functions. This is not the case for two major reasons.</p>
+
+<p>The first reason is the indistinguishable nature of electrons. We have seen that the $1s$ electron of the third microstate is spin up, and the $1s$ electron of the fourth microstate is spin down. However, for any energy state, any electron must be spin up or down with the same probability. Thus, for any energy state, the $1s$ electron is a 1:1 linear combination of spin up and spin down state (this is true for the $2s$ electron). Switching our perspective from spin to orbitals, for any energy state, any electron must be in the $1s$ orbital or the $2s$ orbital with the same probability. Thus, for any energy state, the spin up electron is a 1:1 linear combination of $1s$ and $2s$ orbital state (this is also true for the spin down electron). To conclude, linear combinations of the two antisymmetric wave functions must be taken to produce the adequate wave functions for the third and fourth energy state. Addition produces one wave function (still antisymmetric) that describes the one of the energy states, while subtraction produces the wave function (antisymmetric as well) of the other energy state.</p>
+
+<p>Therefore, $1s(1)\alpha(1)\,2s(2)\beta(2) - 2s(1)\beta(1)\,1s(2)\alpha(2) + 1s(1)\beta(1)\,2s(2)\alpha(2) - 2s(1)\alpha(1)\,1s(2)\beta(2)$ and $1s(1)\alpha(1)\,2s(2)\beta(2) + 2s(1)\beta(1)\,1s(2)\alpha(2) - 1s(1)\beta(1)\,2s(2)\alpha(2) - 2s(1)\alpha(1)\,1s(2)\beta(2)$ are our wave functions for the third and fourth energy states.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/microstates_helium_6.png" alt="States 3 and 4" /></p>
+
+<p>The second reason (which is a consequence of the first reason) is that the two new antisymmetric wave functions are eigenfunctions of $\hat{H}, \hat{L}^2, \hat{L}_z, \hat{S}^2, \hat{S}_z$, while the two old antisymmetric wave function were not.</p>
+
+<p>To conclude, we have constructed four wave functions from four microstates for $1s^12s^1$, as follows. These four wave functions are chosen such that they are eigenfunctions of $\hat{H}, \hat{L}^2, \hat{L}_z, \hat{S}^2, \hat{S}_z$ simultaneously. An important point to note is the fact that the number of microstates equals the number of wave functions (energy states).</p>
+
+\[1s(1)\alpha(1)\,2s(2)\alpha(2)-2s(1)\alpha(1)\,1s(2)\alpha(2)\]
+
+\[1s(1)\beta(1)\,2s(2)\beta(2)-2s(1)\beta(1)\,1s(2)\beta(2)\]
+
+\[1s(1)\alpha(1)\,2s(2)\beta(2) - 2s(1)\beta(1)\,1s(2)\alpha(2) + 1s(1)\beta(1)\,2s(2)\alpha(2) - 2s(1)\alpha(1)\,1s(2)\beta(2)\]
+
+\[1s(1)\alpha(1)\,2s(2)\beta(2) - 2s(1)\beta(1)\,1s(2)\alpha(2) - 1s(1)\beta(1)\,2s(2)\alpha(2) + 2s(1)\alpha(1)\,1s(2)\beta(2)\]
+
+<p>In determinantal form (recall Slater determinants)<sup id="fnref:2:1" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>:</p>
+
+\[\begin{vmatrix}
+1s(1)\alpha(1) &amp; 2s(1)\alpha(1)\\ 
+1s(2)\alpha(2) &amp; 2s(2)\alpha(2)
+\end{vmatrix}\]
+
+\[\begin{vmatrix}
+1s(1)\beta(1) &amp; 2s(1)\beta(1)\\ 
+1s(2)\beta(2) &amp; 2s(2)\beta(2)
+\end{vmatrix}\]
+
+\[\begin{vmatrix}
+1s(1)\alpha(1) &amp; 2s(1)\beta(1)\\ 
+1s(2)\alpha(2) &amp; 2s(2)\beta(2)
+\end{vmatrix}
++
+\begin{vmatrix}
+1s(1)\beta(1) &amp; 2s(1)\alpha(1)\\ 
+1s(2)\beta(2) &amp; 2s(2)\alpha(2)
+\end{vmatrix}\]
+
+\[\begin{vmatrix}
+1s(1)\alpha(1) &amp; 2s(1)\beta(1)\\ 
+1s(2)\alpha(2) &amp; 2s(2)\beta(2)
+\end{vmatrix}
+-
+\begin{vmatrix}
+1s(1)\beta(1) &amp; 2s(1)\alpha(1)\\ 
+1s(2)\beta(2) &amp; 2s(2)\alpha(2)
+\end{vmatrix}\]
+
+<p>For two-electron systems, the spatial part and the spin part can be factored out. This factored form is useful when seeing how they are antisymmetric, as well as when calculating various properties.</p>
+
+\[\left[1s(1)\,2s(2)-2s(1)\,1s(2)\right]\alpha(1)\alpha(2)\]
+
+\[\left[1s(1)\,2s(2)-2s(1)\,1s(2)\right]\beta(1)\beta(2)\]
+
+\[\left[1s(1)\,2s(2) - 2s(1)\,1s(2)\right]\left[\alpha(1)\,\beta(2) + \beta(1)\,\alpha(2)\right]\]
+
+\[\left[1s(1)\,2s(2) + 2s(1)\,1s(2)\right]\left[\alpha(1)\,\beta(2) - \beta(1)\,\alpha(2)\right]\]
+
+<p>We can directly apply the operators $\hat{L} ^2 = \left(\hat{l} _1 + \hat{l} _2\right) ^2$, $\hat{L}_z = \hat{l} _{1z} + \hat{l} _{2z}$,  $\hat{S} ^2 = \left(\hat{s} _1 + \hat{s} _2\right) ^2$, and $\hat{S} _z = \hat{s} _{1z} + \hat{s} _{2z}$ to the wave functions above to obtain $\left|\bold{L}\right| ^2, L_z \left|\bold{S}\right| ^2,$ and $S_z$ and therefore $L, M_L, S,$ and $M_S$. For example, with the spin part of the first wave function,</p>
+
+\[\hat{S}_z \left(\alpha(1)\alpha(2)\right) = \left(\hat{s}_{1z} + \hat{s}_{2z}\right)\alpha(1)\alpha(2)\]
+
+\[= \hat{s}_{1z}\,\alpha(1)\alpha(2) + \alpha(1)\,\hat{s}_{2z}\,\alpha(2)\]
+
+\[= \left(+\frac{1}{2}\hbar\right)\alpha(1)\,\alpha(2) + \alpha(1)\left(+\frac{1}{2}\hbar\right)\alpha(2)\]
+
+\[= +\hbar \left(\alpha(1)\alpha(2)\right)\]
+
+<p>Therefore, $S_z = +\hbar$ and $M_S = +1$. Calculating $M_L$ and $M_S$ for all four wave functions is a good exercise in manipulating operators.</p>
+
+<p>These are the results:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Spatial part</th>
+      <th style="text-align: center">$L$</th>
+      <th style="text-align: center">$M_L$</th>
+      <th style="text-align: center">Spin part</th>
+      <th style="text-align: center">$S$</th>
+      <th style="text-align: center">$M_S$</th>
+      <th style="text-align: center">Term Symbol</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">$1s(1)\,2s(2)-2s(1)\,1s(2)$</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">$\alpha(1)\alpha(2)$</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">+1</td>
+      <td style="text-align: center">$^3S$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$1s(1)\,2s(2)-2s(1)\,1s(2)$</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">$\beta(1)\beta(2)$</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">$^3S$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$1s(1)\,2s(2)-2s(1)\,1s(2)$</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">$\alpha(1)\,\beta(2) + \beta(1)\,\alpha(2)$</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">$^3S$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$1s(1)\,2s(2)+2s(1)\,1s(2)$</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">$\alpha(1)\,\beta(2) - \beta(1)\,\alpha(2)$</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">$^1S$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>From the possible $L$ and $S$ values, we can see that the term symbols that describe $1s^12s^1$ are $^3S$ (triply degenerate) and $^1S$ (singly degenerate).</p>
+
+<p>On a side note, the spin parts can be added in a visual way (ignoring the spatial parts). The following are representations of spin functions $\alpha$ and $\beta$.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/spin_up_and_down.png" alt="Spin up and down" /></p>
+
+<p>These spin functions are multiplied and added to produce the spin parts, shown in the table above.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/spin_addition.png" alt="Spin addition" /></p>
+
+<p>The resulting visual representations clearly show the $S$ and the $M_S$ of the spin functions, which is the same as the table above.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/spin_result.png" alt="Spin addition result" /></p>
+
+<p>Coming back to our results of approach 1, the shortcomings of this approach is that you first need to obtain each and every wave function before anything else. Is there a way to obtain the term symbols without the wave functions?</p>
+
+<h2 id="approach-2-m_l-and-m_s-from-microstates">Approach 2: $M_L$ and $M_S$ from microstates</h2>
+
+<p>In the procedure above, calculating $M_L$ and $M_S$ from wave functions is easy. What is easier is calculating $M_L$ and $M_S$ from the four original microstates.</p>
+
+<p>Recall that $\hat{S} _z = \hat{s} _{1z} + \hat{s} _{2z}$. For the appropiate eigenfunctions (which is the case for all examples in this section), $S _z = s _{1z} + s _{2z}$ and thus, for the quantum number $M _S = m _{s1} + m _{s2}$.</p>
+
+<p>The first microstate has both electrons spin up. Therefore, $M_S = +\frac{1}{2}:+\frac{1}{2} = +1$. The second microstate has both electrons spin down, so $M_S = -\frac{1}{2}:-\frac{1}{2} = -1$. The third and fourth microstates has one electron spin down and another spin up, which results in $M_S = 0$.</p>
+
+<p>For all four microstates, $M_L = 0$ as $m_l$ for both $1s$ and $2s$ orbitals are 0. We can organize these microstates into a table. They are given as $\left( 0^+, 0^- \right)$, which means $m_{l1} = 0, m_{s1} = +1/2, m_{l2} = 0,$ and $m_{s2} = -1/2$.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/table.png" alt="Microstate Table" /></p>
+
+<p>Now, we will obtain the term symbols by progressively erasing the (micro)states of each term symbol.</p>
+
+<p>From these values of $M_L$ and $M_S$, note that the maximum value of $M_S$ is +1 and the minimum value is -1. Assume for a moment that $S$ of a term symbol is larger than 1. Then, the maximum value of $M_S$ should be larger than +1, and the minimum value of $M_S$ should be smaller than -1. As that is not the case, $S$ is not larger than 1, and as a consequence, the largest $S$ possible a term symbol can have must be 1.</p>
+
+<p>As the maximum value of $M_L$ is 0, it must be that $L = 0$. Thus, the largest possible combination of $S$ and $L$ is $L = 0$ and $S = 1$. This is $^3S$ in term symbol notation, which consists of three states: $M_L = 0$ and $M_S = -1, \,0, \,+1$. After confirming the term symbol $^3S$, we erase three states from the table: one from each possible $M_L$ and $M_S$ to find other term symbols with smaller $S$ and $L$.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/table_cross.png" alt="Table, crossed out" /></p>
+
+<p>For the entries in $M_L = 0$ and $M_S = 0$, the microstate $\left(0^+, 0^-\right)$ is erased instead of $\left(0^-, 0^+\right)$. This does not mean that $^3S$ contains the microstate $\left(0^+, 0^-\right)$ but not $\left(0^-, 0^+\right)$; it merely means that one of two states with $M_L = 0$ and $M_S = 0$ is in $^3S$, while the term symbol for the other state is yet to be determined. The most technically accurate way to erase these states would be erase one-half of both states, but that can result in confusion. Instead, a single state (either one) is completely erased for visual clarity, and the choice of microstate to be erased is unimportant.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/table_erased.png" alt="Table, erased" /></p>
+
+<p>Now, the maximum value of $M_S$ is 0, and the maximum value of $M_L$ is 0. Thus, the only possible combination of $L$ and $S$ is $L = 0$ and $S = 0$, resulting in a term symbol of $^1S$. We cross out the microstate in $L = 0$ and $S = 0$, which leaves us with no remaining states. All term symbols of $1s^12s^1$ have been accounted for.</p>
+
+<h2 id="quantum-mechanical-addition-of-angular-momenta">Quantum Mechanical Addition of Angular Momenta</h2>
+
+<p>Although approach 2 is a lot quicker than approach 1, there is yet a faster way to obtain the term symbols of $1s^12s^1$ by generalizing approach 2. Recall how the sum of the largest values of $m_{s1} (+\frac{1}{2})$ and $m_{s2} (+\frac{1}{2})$ adds to give the largest value of $M_S (+1)$. This is equal to the sum of $s_1 \left(\frac{1}{2}\right)$ and $s_2 \left(\frac{1}{2}\right)$, as the largest value of $m_{s1}$ is $s_1$ and the largest value of $m_{s2}$ is $s_2$.</p>
+
+<p>Now consider an addition of a general angular momentum quantum numbers $j_1$ and $m_{j1}$ with $j_2$ and $m_{j2}$, resulting in $J$ and $M_J$ (alongside $j_1$ and $j_2$, which are implicitly understood) (the image below has $j_1 = \frac{3}{2}$ and $j_2 = 1$).</p>
+
+<p><img src="/assets/img/atomic-term-symbols/j1j2.png" alt="j1 and j2 1" /></p>
+
+<p>The largest value of $M_J$ is $j_1+j_2$.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/j1j2_add.png" alt="j1 and j2 2" /></p>
+
+<p>The largest possible $J$ is therefore $j_1+j_2$. Like all angular momentum quantum numbers, $M_J$ can have the values $+J, \,+J-1,\,\cdots,\, -J+1, -J$.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/J52.png" alt="j1 and j2 3" /></p>
+
+<p>If $J_{\text{max}} = j_1 + j_2$, then what is $J_{\text{min}}$? The smallest maximum value of $M_J$ is given by the difference of the largest values of $m_{j1}$ and $m_{j2}$. This is equal to the difference between $j_1$ and $j_2$.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/j1j2_sub.png" alt="j1 and j2 4" /></p>
+
+<p>Thus, the smallest maximum value of $M_J$ is $\left|j_1 - j_2\right|$. Therefore, smallest possible $J$ is $\left|j_1 - j_2\right|$.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/J12.png" alt="j1 and j2 5" /></p>
+
+<p>Therefore, $J_{\text{min}} = \left|j_1 - j_2\right|$. Thus, the possible $J$ are $\left|j_1 - j_2\right|,\,\cdots,\,j_1 + j_2$. Just as a check, let us compare the total number of microstates (total number of combinations of $j_1$, $m_{j1}$, $j_2$, $m_{j2}$), with the total number of states (total number of combinations of $j_1$, $j_2$, $J$ and $M_J$). As $j_1$ and $j_2$ are fixed, the former is equal to $\left(2j_1+1\right)\left(2j_2+1\right)$. The latter is equal to $\sum_J \left(2J+1\right)$, summed over $J = \left|j_1 - j_2\right|,\,\cdots,\,j_1 + j_2$.</p>
+
+\[\left(2j_1+1\right)\left(2j_2+1\right) = \sum_{J\,=\,\left|j_1 - j_2\right|}^{j_1 + j_2} \left(2J+1\right)\]
+
+<p>With some algebraic manipulation, this can be shown to be true. We are left with a general statement on the addition of angular momenta.</p>
+
+<blockquote>
+  <p>The addition of two angular momenta characterized by quantum numbers $j_1$ and $j_2$ results in a total angular momentum whose quantum number $J$ has the possible values</p>
+
+\[J=\left|j_1 - j_2\right|,\,\left|j_1 - j_2\right|+1,\,\cdots,\,j_1 + j_2 - 1,\,j_1 + j_2\]
+</blockquote>
+
+<h2 id="approach-3-direct-addition">Approach 3: direct addition</h2>
+
+<p>Let us apply this for the $L$ and $S$ of $1s^12s^1$. For the electron in the $1s$ orbital, $l_1 = 0$ ($s$ orbital). For the electron in the $2s$ orbital, $l_2 = 0$. Therefore, $L_{\text{min}} = \left| 0 - 0 \right| = 0$ and $L_{\text{max}} = 0 + 0 = 0$. This means that $L = 0$.</p>
+
+<p>As for spin, both electrons have $s = 1/2$. $S_{\text{min}} = \left| 1/2 - 1/2 \right| = 0$ and $S_{\text{max}} = 1/2 + 1/2 = 1$. Therefore, $S = 0, 1$.</p>
+
+<p>Combining both $L = 0$ and $S = 0, 1$ result in the term symbols $^1S$ and $^3S$. Notice how simple this approach is - how there was no need to fumble around with $M_L$ and $M_S$.</p>
+
+<p>There is one critical caveat to this approach; it cannot be used with equivalent electrons, which are electrons in the same subshell. For example, the steps above, when applied to $1s^2$, should result in the same term symbols. However, due to the Pauli exclusion principle, the two electrons cannot have parallel spins and $S = 1$ is impossible. Instead, the two electrons have opposite spins, and only $M_S = 0$ is allowed. Thus, the only term symbol possible for $1s^2$ is $^1S$.</p>
+
+<p>As a simple exercise, let us tackle $1s^12s^13s^1$. For this configuration, we split it into $1s^12s^1$ and $3s^1$. We know the $l_1$ &amp; $s_1$ of $1s^12s^1$ - it is the same as our previous answer: $l_1 = 0$ &amp; $s_1 = 0, 1$. For $3s^1$, $l_2 = 0$ ($s$ orbital) &amp; $s_2 = 1/2$.</p>
+
+<p>There are two additions possible: (1) between $l_1 = 0$ &amp; $s_1 = 0$ and $l_2 = 0$ &amp; $s_2 = 1/2$, or (2) between $l_1 = 0$ &amp; $s_1 = 1$ and $l_2 = 0$ &amp; $s_2 = 1/2$.</p>
+
+<p>For (1), $l_1 = 0$ adds with $l_2 = 0$ to produce $L_{\text{min}} = \left|0 - 0\right| = 0$ and $L_{\text{max}} = 0 + 0 = 0$, resulting in $L = 0$. This is unsurprising as all electrons are in an $s$ orbital. $s_1 = 0$ and $s_2 = 1/2$ results in $S_{\text{min}} = \left|0 - \frac{1}{2}\right| = \frac{1}{2}$ and $S_{\text{max}} = 0 + \frac{1}{2} = \frac{1}{2}$. Therefore, $L = 0$ and $S = 1/2$, and the term symbol is $^2S$.</p>
+
+<p>For (2), $l_1 = 0$ adds with $l_2 = 0$ to produce $L = 0$; same as before. $s_1 = 1$ and $s_2 = 1/2$ results in $S_{\text{min}} = \left|1 - \frac{1}{2}\right| = \frac{1}{2}$ and $S_{\text{max}} = 1 + \frac{1}{2} = \frac{3}{2}$. Therefore, $L = 0$ and $S = 1/2,\, 3/2$, and the term symbols are $^2S$ and $^4S$.</p>
+
+<p>In conclusion, $1s^12s^13s^1$ results in the term symbols $^2S$ (two) and $^4S$.</p>
+
+<h1 id="spin-orbit-coupling">Spin-Orbit Coupling</h1>
+
+<p>Remember this?</p>
+
+<blockquote>
+  <p>The energy level of an atom is characterized by the electron configuration, the total orbital angular momentum quantum number $L$, and the total spin quantum number $S$.</p>
+</blockquote>
+
+<p>I lied. It turns out that a quantum mechanical effect called <strong>spin-orbit interaction</strong> (or spin-orbit coupling) effects the energy of the energy state <em>ever so slightly</em>. The energy states with the same electron configuration, $L$, and $S$ are <em>nearly</em> degenerate, but not <em>completely</em> degenerate. For an explanation on this effect, we must return to the Hamiltonian $\hat{H}$.</p>
+
+<p>In part 1, the following was the multi-electron $\hat{H}$ in atomic units.</p>
+
+\[\hat{H} = \hat{H}^{(0)} = \sum_{i\,=\,1}^{n}\left ( -\frac{1}{2}\nabla_i^2 \right ) + \sum_{i\,=\,1}^{n}\left ( -\frac{Z}{r_i} \right ) + \sum_{i}\sum_{j\,&gt;\,i} \left ( \frac{1}{r_{ij}} \right )\]
+
+<p>With this Hamiltonian (denoted $\hat{H}^{(0)}$), the operators $\hat{L}^2$, $\hat{L}_z$, $\hat{S}^2$, and $\hat{S}_z$ all commute with $\hat{H}^{(0)}$, which results in the energy states with the same electron configuration, $L$, and $S$ being degenerate. However, the true Hamiltonian, $\hat{H}$, contains a term ($\hat{H}^{(1)}$) that is dependent on $\hat{\bold{l}}_i\cdot\hat{\bold{s}}_i$ for all electrons in an atom. Roughly speaking, the term $\hat{\bold{l}}_i\cdot\hat{\bold{s}}_i$ represents the interaction between the magnetic moment due to the electron spin with the magnetic field generated by the electron’s orbit. The true Hamiltonian is thus closer to the following (the function $\xi(r_j)$ is not important for our discussion).</p>
+
+\[\hat{H} = \hat{H}^{(0)} + \hat{H}^{(1)} = \sum_{i\,=\,1}^{n}\left ( -\frac{1}{2}\nabla_i^2 \right ) + \sum_{i\,=\,1}^{n}\left ( -\frac{Z}{r_i} \right ) + \sum_{i}\sum_{j\,&gt;\,i} \left ( \frac{1}{r_{ij}} \right ) + \sum_{i\,=\,1}^{n} \left( \xi(r_i)\, \hat{\bold{l}}_i\cdot\hat{\bold{s}}_i \right)\]
+
+<p>Note that for elements with atomic number less than 30, the effect of $\hat{H}^{(1)}$ is much smaller than $\hat{H}^{(0)}$. As a result, $\hat{L}^2$, $\hat{L}_z$, $\hat{S}^2$, and $\hat{S}_z$ <em>nearly</em> commutes with $\hat{H}$, and a microscopic energy difference of</p>
+
+\[E^{(1)} \approx \frac{1}{2}A[J(J+1) - L(L+1) - S(S+1)]\]
+
+<p>can be seen for multi-electron atoms. This difference of 0.1% breaks the degeneracy previously seen with $L$ and $S$.<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup></p>
+
+<p>If so, what is $J$ from the equation above? For starters, $\bold{J}$ is the total angular momentum, which is equal to $\bold{L} + \bold{S}$. This coupling between total orbital angular momentum $\bold{L}$ and total spin angular momentum $\bold{S}$ is called <em>L-S coupling</em> or <em>Russell-Saunders coupling</em>. In operator form,</p>
+
+\[\hat{J} = \hat{L} + \hat{S}\]
+
+<p>Just like $\hat{L}$ and $\hat{S}$, $\hat{J}$ has its own quantum numbers ($J$ and $M_J$) which satisfy the following relations (note that $M_J = -J, \,-J+1,\,\cdots,\,+J-1,\,+J$).</p>
+
+\[\hat{J}^2 \psi = \left\| \bold{J} \right\|^2 \psi =J\left(J+1\right)\hbar^2 \psi\]
+
+\[\hat{J}_z \psi = J_z \psi = M_J \hbar \, \psi\]
+
+<p>Previously, $\hat{H}$, $\hat{L}^2$, $\hat{L}_z$, $\hat{S}^2$, and $\hat{S}_z$ commuted with each other to form a complete set of commuting observables. Now,  $\hat{H}$, $\hat{L}^2$, $\hat{S}^2$, $\hat{J}^2$, and $\hat{J}_z$ commute to form a complete set of commuting observables.</p>
+
+<p>Therefore, $L$, $S$, $J$, and $M_J$ are used to specify an energy <em>state</em> instead of $L$, $M_L$, $S$, and $M_S$. To specify an energy <em>level</em> (term symbol), $L$, $S$, and $J$ are required. $M_J$ is excluded as states with different $M_J$ but same $L$, $S$, and $J$ are degenerate as $M_J$ is not included in $E^{(1)}$.</p>
+
+<p>If so, what is the value of $J$ for a given $L$ and $S$? Just like adding two orbital angular momentum quantum numbers $l_1$ and $l_2$ or two spin quantum numbers $s_1$ and $s_2$, we can obtain $J$, the total angular momentum quantum number by “adding” $L$ and $S$.</p>
+
+<blockquote>
+  <p>For $L$ and $S$, the possible values of $J$, the total angular momentum quantum number, are</p>
+
+\[J=\left|L - S\right|,\,\left|L - S\right|+1,\,\cdots,\,L + S - 1,\,L + S\]
+</blockquote>
+
+<p>For example, $L = 1$ and $S = 1$. The possible values of $J = 0, 1, 2$.</p>
+
+<p>As $L$, $S$, and $J$ are all required to specify an energy level, the term symbol notation changes from $^{2S+1}L$ to<sup id="fnref:1:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup></p>
+
+<blockquote>
+\[^{2S+1}L_J\]
+</blockquote>
+
+<p>The degeneracy of this term symbol is now $2J+1$ (the total number of possible $M_J$), instead of $\left(2L+1\right)\left(2S+1\right)$.</p>
+
+<p>For $L = 1$, $S = 1$, as $J = 0, 1, 2$, the new term symbols are $^3P_0, ^3P_1$, and $ ^3P_2$ instead of just $^3P$. In other words, the 9 degenerate $^3P$ energy states are actually 1 state belonging to $^3P_0$, 3 degenerate states belonging to $^3P_1$, and 5 degenerate states belonging to $^3P_2$. As demonstrated, the number of states do not change. For a given $L$ and $S$,</p>
+
+\[\left(2L+1\right)\left(2S+1\right) = \sum_{J \, = \, \left| L - S \right|}^{L+S}\left(2J+1\right)\]
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>Here is a quick recap of all the things we learned about term symbols.</p>
+
+<ol>
+  <li>The energy of an energy state is determined by its electron configuration and its quantum numbers: the total orbital angular momentum quantum number $L$, the total spin quantum number $S$, and the total angular momentum quantum number $J$.</li>
+  <li>To describe an energy level, we use atomic term symbols: $^{2S+1}L_J$</li>
+</ol>
+
+<p>To obtain the term symbol for a particular electron configuration, there are two practical options, which are approaches 2 and 3:</p>
+
+<p>Approach 3: for non-equivalent electrons only</p>
+<ul>
+  <li>Perform addition of angular momenta to obtain $L$ and $S$</li>
+  <li>Perform addition of $L$ and $S$ to obtain $J$</li>
+</ul>
+
+<p>Approach 2: for equivalent electrons<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup></p>
+<ul>
+  <li>Organize all microstates into a table according to their $M_L$ and $M_S$, then progressively erase microstates that belong to a term symbol with the largest possible $L$ and $S$</li>
+  <li>Obtain $J$ for all term symbols through addition of $L$ and $S$</li>
+</ul>
+
+<p>As a quick problem, try to find the term symbols of $1s^12p^1$ excited state helium by yourself!
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+The term symbols are $^3P_0$, $^3P_1$, $^3P_2$, and $^1P_1$. The following is an energy diagram of those term symbols, which also shows how the energy and degeneracies of energy level changes due to the change in Hamiltonian.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/energy_diagram.png" alt="Energy Diagram" /></p>
+
+<h1 id="footnotes">Footnotes</h1>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>In some textbooks (such as <em>Levine</em>), a <em>term</em> refers to an “energy level” (determined by electron configuration, $L$, and $S$, <em>but not</em> $J$), while a <em>term symbol</em> refers to the symbol that is used to represent the term. In this case, term is a closely spaced set of energy levels (which are determined by electron configuration, $L$, $S$, <em>and</em> $J$). <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:1:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>If you are unfamiliar with this notation, see page 284 of <em>McQuarrie</em>. Note that all wave functions dealt in this article are <em>not normalized but are normalizable</em>. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:2:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p>Electron configuration like this are called microstates because it treats each electron as independent, as if the quantum number (thus the state) of each electron is obtainable. The states of each electron is thought to combine to form the entire atom, which is considered as a macrostate. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:4" role="doc-endnote">
+      <p>This results in the <strong>fine structure</strong> of atomic spectra. <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:5" role="doc-endnote">
+      <p>Also possible for non-equivalent electrons. <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name></name></author><category term="physical-chemistry" /><summary type="html"><![CDATA[Introduction]]></summary></entry><entry xml:lang="en"><title type="html">Atomic Term Symbols: Part 1 - The Preliminaries</title><link href="https://sypark-chem.me/physical-chemistry/atomic-term-symbols-pt-1/" rel="alternate" type="text/html" title="Atomic Term Symbols: Part 1 - The Preliminaries" /><published>2022-08-10T00:00:00+00:00</published><updated>2022-08-10T00:00:00+00:00</updated><id>https://sypark-chem.me/physical-chemistry/atomic-term-symbols-pt-1</id><content type="html" xml:base="https://sypark-chem.me/physical-chemistry/atomic-term-symbols-pt-1/"><![CDATA[<h1 id="introduction">Introduction</h1>
+
+<p>This article is an in-depth explanation on atomic term symbols based on <em>Quantum Chemistry</em> by Levine to supplement chapter 8 of <em>Physical Chemistry: A Molecular Approach</em> by McQuarrie. A good understanding of preceding chapters, notably chapters 6 and 7, is required.</p>
+
+<p>The notation used in this article is based on the latter textbook.</p>
+
+<p>Part 1 deals with the quantum mechanics of multi-electron atoms, while Part 2 and Part 3 are devoted to atomic term symbols.</p>
+
+<h1 id="the-atomic-hamiltonian">The Atomic Hamiltonian</h1>
+
+<p>We start with the Hamiltonian for multi-electron atoms. The Hamiltonian for an atom with $n$ electrons and a nuclear charge of $Z$, in atomic units, is as follows.</p>
+
+\[\hat{H} = \sum_{i\,=\,1}^{n}\left ( -\frac{1}{2}\nabla_i^2 \right ) + \sum_{i\,=\,1}^{n}\left ( -\frac{Z}{r_i} \right ) + \sum_{i}\sum_{j\,&gt;\,i} \left ( \frac{1}{r_{ij}} \right )\]
+
+<p>For now, the potential term of $\hat{H}$ only includes Coulombic interactions. We ignore terms arising from interactions such as spin-orbit interaction or spin-spin interaction, as their contributions are small.<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup></p>
+
+<p>The eigenfunctions of $\hat{H}$, $\psi \left(r_1, \theta_1, \phi_1, \sigma_1;\,r_2, \theta_2, \phi_2, \sigma_2;\, \cdots ;\,r_n, \theta_n, \phi_n, \sigma_n \right)$,<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup> are the energy states of helium. This $\psi$ can be obtained numerically (with near-exact results) or with approximations such as the Hartree-Fock self-consistent-field (SCF) method with Slater-type orbitals (STOs), which retains the orbital concept.</p>
+
+<p>However, for our discussion of multi-electron atoms, there is no need to obtain such $\psi$. The exact details of $\psi$ are not important; what is important is the fact that $\psi$ is an <strong>eigenfunction of the operator $\hat{H}$</strong>. This will prove to be very important, as we discover other properties of $\hat{H}$ and $\psi$.</p>
+
+<h1 id="complete-set-of-commuting-observables">Complete Set of Commuting Observables</h1>
+
+<p>Consider a hydrogen-like atom with one electron. The $\psi$ of this system are the atomic orbitals. As you may know, $\hat{H}$ commutes not with $\bold{\hat{l}}$, the orbital angular momentum operator, but with its square, $\hat{l}^2$.<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup> As a result, $\psi$ can be <em>chosen</em> to be an eigenfunction of both $\hat{H}$ and $\hat{l}^2$. Even if $\psi$, an eigenfunction of $\hat{H}$, happens to not be an eigenfunction of $\hat{l}^2$, a suitable linear combination involving $\psi$ must be an eigenfunction of $\hat{l}^2$.</p>
+
+<p>Physically, this means that particular energy states have a definite value of the observable $\left| \bold{l} \right|^2$ in addition to $E$, the energy.</p>
+
+<p>The same can be said with $\hat{l}_z$,<sup id="fnref:3:1" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup> the z-component of $\bold{\hat{l}}$, which commutes with $\hat{H}$. Furthermore, $\hat{l}_z$ commutes with $\hat{l}^2$. In total, this means that a $\psi$ can be chosen to be an eigenfunction of $\hat{H}$, $\hat{l}^2$, and $\hat{l}_z$ simultaneously. Physically, this means that particular energy states have a definite value of $E$, $\left| \bold{l} \right|^2$, and $l_z$ at the same time.</p>
+
+<p>The electronic spin operators are similar in this regard. $\hat{H}$ commutes with $\hat{s}^2$ and $\hat{s}_z$<sup id="fnref:3:2" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup> as $\hat{H}$ is not dependent on electronic spin. $\hat{s}^2$ and $\hat{s}_z$ commute with each other (more precisely, are defined in a way such that they commute with each other). Any orbital angular momentum operator ($\hat{l}^2$ or $\hat{l}_z$) commutes with any spin operator ($\hat{s}^2$ or $\hat{s}_z$) because the former is dependent on spatial variables only, while the latter is dependent on spin variables.</p>
+
+<p>As a result, the operators $\hat{H}$, $\hat{l}^2$, $\hat{l}_z$, $\hat{s}^2$, and $\hat{s}_z$ all commute with each other as shown below.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/pentagram_1.png" alt="Commuting Operators" /></p>
+
+<p>Mathematically, this means that particular wave functions ($\psi$) are eigenfunctions of $\hat{H}$, $\hat{l}^2$, $\hat{l}_z$, $\hat{s}^2$, and $\hat{s}_z$; thus, they satisfy the following.</p>
+
+\[\hat{H} \psi = E \psi\]
+
+\[\hat{l}^2 \psi = \left| \bold{l} \right|^2 \psi\]
+
+\[\hat{l}_z \psi = l_z \psi\]
+
+\[\hat{s}^2 \psi = \left| \bold{s} \right|^2 \psi\]
+
+\[\hat{s}_z \psi = s_z \psi\]
+
+<p>Physically, this means that such energy states have a definite value of observables $E$, $\left| \bold{l} \right|^2$, $l_z$, $\left| \bold{s} \right|^2$, and $s_z$. For example, the wave function $\psi = \frac{Z^\frac{3}{2}}{\sqrt{\pi}}e^{-Zr} \alpha(\sigma)$ (which translates to one electron in a $1s$ orbital, spin up) has a definite value of $E = -Z^2 m_e e^4/8\epsilon_0^2h^2$, $\left| \bold{l} \right|^2 = 0$, $l_z = 0$, $\left| \bold{s} \right|^2 =  3\hbar^2/4$, and $s_z = +\hbar/2$ (in SI units).</p>
+
+<p><img src="/assets/img/atomic-term-symbols/hydrogen.png" alt="Hydrogen" /></p>
+
+<p><strong>Any energy state can be expressed as a linear combination of degenerate energy states with a definite value of $E$, $\left| \bold{l} \right|^2$, $l_z$, $\left| \bold{s} \right|^2$, and $s_z$.</strong> For example, consider the wave function $\psi = \frac{Z^\frac{3}{2}}{\sqrt{\pi}}e^{-Zr} \times \frac{1}{\sqrt{2}}\left(\alpha(\sigma) + \beta(\sigma)\right)$.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/hydrogen_superposition_1.png" alt="Superposition" /></p>
+
+<p>This wave function is an energy state, as it has a definite value of $E$, which is the same as the previous example. In fact, $\left| \bold{l} \right|^2$, $l_z$, and $\left| \bold{s} \right|^2$ of this wave function is the same as the previous example.</p>
+
+<p>However, the spin of the electron ($s_z$) is not definite, as it is a superposition of spin up ($\alpha(\sigma)$, $s_z = +\frac{\hbar}{2}$) and spin down ($\beta(\sigma)$, $s_z = -\frac{\hbar}{2}$). Upon observation of $s_z$, 50% of the time it is spin up, and 50% of the time it is spin down.</p>
+
+<p>Cases like this infinitely exist. However, all of these wave functions can be expressed as linear combinations of wave functions with definite $E$, $\left| \bold{l} \right|^2$, $l_z$, $\left| \bold{s} \right|^2$, and $s_z$. For $\psi = \frac{Z^\frac{3}{2}}{\sqrt{\pi}}e^{-Zr} \times \frac{1}{\sqrt{2}}\left(\alpha(\sigma) + \beta(\sigma)\right)$, this wave function is a linear combination of $\psi = \frac{Z^\frac{3}{2}}{\sqrt{\pi}}e^{-Zr} \alpha(\sigma)$ (always spin up) and $\psi = \frac{Z^\frac{3}{2}}{\sqrt{\pi}}e^{-Zr} \beta(\sigma)$ (always spin down). Mathematically, these two are part of the eigenbasis of $\hat{H}$.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/hydrogen_superposition_2.png" alt="Superposition" /></p>
+
+<p>When explaining the various facets of quantum mechanics, it is much easier to deal with wave functions that have a definite value of $E$, $\left| \bold{l} \right|^2$, $\cdots$, etc. than wave functions that do not. As a simple example, let us ask a question like “what is the degeneracy of this energy level (number of energy states with the same energy)?” The technical answer would be:</p>
+
+<blockquote>
+  <p>Infinitely many energy states have the same energy, but those states can be decomposed into two (for example, $\psi = \frac{Z^\frac{3}{2}}{\sqrt{\pi}}e^{-Zr} \alpha(\sigma)$ and $\psi = \frac{Z^\frac{3}{2}}{\sqrt{\pi}}e^{-Zr} \beta(\sigma)$) independent energy states.</p>
+</blockquote>
+
+<p>This is a bit cumbersome compared to:</p>
+<blockquote>
+  <p>The degeneracy of this energy level is 2.</p>
+</blockquote>
+
+<p>Therefore, for the sake of convenience and readability, we will now <strong>limit our discussion of energy states to ONLY energy states with a definite value of $E$, $\left| \bold{l} \right|^2$, $l_z$, $\left| \bold{s} \right|^2$, and $s_z$</strong>. On that note,</p>
+
+<blockquote>
+  <p>An energy state of a hydrogen-like atom is completely characterized by</p>
+
+\[E,\: \left| \bold{l} \right|^2,\: l_z,\: \left| \bold{s} \right|^2,\: \text{and}\: s_z\]
+</blockquote>
+
+<p>This means that instead of describing $\psi$ by its functional form $(\frac{Z^\frac{3}{2}}{\sqrt{\pi}}e^{-Zr} \alpha(\sigma))$, we can describe it by specifying its $E$, $\left| \bold{l} \right|^2$, $l_z$, $\left| \bold{s} \right|^2$, and $s_z$. These observables are special in this regard, and thus they have a special name: <strong>a complete set of commuting observables(CSCO)</strong>.</p>
+
+<p>In practice, it is a bit awkward to list the exact value of the five observables everytime we want to refer to an energy state. Instead, we can call these values (and thus the energy state) with the associated <strong>quantum numbers</strong>: $n, l, m_l, s, m_s$.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/observables_qnumbers_1.png" alt="Observables and Quantum Numbers" /></p>
+
+<p>These quantum numbers arise from the derivation of $\psi$, and as a consequence of the boundary conditions imposed on $\psi$, they are integers or half-integers.</p>
+
+<p>Following are the relationship between observables and their quantum numbers for hydrogen-like atoms, in SI units.</p>
+
+\[\hat{H} \psi = E \psi = -\frac{Z^2m_ee^4}{8\epsilon_0^2h^2n^2} \psi\]
+
+\[\hat{l}^2 \psi = \left| \bold{l} \right|^2 \psi =l\left(l+1\right)\hbar^2 \psi\]
+
+\[\hat{l}_z \psi = l_z \psi = m_h \hbar \, \psi\]
+
+\[\hat{s}^2 \psi = \left| \bold{s} \right|^2 \psi =s\left(s+1\right)\hbar^2 \psi\]
+
+\[\hat{s}_z \psi = s_z \psi = m_s \hbar \, \psi\]
+
+<p>When specifying a particular $\psi$, we can substitute $E$ with the principle quantum number $n = 1,\, 2,\, 3,\, \cdots$, as</p>
+
+\[E = -\frac{Z^2m_ee^4}{8\epsilon_0^2h^2n^2}\]
+
+<p>We can substitute $\left| \bold{l} \right|^2$ with the (orbital) angular momentum quantum number $l = 0, \,1, \,2, \,\cdots,\, n$, as</p>
+
+\[\left| \bold{l} \right|^2=l\left(l+1\right)\hbar^2\]
+
+<p>We can substitute $l_z$ with the magnetic quantum number $m_l = -l,\, -l+1,\, \cdots, \,0, \,\cdots, \,+l-1, \,+l$, as</p>
+
+\[l_z = m_h \hbar\]
+
+<p>We can substitute $\left| \bold{s} \right|^2$ with $s$, as</p>
+
+\[\left| \bold{s} \right|^2 =s\left(s+1\right)\hbar^2\]
+
+<p>As there is only a single electron for hydrogen-like atoms, $s=1/2$. Therefore, in general chemistry and elsewhere, $s$ is often omitted as it does not convey any additional information. The reason this is here is because we will deal with multi-electron atoms with more complicated electron spin, at a later date.</p>
+
+<p>Lastly, we can substitute $s_z$ with the spin quantum number $m_s$, as</p>
+
+\[s_z = m_s \hbar\]
+
+<p>Like $m_l$, $m_s = -s,\, -s+1,\, \cdots, \,+s-1, \,+s$. As $s = 1/2$, $m_s$ must be either $+1/2$ (spin up) or $-1/2$ (spin down).</p>
+
+<p>Our last example dealt with a $1s$ orbital, spin up energy state $\psi$. This energy state was described either with its functional form (of $(\frac{Z^\frac{3}{2}}{\sqrt{\pi}}e^{-Zr} \alpha(\sigma))$), or by its complete set of commuting observables $E$, $\left| \bold{l} \right|^2$, $l_z$, $\left| \bold{s} \right|^2$, and $s_z$. Now, we can describe it very concisely with a set of quantum numbers: $\left(n, l, m_l, s, m_s\right) = (1, 0, 0, 1/2, +1/2)$.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/hydrogen_quantum_numbers.png" alt="Quantum Numbers" /></p>
+
+<p>We can adopt the <strong>bra-ket notation</strong>, where a vector (a wave function) is denoted by a bra($|$) and a ket($ \rangle $). A very apt name for an energy state would be a list of its quantum numbers ($n\,l\,m_l\,s\,m_s$). This name goes inbetween the bra and the ket to denote the energy state $\psi$.</p>
+
+\[\psi = \psi_{\left(n, \,l, \,m_l,\, s,\, m_s\right)} = \left |\, n\,l\,m_l\,s\,m_s\,\right \rangle\]
+
+<p>Thus, the $1s$ orbital, spin up energy state $\psi$ is equivalent to $\left |\, 1\,0\,0\,\frac{1}{2}\,+\frac{1}{2}\,\right \rangle$.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/hydrogen_bra_ket.png" alt="Bra-ket Notation" /></p>
+
+<p>To conclude, this section can be condensed into a single statement:</p>
+
+<blockquote>
+  <p>An energy state of a hydrogen-like atom is characterized by orbital and spin quantum quantum numbers. With the bra-ket notation:</p>
+
+\[\psi = \left |\, n\,l\,m_l\,s\,m_s\,\right \rangle\]
+</blockquote>
+
+<h1 id="multi-electron-atom">Multi-electron Atom</h1>
+
+<p>It would be nice if the energy states of multi-electron atoms are described completely by quantum numbers similar to those of hydrogen-like atoms.</p>
+
+<p>One speculation one might have is that such energy states are described by quantum numbers for <em>each</em> electron. For example, an energy state of a neutral helium atom might be described as $ \left |\, n_1\,l_1\,m_{l1}\,s_1\,m_{s1};\,n_2\,l_2\,m_{l2}\,s_2\,m_{s2}\,\right \rangle$, as there are two electrons. For the ground state helium atom, perhaps $ \left |\, 1\,0\,0\,\frac{1}{2}\,+\frac{1}{2};\,1\,0\,0\,\frac{1}{2}\,-\frac{1}{2}\,\right \rangle$ is appropriate?</p>
+
+<p><img src="/assets/img/atomic-term-symbols/helium_1.png" alt="Helium" /></p>
+
+<p>If this seems too convenient, this is because it is incorrect. There are two complementary reasons why energy states cannot be described by quantum numbers of <em>each</em> electron.</p>
+
+<p>First, we go back to our discussion of hydrogen-like atoms. For an energy state to be described by quantum numbers, the operator associated with the observable/quantum number (i.e. $\hat{s}_z$ for $m_s$) must <em>commute</em> with the Hamiltonian, $\hat{H}$.</p>
+
+<p>For a helium atom to be denoted $ \left |\, n_1\,l_1\,m_{l1}\,s_1\,m_{s1};\,n_2\,l_2\,m_{l2}\,s_2\,m_{s2}\,\right \rangle$, operators $ \hat{H} _{1} $, $ \hat{l} _{1} ^{2} $, $ \hat{l} _{1z} $, $  \hat{s} _{1} ^{2} $, $ \hat{s} _{1z} $, $ \hat{H} _{2} $, $\hat{l} _2 ^2$, $\hat{l} _{2z}$, $\hat{s} _2 ^2$, and $\hat{s} _{2z}$ must commute with $\hat{H}$. Even ignoring $\hat{H} _1$ and $\hat{H} _2$,<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup> operators $\hat{l} _1^2$, $\hat{l} _{1z}$, $\hat{s} _1^2$, $\hat{s} _{1z}$, $\hat{l}_2^2$, $\hat{l} _{2z}$, $\hat{s} _2^2$, and $\hat{s} _{2z}$ <em>do not commute</em> with $\hat{H}$.</p>
+
+<p>This means that such helium energy state does not have definite values of observables $E$, $\left| \bold{l} _1 \right| ^2$, $l _{1z}$, $\left| \bold{s} _1 \right| ^2$, $s _{1z}$, $\left| \bold{l} _2 \right| ^2$, $l _{2z}$, $\left| \bold{s} _2 \right| ^2$ and $s _{2z}$, as such energy state is <em>not an eigenfunction</em> of all of the operators listed above. Consequently, it is not possible to assign the quantum numbers $l _1\,m _{l1}\,s _1\,m _{s1};\,l _2\,m _{l2}\,s _2\,m _{s2}$, and the notation $ \left |\, n _1\,l _1\,m _{l1}\,s _1\,m _{s1};\,n _2\,l _2\,m _{l2}\,s _2\,m _{s2}\,\right \rangle$ is wrong.</p>
+
+<p>Second, the scheme $ \left |\, n_1\,l_1\,m_{l1}\,s_1\,m_{s1};\,n_2\,l_2\,m_{l2}\,s_2\,m_{s2}\,\right \rangle$ implies that we can distinguish the two electrons: one is spin up and one is spin down. However, all electrons are identical and it is impossible to distinguish between any electrons in an atom. For the ground state helium, (1) there is no “electron 1” and “electron 2” and (2) no electron is simply spin up or down, but any electron can be spin up or spin down upon measurement.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/helium_2.png" alt="Helium" /></p>
+
+<p>If so, what are the quantum numbers that completely describe an energy state of a multi-electron atom? Another way of saying this would be <strong>“which operators commute with the Hamiltonian and with each other to form a complete set of commuting observables?”</strong></p>
+
+<p>In classical mechanics, angular momentum is a vector and therefore adds vectorally. In equation form, it would look something like this.</p>
+
+\[\bold{L} = \sum_i \bold{l}_i\]
+
+<p>Quantum mechanics has angular momentum <em>operators</em>, which also adds vectorally. For starters, the total[^7] orbital angular momentum operator $\hat{L}$ is defined as the sum of all orbital angular momentum operator $\hat{l}_i$ for all electrons.</p>
+
+\[\hat{L} = \sum_i \hat{l}_i\]
+
+<p>This is the orbital angular momentum operator of the entire atom. The operators derived from $\hat{L}$, $\hat{L}^2$ and $\hat{L} _z$, commute with each other, as well as with $\hat{H}$. Note that as $\hat{L} _z$ is the z-component of $\hat{L}$ and $\hat{l} _{iz}$ is the z-component of $\hat{l} _{i}$</p>
+
+\[\hat{L}_z = \sum_i \hat{l}_{iz}\]
+
+<p>The total[^7] spin operator $\hat{S}$ is defined as the sum of all spin operators $\hat{s}_i$ for all electrons.</p>
+
+\[\hat{S} = \sum_i \hat{s}_i\]
+
+<p>This is the spin operator of the entire atom. The operator $\hat{S}^2$ and $\hat{S}_z$ commute with each other, as well as with $\hat{H}$. Also note that</p>
+
+\[\hat{S}_z = \sum_i \hat{s}_{iz}\]
+
+<p>As expected, any orbital angular momentum operator ($\hat{L}^2$ or $\hat{L}_z$) commutes with any spin operator ($\hat{S}^2$ or $\hat{S}_z$). Similar to hydrogen-like atoms, the operators $\hat{H}$, $\hat{L}^2$, $\hat{L}_z$, $\hat{S}^2$, and $\hat{S}_z$ all commute with each other as shown below.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/pentagram_2.png" alt="Commuting Operators" /></p>
+
+<p>This means that energy state $\psi \left(r_1, \theta_1, \phi_1, \sigma_1;\,r_2, \theta_2, \phi_2, \sigma_2;\, \cdots ;\,r_n, \theta_n, \phi_n, \sigma_n \right)$ can be described completely by the observables of $\hat{H}$, $\hat{L}^2$, $\hat{L}_z$, $\hat{S}^2$, and $\hat{S}_z$, as $\psi$ is an eigenfunction of all of the operators above.</p>
+
+\[\hat{H} \psi = E \psi\]
+
+\[\hat{L}^2 \psi = \left| \bold{L} \right|^2 \psi\]
+
+\[\hat{L}_z \psi = L_z \psi\]
+
+\[\hat{S}^2 \psi = \left| \bold{S} \right|^2 \psi\]
+
+\[\hat{S}_z \psi = S_z \psi\]
+
+<p>Among the quantum numbers associated to these operators and observables, the multi-electron atom equivalent of the principle quantum number $n$ requires special treatment and will be discussed at the very end. For all other quantum numbers, in SI units,</p>
+
+\[\hat{L}^2 \psi = \left| \bold{L} \right|^2 \psi =L\left(L+1\right)\hbar^2 \psi\]
+
+\[\hat{L}_z \psi = L_z \psi = M_L \hbar \, \psi\]
+
+\[\hat{S}^2 \psi = \left| \bold{S} \right|^2 \psi =S\left(S+1\right)\hbar^2 \psi\]
+
+\[\hat{S}_z \psi = S_z \psi = M_S \hbar \, \psi\]
+
+<p>We substitute the observable $\left| \bold{L} \right|^2$ with the total orbital angular momentum quantum number $L = 0, \,1, \,2,\, \cdots$ as</p>
+
+\[\left| \bold{L} \right|^2 =L\left(L+1\right)\hbar^2\]
+
+<p>We substitute the observable $L_z$ with $M_L = -L,\, -L+1,\, \cdots, \,+L-1, \,+L$<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup> as</p>
+
+\[L_z = M_L \hbar\]
+
+<p>We substitute the observable $\left| \bold{S} \right|^2$ with the total orbital angular momentum quantum number $S = 0, \,1/2,\, 1,\, 3/2,\, \cdots$ as</p>
+
+\[\left| \bold{S} \right|^2 =S\left(S+1\right)\hbar^2\]
+
+<p>Unlike $L$, $S$ can take on half-integer values, and unlike hydrogen-like atoms, $S$ can take on a variety of values as there are many electrons.</p>
+
+<p>We substitute the observable $S_z$ with $M_S = -S, \,-S+1, \,\cdots, \,+S-1, \,+S$<sup id="fnref:5:1" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup> as</p>
+
+\[S_z = M_S \hbar\]
+
+<p>Depending on the value of $S$, $M_S$ can take integer values (e.g. $M_S = -1,\, 0,\, +1$ for $S = 1$) or half-integer values (e.g. $M_S = -1/2, \,+1/2$ for $S = 1/2$).</p>
+
+<p>The observable $E$, energy, is problematic as although it is discrete, there is no formula to relate a quantum number to its corresponding observable. In fact, there is not much pattern at all! Instead of using quantum numbers like hydrogen-like atoms, we need a different scheme to describe energy in an easy way.</p>
+
+<p>Luckily, for many electron configurations (ex. $1s^22s^22p^3$), no two energy states has the same $L$, $M_L$, $S$, and $M_S$. Therefore, in many cases, we can substitute $E$ with the electron configuration.</p>
+
+<p><img src="/assets/img/atomic-term-symbols/observables_qnumbers_2.png" alt="Observables and Quantum Numbers" /></p>
+
+<p>To sum up, for all cases, $E$, $L$, $M_L$, $S$, and $M_S$ can be used to specify an energy state. For many frequently encountered cases:</p>
+
+<blockquote>
+  <p>An energy state of a multi-electron atom is characterized by its electron configuration and orbital and spin quantum quantum numbers. With the bra-ket notation:</p>
+
+\[\psi = \left |\, (e^- \text{ config)}\,L\,M_L\,S\,M_S\,\right \rangle\]
+</blockquote>
+
+<p>As an example, the ground state helium atom can be expressed as $\left |\, 1s^2\,0\,0\,0\,0\,\right \rangle$ with an electron configuration of $1s^2$, $L=0$, $M_L=0$, $S=0$, and $M_S=0$ (we haven’t explained how these values were calculated for now).</p>
+
+<p><img src="/assets/img/atomic-term-symbols/helium_3.png" alt="Helium" /></p>
+
+<h1 id="footnotes">Footnotes</h1>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>We are also ignoring nuclear mass and motion (rather considering them to be fixed in space) and nuclear spin. The wavefunction is technically an <strong>electronic</strong> wavefunction. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>The variable $\sigma_i$ is the spin variable of the $i^{\text{th}}$ electron. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p>$\bold{\hat{L}}$, $\hat{L}^2$, $\hat{L}_z$, $\bold{\hat{S}}$, $\hat{S}^2$, $\hat{S}_z$ in the textbook for both hydrogen-like atoms and multi-electron atoms. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:3:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a> <a href="#fnref:3:2" class="reversefootnote" role="doc-backlink">&#8617;<sup>3</sup></a></p>
+    </li>
+    <li id="fn:4" role="doc-endnote">
+      <p>Defining these two operators is also problematic. <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:5" role="doc-endnote">
+      <p>For some reason, $M_L$ and $M_S$ do not have proper names and are just called $M_L$ and $M_S$. <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:5:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name></name></author><category term="physical-chemistry" /><summary type="html"><![CDATA[Introduction]]></summary></entry><entry xml:lang="en"><title type="html">The pKa of Water … and more</title><link href="https://sypark-chem.me/general-chemistry/the-pka-of-water/" rel="alternate" type="text/html" title="The pKa of Water … and more" /><published>2022-02-17T00:00:00+00:00</published><updated>2022-02-17T00:00:00+00:00</updated><id>https://sypark-chem.me/general-chemistry/the-pka-of-water</id><content type="html" xml:base="https://sypark-chem.me/general-chemistry/the-pka-of-water/"><![CDATA[<h1 id="disclaimer">Disclaimer</h1>
+
+<p>This article argues that the $\text{p}K_{\text{a}}$ of water is $14.0$, not $15.7$ as stated by most organic chemistry textbooks. Unless you can convince your organic chemistry teacher/professor, stick to $15.7$.</p>
+
+<p>This article is based off of three sources.</p>
+
+<p>On the $\text{p}K_{\text{a}}$ of water:</p>
+
+<ul>
+  <li><a href="https://chem.libretexts.org/Bookshelves/Organic_Chemistry/Supplemental_Modules_(Organic_Chemistry)/Fundamentals/What_is_the_pKa_of_water">What is the pKa of water?</a> on LibreTexts</li>
+  <li><a href="https://doi.org/10.1021/acs.jchemed.6b00623">pKa Values in the Undergraduate Curriculum: What Is the Real pKa of Water?</a> by Silverstein and Heller, published in the <em>Journal of Chemical Education</em></li>
+</ul>
+
+<p>And on $\text{p}K_{\text{a}}$ in general:</p>
+
+<ul>
+  <li><a href="https://doi.org/10.1007/s40828-020-00112-z">pKa Values in the Undergraduate Curriculum: Introducing pKa Values Measured in DMSO to Illustrate Solvent Effects</a> by Silverstein and Heller</li>
+</ul>
+
+<h1 id="140-or-157">14.0 or 15.7</h1>
+
+<p>The $\text{p}K_{\text{a}}$ of water, according to any general chemistry textbook, is $14.0$ <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>. However, in most organic chemistry textbooks and resources, the $\text{p}K_{\text{a}}$ of water is $15.7$.</p>
+
+<p>Here is one example in the textbook <em>Organic Chemistry</em> by David Klein.</p>
+
+<p><img src="/assets/img/the-pka-of-water/pKa_values.png" alt="pKa values" /></p>
+
+<p>Here is another from the widely used $\text{p}K_{\text{a}}$ table by Ripin and Evans.</p>
+
+<p><img src="/assets/img/the-pka-of-water/evans.png" alt="Evans" /></p>
+
+<p>The rationale for this value is as follows<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>. Below is the equation for the acid dissociation constant $K_\text{a}$, in terms of activities of each chemical species<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>.</p>
+
+\[K_\text{a} = \frac{a_{\text{H}^{+}} a_{\text{OH}^{-}}}{a_{\text{H}_2\text{O}}}\]
+
+<p>For dilute solutions, activity is well approximated by molarity<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup>. Thus, $a_{\text{H}^{+}} = \left [ \text{H}^{+} \right ]$ and $a_{\text{OH}^{-}} = \left [ \text{OH}^{-} \right ]$. In addition, we know for pure water that $\left [ \text{H}^{+} \right ] = 1.0 \times 10^{-7} \, \text{M}$ and $\left [ \text{OH}^{-} \right ] = 1.0 \times 10^{-7} \, \text{M}$.</p>
+
+<p>The only value left to determine is $a_{\text{H}_2\text{O}}$. Instead of treating water as a solvent and taking this value as unity (as $1$), we treat water as a solute and use the molarity of pure water for the activity of water.</p>
+
+<p>Let us now calculate the molarity of pure water. The molar mass of water is $18.015 \, \text{g/mol}$, and its density at $25 ^{\circ} \text{C}$ is $997 \, \text{g/L}$. Therefore, the molar concentration of water $ \left [ \text{H}_{2}\text{O} \right ]$ is $55.3 \, \text{M}$. We plug this value in to obtain $\text{p} K _{\text{a}} = 15.7 $.</p>
+
+<p>The calculation above is <strong>wrong</strong> for three reasons.</p>
+
+<ol>
+  <li>The activity of water should be taken as unity and only unity: pure substances in their reference state have their activities as set to $1$.</li>
+  <li>The term ‘concentration’ for the molar concentration of water implies that water can be viewed as both a solvent and a solute, which is not possible.</li>
+  <li>Even if this was possible, $ \left [ \text{H}_{2}\text{O} \right ] = 55.3 \text{M}$ is too large to be considered as dilute. Thus, one cannot approximate the activity of water with its molar concentration.</li>
+</ol>
+
+<p>This may seem like a silly mistake; one may ask why such error is very widespread. This is well laid out in the aforementioned <a href="https://chem.libretexts.org/Bookshelves/Organic_Chemistry/Supplemental_Modules_(Organic_Chemistry)/Fundamentals/What_is_the_pKa_of_water">“What is the pKa of water?”</a> article. In essence, this mistake was first made by prominent chemists like Brønsted who were just as confused as you. After a while, some other physical organic chemists also made the same mistake while trying to indirectly obtain the $\text{p}K_{\text{a}}$ of water. Then it made its way to countless publications, textbooks, and $\text{p}K_{\text{a}}$ tables without being scrutinized, and now thousands and millions of chemistry students are left to suffer from the resulting confusion.</p>
+
+<p>The <strong>correct</strong> way of obtaining the $\text{p}K_{\text{a}}$ of water continues from $\left [ \text{H}^{+} \right ] = 1.0 \times 10^{-7} \text{M}$ and $\left [ \text{OH}^{-} \right ] = 1.0 \times 10^{-7} \text{M}$.</p>
+
+\[K_\text{a} = \frac{1.0 \times 10^{-14}}{a_{\text{H}_{2}\text{O}}} = 1.0 \times 10^{-14}\]
+
+<p>The activity of water is taken as unity (as $1$), and even though this ‘$1$’ is mathematically insignificant, it is very important in chemistry. It signifies that water is in its <em>reference state</em> as a pure liquid. Thus, the resulting $\text{p}K_{\text{a}} = 14.0$ <strong><em>automatically implies</em> that water is the solvent and not a solute</strong>. This emphasis on the solvent will prove to be very important for the rest of the article.</p>
+
+<h1 id="water-as-both-solvent-and-acid">Water as Both Solvent and Acid</h1>
+
+<p>Although we have established that the $\text{p}K_{\text{a}}$ of water is indeed $14.0$, we must take care when using this result. Below is an easy example.</p>
+
+<p><img src="/assets/img/the-pka-of-water/acid_base_example.png" alt="Acid base example" /></p>
+
+<p>Because acetylene has a smaller $\text{p}K_{\text{a}}$ than ammonia, it is the stronger acid.</p>
+
+<p>More specifically, acetylene is a stronger acid in ammonia <em>in water</em>, as the $\text{p}K_{\text{a}}$ values assume the solvent to be water.</p>
+
+<p>Here’s another example.</p>
+
+<p><img src="/assets/img/the-pka-of-water/water.png" alt="Water" /></p>
+
+<p>In this case, acetylacetone (the 1,3-diketone on the far left) is a stronger acid than water as <strong>both solvent and acid</strong>. If we wanted to compare the acid strength of acetylacetone and water both as an <strong>acid/solute</strong>, we must use a solvent other than water.</p>
+
+<p><img src="/assets/img/the-pka-of-water/dimethyl_sulfoxide.png" alt="Dimethyl sulfoxide" /></p>
+
+<p>When dissolved in dimethyl sulfoxide (DMSO), acetylacetone and water now have a new $\text{p}K_{\text{a}}$. In practice, this still is referred to as $\text{p}K_{\text{a}}$. However, to reduce confusion, we will denote this new $\text{p}K_{\text{a}}$ as $\text{p}K_{\text{a}}^{\ast}$.</p>
+
+<p><img src="/assets/img/the-pka-of-water/DMSO.png" alt="DMSO" /></p>
+
+<p>From the $ \text{p} K_{\text{a}}^{\ast} $ of acetylacetone and water, we can conclude that acetylacetone is a stronger acid than water <em>as acid/solute</em> (in DMSO).</p>
+
+<h1 id="one-caveat">One Caveat</h1>
+
+<p>One caveat of the method above, using different solvents, is the fact for some rare cases, the strength of some acids may differ from solvent to solvent.</p>
+
+<p><img src="/assets/img/the-pka-of-water/different_solvents.png" alt="Different solvents" /></p>
+
+<p>For example, in water, acetic acid is a stronger acid than the ammonium ion (top equilibrium). However, in DMSO, the acid strength is reversed and the ammonium ion is a stronger acid than acetic acid (bottom equilibrium).</p>
+
+<h1 id="pka--acid-strength">pKa ≠ Acid Strength?</h1>
+
+<p>When learning organic chemistry, there is this notion that the strength of an acid is <em>inherent</em>. The $\text{p}K_{\text{a}}$ is thought of as a measure of such inherent property. The fact is, as we have seen above, the strength of an acid is not inherent and rather <em>depends</em> on a variety of factors, namely the solvent. It is a mistake to use the $\text{p}K_{\text{a}}$ (based on water) for a solvent vastly different from water, such as DMSO.</p>
+
+<p>That being said, the $\text{p}K_{\text{a}}$ is <em>not too terrible</em> for judging the strength of an acid in any solvent, water or not. Below is a graph of $\text{p}K_{\text{a}}$ and $\text{p}K_{\text{a}}^{\ast}$. In general, as $\text{p}K_{\text{a}}$ increases, $\text{p}K_{\text{a}}^{\ast}$ increases linearly. In essence, strong acids are strong acids and weak acids are weak acids, irrespective of the solvent.</p>
+
+<p><img src="/assets/img/the-pka-of-water/DMSO_water.png" alt="DMSO water" /></p>
+
+<p>Simply put:</p>
+
+<p>For acid-base equilibria in polar protic solvents (like methanol and acetic acid), the $\text{p}K_{\text{a}}$ is a very good predictor of acid strength, as how various chemical species are dissolved is similar to water.</p>
+
+<p>For acid-base equilibria in polar aprotic solvents (like acetone or THF), the $\text{p}K_{\text{a}}$ is an acceptable predictor of acid strength. $\text{p}K_{\text{a}}^{\ast}$ (with DMSO as solvent), on the other hand, is a much better predictor of acid strength. When possible, use $\text{p}K_{\text{a}}^{\ast}$ not $\text{p}K_{\text{a}}$ for polar aprotic solvents.</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<ol>
+  <li>The $\text{p}K_{\text{a}}$ of water (with water as its solvent) is without doubt $14.0$, not $15.7$</li>
+  <li>The acid strength of ‘water <em>as both solvent and acid</em>’ differs from the acid strength of ‘water <em>only as acid</em>’.</li>
+  <li>Acid strength is not an inherent property: the solvent in which acid-base equilibria occurs appreciably affects the strength of an acid.</li>
+</ol>
+
+<h1 id="addendum">Addendum</h1>
+
+<p>There is an entire book devoted to acid-base equilibria in various solvents. Check this out for more in-depth information.</p>
+
+<ul>
+  <li>Acids and Bases: Solvent Effects on Acid-Base Strength by Brian G. Cox</li>
+</ul>
+
+<h1 id="footnotes">Footnotes</h1>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>$25 ^{\circ} \text{C}$, $ 1 \, \text{atm}$ or $1 \, \text{bar}$, depending on the source. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>Actually, this is just one of many ways of obtaining $\text{p}K_{\text{a}} = 15.7$. For a more complete explanation, including the most complete derivation of $\text{p}K_{\text{a}} = 14.0$ using the Gibbs free energy, see <a href="https://chem.libretexts.org/Bookshelves/Organic_Chemistry/Supplemental_Modules_(Organic_Chemistry)/Fundamentals/What_is_the_pKa_of_water">“What is the pKa of water?”</a>. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p>Activity is the “effective concentration” of chemical species. To learn more, check out <a href="https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules_(Physical_and_Theoretical_Chemistry)/Physical_Properties_of_Matter/Solutions_and_Mixtures/Nonideal_Solutions/Activity">this article</a>. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:4" role="doc-endnote">
+      <p>The proper way to relate activity and molar concentration is by using the equation $a = \gamma \frac{c}{c^{\circ}}$, where $\gamma$ is the activity coefficient (dependent on solvent, solute, concentration, etc.) which approaches unity (the value $1$) as the concentration approaches $0 \, \text{M}$ (infinite dilution). $c$ is the molarity and $c^{\circ}$ is the standard concentration, usually set as $1 \, \text{M}$. Note how the activity $a$ is a dimensionless quantity - this is the conclusive reason why all equilibrium constants are dimensionless. <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name></name></author><category term="general-chemistry" /><summary type="html"><![CDATA[Disclaimer]]></summary></entry><entry xml:lang="en"><title type="html">A Different Approach for Molecular Orbitals of the Hydrogen Molecular Ion</title><link href="https://sypark-chem.me/physical-chemistry/hydrogen-molecular-ion/" rel="alternate" type="text/html" title="A Different Approach for Molecular Orbitals of the Hydrogen Molecular Ion" /><published>2022-02-06T00:00:00+00:00</published><updated>2022-02-06T00:00:00+00:00</updated><id>https://sypark-chem.me/physical-chemistry/hydrogen-molecular-ion</id><content type="html" xml:base="https://sypark-chem.me/physical-chemistry/hydrogen-molecular-ion/"><![CDATA[<h1 id="introduction">Introduction</h1>
+
+<p>In the widely used textbook <em>Principles of Modern Chemistry</em> by David W. Oxtoby, the hydrogen molecular ion $\text{H}_2^+$ (HMI) is used as a bridge between atomic orbitals (AOs) and molecular orbitals (MOs). The textbook states that the wavefunction of the HMI can be solved exactly as it is a one-electron system<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>. It, however, does not actually solve the HMI and instead uses its results from someplace else. It then goes on about approximating MOs with the Linear Combination of Atomic Orbital method (LCAO), which is the main takeaway of the chapter.</p>
+
+<p>I have always wondered how the HMI is exactly solved until recently. Now, with a new understanding of quantum mechanics and differential equations, I set out to tackle this long-anticipated question. Thankfully, with some papers and resources on obtaining a very accurate solution for the HMI, I was able to approximately calculate the wavefunctions for the HMI with the Jupyter Notebooks in my <a href="https://github.com/KeroseneNotForConsumption/hydrogen-molecular-ion">GitHub repo, hydrogen-molecular-ion</a>.</p>
+
+<p>I intend to share some of my findings during this journey, without the complicated mathematics and physics involved. Although this may be entirely useless from a chemistry education standpoint, it nevertheless will be interesting to those who have had the same questions as me.</p>
+
+<h1 id="housekeeping">Housekeeping</h1>
+
+<p>As the HMI is at the atomic scale, it is a good idea to use atomic units - units for length and energy for our purposes. They are the Bohr radius $a_0$, which is equal to $5.29 \times 10^{-11} \text{ m}$, and the Hartree $E_h$, which equal to $27.2 \text { eV}$. The Hartree is useful as it is also equal to twice the absolute value of the energy of a ground state hydrogen.</p>
+
+<p>Now is a good time to remind ourselves of the spherical coordinate system, which is essential when solving the Schrödinger equation for hydrogen. The spherical coordinates $r$, $\theta$, and $\phi$ are defined as follows, with their bounds being $0 \leq r\, ,\; 0 \leq \theta \leq \pi\, ,\; 0 \leq \phi &lt; 2\pi$.</p>
+
+<p><img src="/assets/img/hydrogen-molecular-ion/spherical_coords.png" alt="Spherical Coordinates" /></p>
+
+<p>Why is the spherical coordinate system used for hydrogen? That is because the hydrogen system is spherically symmetric. More specifically, the Hamiltonian for the Schrödinger equation for hydrogen is (in atomic units)</p>
+
+\[\hat{H}=-\frac{1}{2}\nabla^{2}-\frac{1}{r}\]
+
+<p>which is dependent and only dependent on $r$: thus, the spherical symmetry.</p>
+
+<p>We are now ready for the HMI.</p>
+
+<h1 id="a-different-way-of-thinking-about-hmi">A Different Way of Thinking About HMI</h1>
+
+<p>The HMI is not too different from the case of hydrogen; instead of having one proton and one electron, we now have two protons and one electron. The distance between the two protons - called equilibrium internuclear distance - is found to be approximately $2.0 \; a_0$.</p>
+
+<p>Now consider the following.</p>
+
+<blockquote>
+  <p>Imagine a stable Helium-2 $ \; { }^{2}\text{He}^{+}$ ion with a single electron. Initially, the wavefunction of the electron is one of the typical hydrogen-like atomic orbitals.</p>
+
+  <p>As you forcefully tear the two protons of the nucleus apart, the electron wavefunction slowly distorts to reflect the changing system. When the two protons are separated by a distance of  $ \; 2.0 \; a_0$, the electron wave function is that of the familiar HMI treated in physical/quantum chemistry textbooks.</p>
+
+  <p>At last, as the two protons continue to be separated, this system now closely resembles that of the infinitely separated proton and a neutral hydrogen atom (again, think of hydrogen atomic orbitals).</p>
+</blockquote>
+
+<p>Let us dive deeper in this line of thought. At first, the HMI resembles that of $^{2}\text{He}^{+}$, which, again, is the typical hydrogen-like atom. Solved practically the same way as that of hydrogen, but with nuclear charge $Z = 2$. This is called the <strong>united-atom limit</strong>.</p>
+
+<p>On the other extreme end, the HMI has two protons, which are infinitely separated, and an electron, technically bound to either proton. As the two protons are identical, the wavefunction of this HMI is the sum of one hydrogen atomic orbital at one proton and another hydrogen atomic orbital at the other proton. This limit, called the <strong>separated-atoms limit</strong>, is the limit where the LCAO-MO approaches the exact MO.</p>
+
+<p>What we must recognize is that this is continuous - the wavefunction of the united-atom limit gradually morphs into the wavefunction of the separated-atoms limit. Below is a table of such correlations.</p>
+
+<h1 id="changes-in-the-coordinate-system">Changes in the Coordinate System</h1>
+
+<p>Before we deal with the MOs, let us first think about the coordinate system. As the internuclear distance starts from zero and then increase, the system is no longer spherically symmetric. Thus, we must resort to a newer coordinate system that better reflects the altered symmetry.</p>
+
+<p>The natural symmetry that arises is the prolate spheroidal (an ellipse spun around the major axis) symmetry, with the foci of the prolate spheroid on the two nuclei. To exploit this new symmetry, we use the prolate spheroidal coordinate system, which we will shorten it to ‘spheroidal coordinates’.</p>
+
+<p>For spheroidal coordinates, we let $D$ be the internuclear distance, and we set the origin to be its midpoint. The internuclear bonding axis is set as the z-axis, and the x and y-axes are set accordingly.</p>
+
+<p>The distance between nuclei A (located at $(0, 0, -\frac{D}{2})$) is denoted as $r_A$, and the distance between nuclei B (located at $(0, 0, +\frac{D}{2})$) is denoted as $r_B$.</p>
+
+<p><img src="/assets/img/hydrogen-molecular-ion/elliptic_coords.png" alt="Prolate Spherical Coordinates" /></p>
+
+<p>We introduce three coordinates, $\xi$, $\eta$, and $\phi$ (same as the $\phi$ of the hydrogen atom).</p>
+
+\[\xi = \frac{r_A+r_B}{D} \qquad \qquad \qquad \qquad \qquad \qquad \quad 1 \leq \xi\]
+
+\[\eta = \frac{r_A-r_B}{D} \qquad \qquad \qquad \qquad \quad \; -1 \leq \eta \leq +1\]
+
+\[\phi = \tan^{-1}\left ( \frac{y}{x} \right ) \text{, usually defined to be } 0 \leq \phi &lt; 2\pi\]
+
+<p>The surface formed by fixing various coordinates can be deduced from the definition of certain conic sections. Fixing $\xi$ and varying the other coordinates yields a prolate spheroid (an ellipse spun around the major axis). Fixing $\eta$ and varying the other coordinates forms one half of a two-sheet hyperboloid (half of a hyperbola spun around the major axis).</p>
+
+<p><img src="/assets/img/hydrogen-molecular-ion/Prolate_spheroidal_coordinates_surf.png" alt="Prolate Spherical Coordinates" /></p>
+
+<p>We will not do any advanced mathematics with spheroidal coordinates. The reason spheroidal coordinates were introduced is to demonstrate how the coordinate system morphs from the united-atom limit to the separated-atoms limit.</p>
+
+<p>As $D \to 0$, $\frac{1}{2}D \xi = \frac{1}{2} \left ( r_A + r_B \right )$ approaches $r$ of spherical coordinates. Therefore, the prolate spheroid formed by fixing $\xi$ is now a sphere, formed by fixing $r$. Similarly, as $D \to 0$, the hyperboloid formed by fixing $\eta$ is now a cone, formed by fixing $\eta$.</p>
+
+<p><img src="/assets/img/hydrogen-molecular-ion/spherical_coordinate_surf.png" alt="Spherical coordinates surfaces" /></p>
+
+<p>For spherical coordinates, we have spherical harmonics. For prolate spheroidal coordinates, we have the prolate spheroidal harmonics. Whereas the wavefunction of the united-atom limit are based on spherical harmonics, the wavefunction of $D &gt; 0$ are based on prolate spheroidal harmonics. As $D \to 0$, prolate spheroidal harmonics converge to spherical harmonics.</p>
+
+<p>Unlike spherical harmonics, prolate spheroidal harmonics are difficult to solve. This is why the actual process of obtaining MOs for the HMI is not covered in the aforementioned textbook.</p>
+
+<h1 id="the-molecular-orbitals-themselves">The Molecular Orbitals Themselves</h1>
+
+<p>Coming back to the MOs themselves, below is a graphical representation of how MOs morph from the united-atom limit to the separated-atoms limit<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup> (Note: orbitals not to scale).</p>
+
+<p><img src="/assets/img/hydrogen-molecular-ion/orbital-at-limits.png" alt="Various limits" /></p>
+
+<p>There are two things to note. First, notice how similar the MOs of the united-atom limit is to the actual MOs (with $D = 2.0$). Second, the MOs of the separated-atom limit is the exact same as the combination of AOs used for obtaining LCAO-MOs.</p>
+
+<h1 id="now-thinking-with-graphs">Now Thinking with Graphs</h1>
+
+<p>When the internuclear distance changes and the wavefunction of the HMI morphs accordingly, their energies also change. Let us investigate the electronic energy - total energy except repulsion between the two nuclei.</p>
+
+<p><img src="/assets/img/hydrogen-molecular-ion/electronic_energy_graph.png" alt="Electronic energy" /></p>
+
+<p>The graph kind of is a mess, but there are three points to be made:</p>
+
+<p>A. At the united-atom limit $(D=0)$, the electronic energy converges to that of hydrogen-like AOs with $Z=2$: $E_{el} = -Z^2 / \left ( 2 n^2 \right ) = -2/n^2$.</p>
+
+<p>B. At the separated-atoms limit, the electronic energy converges to the average of those of the hydrogen-like AOs. The two lowest states converge to</p>
+
+\[E_{el} = \frac{ -\frac{1}{2} + -\frac{1}{2}}{2}  = -\frac{1}{2}\]
+
+<p>and the remaining states converge to</p>
+
+\[E_{el} = \frac{ -\frac{1}{8} + -\frac{1}{8}}{2}  = -\frac{1}{8}\]
+
+<p>In hindsight, these two points could have been predicted from our initial observations about the MOs.</p>
+
+<p>C. The order of the MOs is quite unpredictable. This is also the case for multielectron homonuclear diatomic MOs.</p>
+
+<p><img src="/assets/img/hydrogen-molecular-ion/mo_correlation.png" alt="MO correlation" /></p>
+
+<p>Here is the total energy graph for good measure.</p>
+
+<p><img src="/assets/img/hydrogen-molecular-ion/total_energy_graph.png" alt="Total energy" /></p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>The MOs for the HMI can be thought of as extensions of the AOs of hydrogen-like atoms.</p>
+
+<h1 id="footnotes">Footnotes</h1>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>This assumes that the Born-Oppenheimer approximation. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>The order in which the orbitals are presented are determined by energy, in descending order. This is different from the typical LCAO-MO example with second-order homonuclear diatomic molecules. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name></name></author><category term="physical-chemistry" /><summary type="html"><![CDATA[Introduction]]></summary></entry><entry xml:lang="en"><title type="html">A (More or Less) Complete Explanation on s-p Mixing</title><link href="https://sypark-chem.me/general-chemistry/s-p-mixing/" rel="alternate" type="text/html" title="A (More or Less) Complete Explanation on s-p Mixing" /><published>2022-02-05T00:00:00+00:00</published><updated>2022-02-05T00:00:00+00:00</updated><id>https://sypark-chem.me/general-chemistry/s-p-mixing</id><content type="html" xml:base="https://sypark-chem.me/general-chemistry/s-p-mixing/"><![CDATA[<h1 id="a-quick-review-on-lcao">A Quick Review on LCAO</h1>
+
+<p>The molecular orbitals (MOs) of homonuclear diatomic molecules can be constructed with the Linear Combination of Atomic Orbital method (LCAO). Let’s take $\text{O}_2$ as an example.</p>
+
+<p>First, the $1s$ orbitals of each fluorine atom contribute very little to bonding as they hardly overlap.</p>
+
+<p><img src="/assets/img/s-p-mixing/1s-orbitals.png" alt="1s orbitals" /></p>
+
+<p>Thus, we will ignore the $1s$ orbitals and only consider the $2s$ and $2p$ orbitals.</p>
+
+<p>For the $2s$ orbitals, the $2s$ orbitals can form either a bonding MO $(\sigma _{g2s})$ or an antibonding MO $(\sigma _{u2s}^\ast)$.</p>
+
+<p><img src="/assets/img/s-p-mixing/2s-orbitals.png" alt="2s orbitals" /></p>
+
+<p>The resulting correlation diagram is as follows.</p>
+
+<p><img src="/assets/img/s-p-mixing/correlation-2s.png" alt="2s correlation" /></p>
+
+<p>$2p_{x}$ orbitals overlap side-by-side to form either the bonding MO $\pi_{u2p_{x}}$ or the antibonding MO $\pi_{g2p_{x}} ^{\ast}$. The same is true for $2p_{y}$ orbitals, resulting in the formation of bonding MO $\pi_{u2p_{y}}$ and antibonding MO $\pi_{g2p_{y}} ^{\ast}$.</p>
+
+<p><img src="/assets/img/s-p-mixing/2pxy.png" alt="2pxy orbitals" /></p>
+
+<p>The resulting correlation diagram is as follows.</p>
+
+<p><img src="/assets/img/s-p-mixing/correlation-2pxy.png" alt="2pxy correlation" /></p>
+
+<p>Lastly, the $2p_z$ orbitals overlap end-on to form either a bonding MO $(\sigma _{g2p_z})$ or an antibonding MO $(\sigma _{u2p_z}^{\ast})$.</p>
+
+<p><img src="/assets/img/s-p-mixing/2pz.png" alt="2pz orbitals" /></p>
+
+<p>Because the overlap between AOs is large, the energy split between the two MOs is larger than before.</p>
+
+<p><img src="/assets/img/s-p-mixing/correlation-2pz.png" alt="2pz correlation" /></p>
+
+<p>After filling in the MOs with electrons according to the Aufbau principle, the correlation diagram is complete. Note the unpaired electrons which cause $\text{O}_2$ to be paramagnetic.</p>
+
+<p><img src="/assets/img/s-p-mixing/correlation-o2.png" alt="O2 correlation" /></p>
+
+<p>The correlation diagram of $\text{F}_2$ is similar. However, for other second-period elements $(\text{Li}$ to $\text{N})$, the order among $\pi _{u2p_x} / \pi _{u2p_y}$ and $\sigma _{g2p_z}$ is <strong>reversed</strong>: the energy of $\pi _{u2p_x} / \pi _{u2p_y}$ is nearly constant, but the energy of $\sigma _{g2p_z}$ is raised considerably.</p>
+
+<p><img src="/assets/img/s-p-mixing/all-correlation.png" alt="All correlation" /></p>
+
+<p>Most introductory textbooks on chemistry attribute this to <em>s-p mixing</em>: the mixing of $2s$ and $2p_z$, due to their small difference in energy. Although this explanation is correct, it is certainly inadequate. It is the purpose of this article is to explain this anomaly in a way that is complete, and most of all, satisfying.</p>
+
+<h1 id="the-criteria-for-orbital-mixing---revisited">The Criteria for Orbital Mixing - Revisited</h1>
+
+<p>Before we begin, let us clear up some convention used in this article. The two nuclei are called A and B, with their coordinate systems arranged as shown below.</p>
+
+<p><img src="/assets/img/s-p-mixing/convention.png" alt="Convention" /></p>
+
+<p>Note how the local coordinate system for nucleus B is left-handed, instead of the usual right-handed system like that of nucleus A. This is done so that the addition of AOs in constructive interference, while the subtraction of one AO from the other results in destructive interference.</p>
+
+<p>In simpler terms, <em>addition results in bonding MOs and subtraction results in antibonding MOs</em>.</p>
+
+<p>We must first return to the principles of LCAO. Technically speaking, when constructing any molecular orbital, we can use as much atomic orbitals as we want.</p>
+
+\[\Psi = c_{1}\psi _{1s \vert \text{A}} + c_{2}\psi _{1s \vert \text{B}} + c_{3}\psi _{2s \vert \text{A}} + c_{4}\psi _{2s \vert \text{B}} + c_{5}\psi _{2p_{\text{z}} \vert \text{A}} + c_{6}\psi _{2p_{\text{z}} \vert \text{B}} + \cdots\]
+
+<p>In a slightly more legible notation:</p>
+
+\[\Psi = c_{1}1s^{\text{A}} + c_{2}1s^{\text{B}} + c_{3}2s^{\text{A}} + c_{4}2s^{\text{B}} + c_{5}2p_{z}^{\text{A}} + c_{6}2p_{z}^{\text{B}} + \cdots\]
+
+<p>In fact, as we use more atomic orbitals, we get better and better results. However, using too many atomic orbitals is problematic for these two reasons.</p>
+
+<ol>
+  <li>It becomes harder to solve, let alone understand.</li>
+  <li>It is overkill for obtaining approximate/qualitative solutions.</li>
+</ol>
+
+<p>Therefore, we try to work with the <strong>smallest</strong> number of AOs at a time - just enough to construct the roughly correct MOs and their energies<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>. Two criteria - derived from advanced quantum calculations - are helpful in this regard.</p>
+
+<h3 id="a-significant-overlap">A. Significant Overlap</h3>
+
+<p>The first criterion is that in order for AOs to mix<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>, they must have overlap significantly. For example, consider $2s^A$ and $2p_x^B$ orbitals.</p>
+
+<p><img src="/assets/img/s-p-mixing/insignificant-overlap.png" alt="Insignificant overlap" /></p>
+
+<p>$2s^A$ and $2p_x^B$ do not mix well because (A) there is little overlap, and (B) there is roughly the same amount of constructive and destructive interference, which leads to neither bonding nor antibonding. From this, we can safely ignore the mixing of those two orbitals.</p>
+
+<p>To elaborate on this point, only the <strong>AOs with the right axial symmetry</strong> is considered when mixing.</p>
+
+<p>First, we deal with AOs (not MOs) of $\sigma$ symmetry - invariant under any rotation about the internuclear axis. They consist of $1s$, $2s$, and $2p_z$, and these AOs linearly combine to form $\sigma$ MOs. Below is an example with $2s^A$ and $2p_z^B$.</p>
+
+<p><img src="/assets/img/s-p-mixing/significant-overlap.png" alt="Significant overlap" /></p>
+
+<p>Second, we turn our attention to AOs of $\pi$ symmetry - which reverse phase under $180^{\circ}$ rotation. Consisting of $2p_x$ and $2p_y$, $2p_x^A$ mixes with $2p_x^B$ and $2p_y^A$ mixes with $2p_y^B$ to form the $\pi$ MOs.</p>
+
+<h3 id="b-similar-energy-level">B. Similar Energy Level</h3>
+
+<p>The second criterion requires AOs of similar energy for mixing. In general, AOs with energy difference <em>greater than</em> $10 \sim 14 \text{ eV}$ <em>do not mix</em>. Below is a graph of energy of $2s$ and $2p$ orbitals.</p>
+
+<p><img src="/assets/img/s-p-mixing/orbital-energies.png" alt="Orbital Energies" /></p>
+
+<p>Going back to the AOs of $\sigma$ symmetry ($1s$, $2s$, and $2p_z$), it is clear that the energy difference between $1s$ and $2s$ / $2p_z$ is very large - much larger than the $10 \sim 14 \text{ eV}$ threshold. We can now safely ignore the $1s$ orbitals when constructing MOs.</p>
+
+<p>However, the energy difference between $2s$ and $2p_z$ is unclear and requires our attention. Below is the calculation of the energy difference between the two AOs for some second-period elements.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Element</th>
+      <th style="text-align: center">Energy of $2s$ ($\text{eV}$)</th>
+      <th style="text-align: center">Energy of $2p$ ($\text{eV}$)</th>
+      <th style="text-align: center">Difference in Energy ($\text{eV}$)</th>
+      <th style="text-align: center">Mixing between $2s$ and $2p_z$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">$\text{C}$</td>
+      <td style="text-align: center">-19.43</td>
+      <td style="text-align: center">-10.66</td>
+      <td style="text-align: center">8.77</td>
+      <td style="text-align: center">Yes</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\text{N}$</td>
+      <td style="text-align: center">-25.56</td>
+      <td style="text-align: center">-13.18</td>
+      <td style="text-align: center">12.38</td>
+      <td style="text-align: center">Yes</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\text{O}$</td>
+      <td style="text-align: center">-32.38</td>
+      <td style="text-align: center">-15.85</td>
+      <td style="text-align: center">16.53</td>
+      <td style="text-align: center">No</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\text{F}$</td>
+      <td style="text-align: center">-40.17</td>
+      <td style="text-align: center">-18.65</td>
+      <td style="text-align: center">21.52</td>
+      <td style="text-align: center">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>It seems that mixing between $2s$ and $2p_z$ occurs for elements $\text{N}$<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup> and earlier. This is the <strong>s-p mixing</strong> that was previously mentioned.</p>
+
+<p>Thus, for $ \text{Li}_ 2 \sim \text{N}_ 2 $, to construct the two bonding $\sigma_g$ MOs (substitutes for the original $\sigma_{g2s}$ and $\sigma_{u2p_{z}}$), we use the following LCAO instead.</p>
+
+\[\Psi = c_{1}2s^{\text{A}} + c_{1}2s^{\text{B}} + c_{2}2p_{z}^{\text{A}} + c_{2}2p_{z}^{\text{B}}\]
+
+<p>For the two antibonding $\sigma_u^{\ast}$ MOs (substitutes for the original $\sigma_{g2s}$ and $\sigma_{u2p_{z}}$), we use the following LCAO instead.</p>
+
+\[\Psi = c_{3}2s^{\text{A}} - c_{3}2s^{\text{B}} + c_{4}2p_{z}^{\text{A}} - c_{4}2p_{z}^{\text{B}}\]
+
+<p>In total, four MOs were constructed from four AOs. <strong>This is the most important takeaway of this article: more than one pair of AOs can be used to construct more than one pair of MOs.</strong></p>
+
+<p>Anyway, note that the coefficients $c_1 \sim c_4$ are all positive. The coefficients are shared between the same kind of orbitals as we are dealing with the homonuclear case. In other words, we see equal contribution from the same kind of orbitals from each atom.</p>
+
+<p>The coefficients $c_1 \sim c_4$ can be calculated through some quantum calculation, and indeed the energy of $\sigma_{g2p_z}$ will be higher than that of $\pi_{u2p_x}$ and $\pi_{u2p_y}$. Case closed.
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+This conclusion should definitely irk you. Couldn’t there be a better, more tangible explanation?</p>
+
+<h1 id="mixing-molecular-orbitals-instead-of-atomic-orbitals">Mixing Molecular Orbitals Instead of Atomic Orbitals</h1>
+
+<p>We’ve seen how atomic orbitals mix. Now is the time to <strong>mix molecular orbitals</strong>. Instead of mixing $2s$ and $2p_z$ orbitals, what if we mixed the ‘four original LCAO-MOs’ to obtain ‘four newer and better MOs’? (they will be designated as ‘improved’ to avoid confusion)</p>
+
+<p>The four original LCAO-MOs are as follows ($a_{1} \sim a_{4}$ are normalization constants).</p>
+
+\[\sigma_{g2s} = a_{1} \left ( 2s^{\text{A}} + 2s^{\text{B}} \right ) \qquad \sigma_{u2s}^{\ast} = a_{2} \left ( 2s^{\text{A}} - 2s^{\text{B}} \right )\]
+
+\[\sigma_{g2p_z} = a_{3} \left ( 2p_{z}^{\text{A}} + 2p_{z}^{\text{B}} \right ) \qquad \sigma_{u2p_{z}}^{\ast} = a_{4} \left ( 2p_{z}^{\text{A}} - 2p_{z}^{\text{B}} \right )\]
+
+<p>By mixing the two  $\sigma_g$ MOs, we obtain two new $\sigma_{g \, \vert \, \text{improved}}$ MOs: $\sigma_{g2s \, \vert \, \text{improved}}$ and $\sigma_{g2p_{z} \vert \, \text{improved}}$</p>
+
+\[\Psi = c_{1}2s^{\text{A}} + c_{1}2s^{\text{B}} + c_{2}2p_{z}^{\text{A}} + c_{2}2p_{z}^{\text{B}} = c_{1} \left ( 2s^{\text{A}} + 2s^{\text{B}} \right) + c_{2} \left (2p_{z}^{\text{A}} + 2p_{z}^{\text{B}} \right )\]
+
+\[\therefore \Psi = \tilde{c_1} \sigma_{g2s} + \tilde{c_2} \sigma_{g2p_z}\]
+
+<p>where $\tilde{c_1} = a_1 / c_1,  \tilde{c_2} = a_2 / c_2$.</p>
+
+<p><img src="/assets/img/s-p-mixing/bonding-mos.png" alt="Bonding MOs" /></p>
+
+<p>With $\sigma_{g2s}$ as the baseline, the electron density of $\sigma_{g2s \, \vert \, \text{improved}}$ between the two nuclei is significantly larger. This in turn stabilizes the MO.</p>
+
+<p>On the other hand, compared to $\sigma_{g2p_{z}}$, the electron density of  $\sigma_{g2p_{z} \vert \, \text{improved}}$ between the two nuclei is significantly smaller. This in turn destabilizes the MO.</p>
+
+<p>In plain terms, $\sigma_{g2s}$ decreases in energy, while $\sigma_{g2p_{z}}$ increases in energy. The updated correlation diagram below reflects these changes.</p>
+
+<p><img src="/assets/img/s-p-mixing/bonding-correlation.png" alt="Bonding Correlation" /></p>
+
+<p>Due to the drastic increase in energy of $\sigma_{g2p_{z}}$, the order among $\sigma_{g2p_{z}}$ and $\pi_{u2p_x} / \pi_{u2p_y}$ is now reversed, as expected.
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+By mixing the two $\sigma_u$ MOs, we obtain two new $\sigma_{u \, \vert \, \text{improved}}$ MOs:  $\sigma_{u2s \, \vert \, \text{improved}}^{\ast}$ and $\sigma_{u2p_{z} \vert \, \text{improved}}^{\ast}$</p>
+
+\[\Psi^{\ast} = c_{3}2s^{\text{A}} - c_{3}2s^{\text{B}} + c_{4}2p_{z}^{\text{A}} - c_{4}2p_{z}^{\text{B}} = c_{3} \left ( 2s^{\text{A}} - 2s^{\text{B}} \right ) + c_{4} \left ( 2p_{z}^{\text{A}} - 2p_{z}^{\text{B}} \right )\]
+
+\[\therefore \Psi^{\ast} = \tilde{c_3} \sigma_{u2s}^{\ast} + \tilde{c_4} \sigma_{u2p_z}^{\ast}\]
+
+<p>where $\tilde{c_3} = a_3 / c_3,  \tilde{c_4} = a_4 / c_4$.</p>
+
+<p><img src="/assets/img/s-p-mixing/antibonding-mos.png" alt="Antibonding MOs" /></p>
+
+<p>Like the $\sigma_g$ MOs, $\sigma_{u2s}^{\ast}$ decreases in energy as $\sigma_{u2p_{z}}^{\ast}$ increases in energy.</p>
+
+<p><img src="/assets/img/s-p-mixing/antibonding-correlation.png" alt="Antibonding Correlation" /></p>
+
+<p>Unlike the $\sigma_g$ MOs, the changes in energy is barely noticable. This is because $\sigma_{u2s}^{\ast}$ and $\sigma_{u2p_{z}}^{\ast}$ overlap poorly - by inspection, roughly equal amounts of constructive and destructive interference is to be predicted. In hindsight, the mixing of the two  was not necessary.</p>
+
+<h1 id="summary">Summary</h1>
+
+<p>From $ \text{Li}_2 $ to $ \text{N}_2 $, the energy levels of $ 2s $ and $ 2p_z $ orbitals are close enough for mixing to occur. Instead of directly mixing the $ 2s $ and $ 2p_z $ orbitals, their $\sigma _{g}$ LCAO-MOs ($\sigma _{g2s}$ and $\sigma _{g2p_z}$) can be further mixed to produce more accurate MOs. As $\sigma _{g2s}$ and $\sigma _{g2p_z}$ are mixed, the energy levels of $\sigma _{g2p_z}$ and $\pi _{u2p_x}$ / $\pi _{u2p_y}$ become reversed.</p>
+
+<h1 id="footnotes">Footnotes</h1>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>For all LCAO below, we have sneakily ignored AOs of $n = 3$ and above (ex. $3s$, $3p$, $3d$, $4s$, etc.). This is because AOs of higher energy contribute very little to the MOs we are interested in; these AOs are also unnecessary for our explanation. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>The term “mix” is really a short-hand way of saying “interfere”. For example, “the AOs $2s^A$ and $2s^B$ mix to form bonding and antibonding MOs” really mean “the AOs $2s^A$ and $2s^B$ interfere constructively (to form a bonding MO) and destructively (to form an antibonding MO)” <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p>Nitrogen seems like a borderline case, but the fact that their AOs overlap very well (a point indirectly made later in the article) makes up for its large energy difference. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name></name></author><category term="general-chemistry" /><summary type="html"><![CDATA[A Quick Review on LCAO]]></summary></entry><entry xml:lang="en"><title type="html">The Purpose of this Blog</title><link href="https://sypark-chem.me/blog/the-purpose-of-this-blog/" rel="alternate" type="text/html" title="The Purpose of this Blog" /><published>2022-01-28T00:00:00+00:00</published><updated>2022-01-28T00:00:00+00:00</updated><id>https://sypark-chem.me/blog/the-purpose-of-this-blog</id><content type="html" xml:base="https://sypark-chem.me/blog/the-purpose-of-this-blog/"><![CDATA[<h1 id="a-repository-for-questions-on-chemistry-mostly">A Repository for Questions on Chemistry (mostly)</h1>
+
+<p>The primary purpose of this blog is to answer some of the unanswered questions on chemistry that I had while learning chemistry - in high school and in college.</p>
+
+<p>Some of those questions cannot be answered without delving deeper into chemistry, as well as other disciplines such as physics and math. Such questions will be answered in the simplest way possible.</p>
+
+<p>These questions will seem easy at the surface, but when dug deeper, they reveal important insights into chemistry. I hope that you not only learn some chemistry, but also share some of the epiphany that I had when understanding chemistry - the feeling that motivated me to start this blog.</p>
+
+<h1 id="modeling-and-simulating-chemical-phenomena">Modeling and Simulating Chemical Phenomena</h1>
+
+<p>The other purpose of this blog is to share some of my attempts of modelling and simulating chemistry with code, mainly Python.</p>
+
+<p>This blog will focus on explaining the general workings of my projects, which will most likely be available as a public <a href="https://github.com/KeroseneNotForConsumption">GitHub</a> repository.</p>]]></content><author><name></name></author><category term="blog" /><summary type="html"><![CDATA[A Repository for Questions on Chemistry (mostly)]]></summary></entry></feed>
