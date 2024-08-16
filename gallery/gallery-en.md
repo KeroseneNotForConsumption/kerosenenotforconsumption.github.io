@@ -7,12 +7,6 @@ lang: en
 
 # Gallery
 
-### Lab work showcase
-
-![autoCG](/assets/img/about/algorithm_figure.png)
-
-![Model architecture](/assets/img/about/model_arch.png)
-
 ### Student Council work showcase
 
 ![Periodic table - front](/assets/img/gallery/periodic_table_front.png)

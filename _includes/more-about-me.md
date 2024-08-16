@@ -48,27 +48,17 @@ s.y.park@kaist.ac.kr / [Download CV as PDF](/assets/CV_shinyoungpark_blog.pdf){:
     </div>
 </div>
 <div class="container">
-    <div class="image-container">
-        <a href="assets/img/about/model_arch.png">
-            <img src="assets/img/about/model_arch.png">
-        </a>
-    </div>
-    <div class="right-text-container">
+    <div class="container">
         <p>
             Developed a generative message passing neural network with PyTorch Geometric that creates reactions with a given activation energy via graph edits.
         </p>
     </div>
 </div>
 <div class="container">
-    <div class="left-text-container">
+    <div class="container">
         <p>
             Contributed to the paper "An efficient automated algorithm for generating input structure for TS searching methods" by suggesting improvements to the algorithm and creating most figures for the manuscript.
         </p>
-    </div>
-    <div class="image-container">
-        <a href="assets/img/about/algorithm_figure.png">
-            <img src="assets/img/about/algorithm_figure.png">
-        </a>
     </div>
 </div>
 <!-- research:end -->
@@ -208,16 +198,6 @@ s.y.park@kaist.ac.kr / [Download CV as PDF](/assets/CV_shinyoungpark_blog.pdf){:
 <!-- service:end -->
 <!-- publications:start -->
 ### Publications
-<div class="container">
-    <div class="left-text-container">
-        <p>
-            Lee, K.; Lee, J.; Park, S.; Kim, W. Y. An efficient automated algorithm for generating input structure for TS searching methods. in preparation.
-        </p>
-    </div>
-    <div class="image-container">
-        <a href="assets/img/about/algorithm_figure.png">
-            <img src="assets/img/about/algorithm_figure.png">
-        </a>
-    </div>
-</div>
+
+
 <!-- publications:end -->

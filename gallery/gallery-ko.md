@@ -7,12 +7,6 @@ lang: ko
 
 # 겔러리
 
-### 연구
-
-![autoCG](/assets/img/about/algorithm_figure.png)
-
-![Model architecture](/assets/img/about/model_arch.png)
-
 ### 학생회
 
 ![Periodic table - front](/assets/img/gallery/periodic_table_front.png)
