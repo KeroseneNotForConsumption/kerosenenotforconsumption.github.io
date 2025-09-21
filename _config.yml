@@ -30,6 +30,7 @@ github_username:  kerosenenotforconsumption
 plugins:
   - jekyll-feed
   - jekyll-polyglot
+  - jekyll-seo-tag
 theme: minima
 
 # Custom permalink

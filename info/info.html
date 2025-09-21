@@ -1,0 +1,52 @@
+---
+layout: post_no_title
+title: About me
+permalink: /info
+lang: en
+robots: noindex, nofollow
+nav_exclude: true
+---
+
+{% capture markdown_content %}
+{% include info.md %}
+{% endcapture %}
+
+<html>
+<head>
+    <title>More about me</title>
+<body style="overflow-x: hidden;">
+    <div class="container">
+        <div class="image-container">
+            <img src="/assets/img/me.png" alt="Shinyoung Park">
+        </div>
+        <div class="right-text-container" style="font-size: 14px;">
+            <p>
+                {% include section_extractor.html section_name="introduction" markdown_content=markdown_content %}
+            </p>
+        </div>
+    </div>
+    <div class="gray-container">
+        <div class="wrapper">
+            <div class="container">
+                <div class="left-text-container" style="font-size: 14px;">
+                    {% include section_extractor.html section_name="SOP" markdown_content=markdown_content %}
+                </div>
+                <div class="large-image-container">
+                    <img src="/assets/img/info/research.png" alt="Research">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="normal-container">
+        <div class="container">
+
+            <div class="large-image-container">
+                <img src="/assets/img/info/high_school.png" alt="International Exchange">
+            </div>
+            <div class="right-text-container" style="font-size: 14px;">
+                {% include section_extractor.html section_name="PS" markdown_content=markdown_content %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

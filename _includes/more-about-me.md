@@ -1,11 +1,11 @@
 
 <!-- introduction:start -->
 ## Shinyoung Park
-s.y.park@kaist.ac.kr / [Download CV as PDF](/assets/CV_shinyoungpark_blog.pdf){:download="CV_shinyoungpark.pdf"}
+s.y.park@kaist.ac.kr / [View CV as PDF](/assets/CV_shinyoungpark_blog.pdf)
 
 ### Research interests
-- Physical/Computational/AI chemistry and machine learning
-- Their applications in various fields such as organic/organometallic chemistry
+- Physical, computational, and AI/ML chemistry
+- Their applications across various areas of chemistry and materials science
 <!-- introduction:end -->
 <!-- education:start -->
 ### Education
@@ -22,18 +22,18 @@ s.y.park@kaist.ac.kr / [Download CV as PDF](/assets/CV_shinyoungpark_blog.pdf){:
         B.S. in Chemistry
     </div>
     <div style="text-align: right;">
-        <i>Expected August 2025</i>
+        <i>Expected February 2026</i>
     </div>
 </div>
 <div style="font-size: 14px;">
-    &nbsp;&nbsp;&nbsp;&nbsp; • GPA: 4.28/4.30 (Major GPA: 4.30/4.30)
+    &nbsp;&nbsp;&nbsp;&nbsp; • GPA: 4.27/4.30
 </div>
 <!-- education:end -->
 <!-- research:start -->
 ### Research Experience
 <div style="display: flex; justify-content: space-between;">
     <div style="text-align: left;">
-        <b><a href="https://wooyoun.kaist.ac.kr/">Intelligent Chemistry Lab</a> &ndash; KAIST Department of Chemistry </b>
+        <b><a href="https://wooyoun.kaist.ac.kr/">Intelligent Chemistry Lab</a> &ndash; KAIST Department of Chemistry</b>
     </div>
     <div style="text-align: right;">
         Daejeon, Korea
@@ -47,23 +47,54 @@ s.y.park@kaist.ac.kr / [Download CV as PDF](/assets/CV_shinyoungpark_blog.pdf){:
         <i>2022 &ndash; Present</i>
     </div>
 </div>
+
 <div class="container">
-    <div class="container">
-        <p>
-            Developed a generative message passing neural network with PyTorch Geometric that creates reactions with a given activation energy via graph edits.
-        </p>
-    </div>
-</div>
-<div class="container">
-    <div class="container">
-        <p>
-            Contributed to the paper "An efficient automated algorithm for generating input structure for TS searching methods" by suggesting improvements to the algorithm and creating most figures for the manuscript.
-        </p>
-    </div>
+    <ul style="list-style-type: none; padding-left: 0; margin: 0;">
+        <li style="margin-bottom: 12px;">
+            Developed the <a href="https://github.com/kyunghoonlee777/autoCG"><b>AutoCG</b> package</a> for generating input reactant/product conformations for a wide range of interpolation transition state (TS) search methods.
+            <ul style="font-size: 0.9em; list-style-type: disc; margin-left: 20px; margin-top: 6px; margin-bottom: 0;">
+                <li>Devised a novel stereochemical manipulation technique to obtain low-energy TS structures.</li>
+                <li>Validated <b>AutoCG</b> with Gaussian and ORCA across three benchmark sets, comprising 32 reactions.</li>
+                <li>Drafted and revised the manuscript published in <i>J. Chem. Theory Comput.</i> titled <a href="#lee2025">Facilitating Transition State Search with Minimal Conformational Sampling Using Reaction Graph.</a></li>
+            </ul>
+        </li>
+        <li style="margin-bottom: 12px;">
+            Developed <b>MetalloGen</b>, an automated tool for generating 3D conformers of organometallic complexes with challenging polydentate and polyhapto ligands.
+            <ul style="font-size: 0.9em; list-style-type: disc; margin-left: 20px; margin-top: 6px; margin-bottom: 0;">
+                <li>Proposed solutions for polyhapto ligand embedding and conformer refinement.</li>
+                <li>Benchmarked <b>MetalloGen</b> with CREST and Gaussian on 80 organometallic complexes from diverse transition metal reactions and real-world catalytic mechanisms.</li>
+                <li>Drafted the majority of the manuscript, currently submitted.</li>
+            </ul>
+        </li>
+        <li style="margin-bottom: 12px;">
+            Extended capabilities of <b>ACE-Reaction</b>, a graph-theoretic reaction network exploration method, as part of the Undergraduate Research Program.
+            <ul style="font-size: 0.9em; list-style-type: disc; margin-left: 20px; margin-top: 6px; margin-bottom: 0;">
+                <li>Proposed and implemented an atom mapping scheme for unbalanced reactions using mixed-integer linear programming with SciPy.</li>
+                <li>Developed an autoregressive message passing neural network with PyTorch Geometric for sampling reactions within a defined activation barrier.</li>
+                <li>Optimized HPC resource allocation of <b>ACE-Reaction</b>; reduced TS search computing cost by 20&ndash;30%.</li>
+            </ul>
+        </li>
+    </ul>
 </div>
 <!-- research:end -->
 <!-- awards:start -->
 ### Awards
+<div style="margin-bottom: 10px;">
+    <div style="display: flex; justify-content: space-between;">
+        <div style="text-align: left;">
+            <b>KFAS Overseas PhD Scholarship (Trainee)</b>
+        </div>
+        <div style="text-align: right;">
+            <i>2026 &ndash; 2030</i>
+        </div>
+    </div>
+    <div style="font-size: 14px;">
+        Korea Foundation for Advanced Studies
+        <br>
+        &nbsp;&nbsp;&bull;&nbsp;&nbsp;Highly selective scholarship supporting doctoral study at top global universities.
+
+    </div>
+</div>
 <div style="margin-bottom: 10px;">
     <div style="display: flex; justify-content: space-between;">
         <div style="text-align: left;">
@@ -76,7 +107,7 @@ s.y.park@kaist.ac.kr / [Download CV as PDF](/assets/CV_shinyoungpark_blog.pdf){:
     <div style="font-size: 14px;">
         Ministry of Science and ICT, Korea
         <br>
-        &nbsp;&nbsp;&bull;&nbsp;&nbsp;Awarded for academic excellence
+        &nbsp;&nbsp;&bull;&nbsp;&nbsp;National award for top academic performance in STEM fields; full tuition for two years.
     </div>
 </div>
 <div style="margin-bottom: 10px;">
@@ -85,24 +116,11 @@ s.y.park@kaist.ac.kr / [Download CV as PDF](/assets/CV_shinyoungpark_blog.pdf){:
             <b>Dean's List</b>
         </div>
         <div style="text-align: right;">
-            <i>Spring 2022, Fall 2022, Spring 2023, Fall 2023</i>
+            <i>Spring 2020, Spring 2022, Fall 2022, Spring 2023, Fall 2023</i>
         </div>
     </div>
     <div style="font-size: 14px;">
-        College of Natural Sciences, KAIST
-    </div>
-</div>
-<div style="margin-bottom: 10px;">
-    <div style="display: flex; justify-content: space-between;">
-        <div style="text-align: left;">
-            <b>Dean's List</b>
-        </div>
-        <div style="text-align: right;">
-            <i>Spring 2020</i>
-        </div>
-    </div>
-    <div style="font-size: 14px;">
-        School of Freshman, KAIST
+        KAIST
     </div>
 </div>
 <!-- awards:end -->
@@ -111,31 +129,38 @@ s.y.park@kaist.ac.kr / [Download CV as PDF](/assets/CV_shinyoungpark_blog.pdf){:
 <div style="margin-bottom: 10px;">
     <b>Programming and other Languages</b>
     <div style="font-size: 14px;">
-        &nbsp;&nbsp;&nbsp;&nbsp;Python, LaTeX, Markdown, MATLAB, JavaScript
+        &nbsp;&nbsp;&nbsp;&nbsp;Python, MATLAB, JavaScript, LaTeX, Markdown
     </div>
 </div>
 <div style="margin-bottom: 10px;">
     <b>Libraries</b>
     <div style="font-size: 14px;">
-        &nbsp;&nbsp;&nbsp;&nbsp;NumPy, SciPy, Matplotlib, RDKit, Plotly, PyTorch, PyTorch Geometric
+        &nbsp;&nbsp;&nbsp;&nbsp;NumPy, SciPy, Matplotlib, RDKit, Plotly, PyTorch, PyTorch Geometric, scikit-learn
     </div>
 </div>
 <div style="margin-bottom: 10px;">
     <b>Developer Tools</b>
     <div style="font-size: 14px;">
-        &nbsp;&nbsp;&nbsp;&nbsp;Neovim, VS Code, Bash, SSH, JupyterLab, Git, GitHub, Jekyll, GitHub Pages
+        &nbsp;&nbsp;&nbsp;&nbsp; Git, Bash, SSH, SLURM, Vim/Neovim, VS Code, JupyterLab, GitHub, GitHub Pages
     </div>
 </div>
 <div style="margin-bottom: 10px;">
     <b>Chemistry Tools</b>
     <div style="font-size: 14px;">
-        &nbsp;&nbsp;&nbsp;&nbsp;Gaussian, ORCA, ChemDraw, Avogadro, PyMOL, Mnova
+        &nbsp;&nbsp;&nbsp;&nbsp;Gaussian, ORCA, MOPAC, xTB, CREST, ChemDraw, Avogadro, PyMOL, Mnova
     </div>
 </div>
 <div style="margin-bottom: 10px;">
     <b>Graphic Design Tools</b>
     <div style="font-size: 14px;">
-        &nbsp;&nbsp;&nbsp;&nbsp;Photoshop, Illustrator
+        &nbsp;&nbsp;&nbsp;&nbsp;Adobe Photoshop, Adobe Illustrator
+    </div>
+</div>
+<div style="margin-bottom: 10px;">
+    <b>English Proficiency</b>
+    <div style="font-size: 14px;">
+        &nbsp;&nbsp;&nbsp;&nbsp; GRE: Verbal (170, 99%), Quantitative (170, 92%), Analytical Writing (4.5, 83%)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; TOEFL: 116 (Reading: 30, Listening: 30, Speaking: 28, Writing: 30)
     </div>
 </div>
 <!-- skills:end -->
@@ -154,50 +179,53 @@ s.y.park@kaist.ac.kr / [Download CV as PDF](/assets/CV_shinyoungpark_blog.pdf){:
         Head of the Internationalization Team
     </div>
     <div style="text-align: right;">
-        <i>2023</i>
+        <i>Aug 2023 – Feb 2024</i>
     </div>
-</div>
-<div style="font-size: 14px;">
-    <ul>
-        <li>
-            Provided Korean-English translation of 
-            key announcements and materials for international students.
-        </li>
-        <li>
-            Served as a Korean-English interpreter 
-            at departmental events, fostering inclusivity 
-            within the chemistry student community.
-        </li>
-        <li>
-            Gathered feedback from international students on the Student Council and created            
-            <a href="https://docs.google.com/document/d/1Hyor_w2OxCaH4-l8lbEXmHokLHJ50-0KLozCi69tr8c/edit?usp=sharing">‘A Guide to the Department of Chemistry’</a> — a comprehensive resource featuring various essential information, links, and advices for students interested in chemistry.
-        </li>
-    </ul>
 </div>
 <div style="display: flex; justify-content: space-between;">
     <div style="text-align: left;">
-        Member of the Design Team and Academic Affairs Team
+        Member of the Design Team and the Academic Affairs Team
     </div>
     <div style="text-align: right;">
-        <i>2022 – 2023</i>
+        <i>Mar 2022 – Aug 2023</i>
     </div>
 </div>
 <div style="font-size: 14px;">
     <ul>
         <li>
-            Planned and designed promotional materials for activities held by the Student Council, including a
-            pamphlet introducing the various labs of the Department of Chemistry and their research to
+            Founded the Internationalization Team to support international students and compiled <br> <a href="https://docs.google.com/document/d/1Hyor_w2OxCaH4-l8lbEXmHokLHJ50-0KLozCi69tr8c/edit?usp=sharing">‘A Guide to the Department of Chemistry’</a>, a comprehensive English-language resource featuring essential information, curated links, and practical guidance.
+        </li>
+        <li>
+            Supported international students by translating Korean announcements and documents into
+English and providing Korean-English interpretation at departmental events.
+        </li>
+        <li>
+            Designed promotional materials, including pamphlets highlighting Department of Chemistry labs
+and their research for 
             <a href="https://drive.google.com/file/d/1nr9f6e0wuJP0eG0zDnIvJoKZf6fNje--/view?usp=sharing">prospective undergraduate</a> and <a href="https://drive.google.com/file/d/1nF9uVZV89qrqHHxwZyz3Fx5MJhuxC4Wh/view?usp=sharing">graduate students</a>.
         </li>
         <li>
-            Facilitated <i>2022 KAIST Chemie Camp</i>, where high school students country-wide 
-            were invited to explore and experience the state-of-the-art chemistry research and education at KAIST.
+            Coordinated the <i>2022 KAIST Chemie Camp</i>, where high school students nationwide were invited to explore and experience cutting-edge chemistry research and education at KAIST.
         </li>
     </ul>
 </div>
 <!-- service:end -->
 <!-- publications:start -->
 ### Publications
-
+<ol style="list-style-type: decimal; margin-left: 1.5em;">
+  <li id="lee2025">
+    Lee, K.<sup>†</sup>; Lee, J.<sup>†</sup>; <i>Park, S.</i><sup>†</sup>; Kim, W. Y. 
+    Facilitating Transition State Search with Minimal Conformational Sampling Using Reaction Graph. 
+    <i>J. Chem. Theory Comput.</i> <b>2025</b>, <i>21</i> (5), 2487–2500. 
+    <a href="https://doi.org/10.1021/acs.jctc.4c01692">DOI: 10.1021/acs.jctc.4c01692</a> 
+    (<sup>†</sup>Equal contribution)
+    <!-- (<sup>†</sup>Co-1st author) -->
+  </li>
+  <li>
+    Lee, K.; <i>Park, S.</i>; Park, M.; Kim, W. Y. 
+    MetalloGen: Automated 3D Conformer Generation for Diverse Coordination Complexes. Submitted. 
+    <!-- (2<sup>nd</sup> author) -->
+  </li>
+</ol>
 
 <!-- publications:end -->
