@@ -34,18 +34,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Add Linux platform to lockfile
-        run: |
-          if [ -f Gemfile.lock ]; then
-            bundle lock --add-platform x86_64-linux || true
-          fi
-
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.1'
-          bundler-cache: true
-          cache-version: 0
+          bundler-cache: false
+
+      - name: Ensure Linux platform in lockfile
+        run: |
+          if [ -f Gemfile.lock ]; then
+            if ! grep -q "x86_64-linux" Gemfile.lock; then
+              bundle lock --add-platform x86_64-linux
+            fi
+          fi
+
+      - name: Bundle install
+        run: bundle install --jobs 4 --retry 3 --path vendor/bundle
 
       - name: Setup Pages
         id: pages
