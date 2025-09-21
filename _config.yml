@@ -33,6 +33,9 @@ plugins:
   - jekyll-seo-tag
 theme: minima
 
+whitelist:
+  - jekyll-polyglot
+
 # Custom permalink
 permalink: /:categories/:title/
 
