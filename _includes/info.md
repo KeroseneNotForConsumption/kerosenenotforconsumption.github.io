@@ -9,17 +9,17 @@ I am a [chemistry major](https://chem.kaist.ac.kr/)
 at [Korea Advanced Institute of Science and Technology (KAIST)](https://www.kaist.ac.kr/en/) 
 and an undergraduate researcher in the [Intelligent Chemistry Lab with Professor Woo Youn Kim](https://wooyoun.kaist.ac.kr/).
 
-I am a recipient of the [KFAS Traning Program for Overseas PhD Scholarship](https://eng.kfas.or.kr/theme/kfaschanel/intl_scholarship_5.php) and expect to graduate in February 2026 with a GPA of 4.27/4.30.
+<!-- I am a recipient of the [KFAS Traning Program for Overseas PhD Scholarship](https://eng.kfas.or.kr/theme/kfaschanel/intl_scholarship_5.php) and expect to graduate in February 2026 with a GPA of 4.27/4.30. -->
 
 My research interests include:
 - Physical, computational, and AI/ML chemistry
 - Their applications across various areas of chemistry and materials science
 
-Check out my [Curriculum Vitae!](/assets/CV_shinyoungpark_info.pdf)
+<!-- Check out my [Curriculum Vitae!](/assets/CV_shinyoungpark_blog.pdf) -->
 
 Below are some materials to help you learn more about me.
 
-<small>Last updated: 2025-09-18</small>
+<small>Last updated: 2025-10-09</small>
 
 <!-- s.y.park@kaist.ac.kr / [Download CV as PDF](/assets/CV_shinyoungpark_blog.pdf) -->
 

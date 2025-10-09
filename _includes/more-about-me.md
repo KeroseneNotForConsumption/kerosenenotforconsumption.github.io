@@ -51,7 +51,7 @@ s.y.park@kaist.ac.kr / [View CV as PDF](/assets/CV_shinyoungpark_blog.pdf)
 <div class="container">
     <ul style="list-style-type: none; padding-left: 0; margin: 0;">
         <li style="margin-bottom: 12px;">
-            Developed the <a href="https://github.com/kyunghoonlee777/autoCG"><b>AutoCG</b> package</a> for generating input reactant/product conformations for a wide range of interpolation transition state (TS) search methods.
+            <b>Developed the <a href="https://github.com/kyunghoonlee777/autoCG">AutoCG package</a> for generating input reactant/product conformations for a wide range of interpolation transition state (TS) search methods.</b>
             <ul style="font-size: 0.9em; list-style-type: disc; margin-left: 20px; margin-top: 6px; margin-bottom: 0;">
                 <li>Devised a novel stereochemical manipulation technique to obtain low-energy TS structures.</li>
                 <li>Validated <b>AutoCG</b> with Gaussian and ORCA across three benchmark sets, comprising 32 reactions.</li>
@@ -59,7 +59,7 @@ s.y.park@kaist.ac.kr / [View CV as PDF](/assets/CV_shinyoungpark_blog.pdf)
             </ul>
         </li>
         <li style="margin-bottom: 12px;">
-            Developed <b>MetalloGen</b>, an automated tool for generating 3D conformers of organometallic complexes with challenging polydentate and polyhapto ligands.
+            <b>Developed MetalloGen, an automated tool for generating 3D conformers of organometallic complexes with challenging polydentate and polyhapto ligands.</b>
             <ul style="font-size: 0.9em; list-style-type: disc; margin-left: 20px; margin-top: 6px; margin-bottom: 0;">
                 <li>Proposed solutions for polyhapto ligand embedding and conformer refinement.</li>
                 <li>Benchmarked <b>MetalloGen</b> with CREST and Gaussian on 80 organometallic complexes from diverse transition metal reactions and real-world catalytic mechanisms.</li>
@@ -67,7 +67,7 @@ s.y.park@kaist.ac.kr / [View CV as PDF](/assets/CV_shinyoungpark_blog.pdf)
             </ul>
         </li>
         <li style="margin-bottom: 12px;">
-            Extended capabilities of <b>ACE-Reaction</b>, a graph-theoretic reaction network exploration method, as part of the Undergraduate Research Program.
+            <b>Extended capabilities of ACE-Reaction, a graph-theoretic reaction network exploration method, as part of the Undergraduate Research Program.</b>
             <ul style="font-size: 0.9em; list-style-type: disc; margin-left: 20px; margin-top: 6px; margin-bottom: 0;">
                 <li>Proposed and implemented an atom mapping scheme for unbalanced reactions using mixed-integer linear programming with SciPy.</li>
                 <li>Developed an autoregressive message passing neural network with PyTorch Geometric for sampling reactions within a defined activation barrier.</li>
@@ -79,7 +79,7 @@ s.y.park@kaist.ac.kr / [View CV as PDF](/assets/CV_shinyoungpark_blog.pdf)
 <!-- research:end -->
 <!-- awards:start -->
 ### Awards
-<div style="margin-bottom: 10px;">
+<!-- <div style="margin-bottom: 10px;">
     <div style="display: flex; justify-content: space-between;">
         <div style="text-align: left;">
             <b>KFAS Overseas PhD Scholarship (Trainee)</b>
@@ -94,7 +94,7 @@ s.y.park@kaist.ac.kr / [View CV as PDF](/assets/CV_shinyoungpark_blog.pdf)
         &nbsp;&nbsp;&bull;&nbsp;&nbsp;Highly selective scholarship supporting doctoral study at top global universities.
 
     </div>
-</div>
+</div> -->
 <div style="margin-bottom: 10px;">
     <div style="display: flex; justify-content: space-between;">
         <div style="text-align: left;">
@@ -160,7 +160,7 @@ s.y.park@kaist.ac.kr / [View CV as PDF](/assets/CV_shinyoungpark_blog.pdf)
     <b>English Proficiency</b>
     <div style="font-size: 14px;">
         &nbsp;&nbsp;&nbsp;&nbsp; GRE: Verbal (170, 99%), Quantitative (170, 92%), Analytical Writing (4.5, 83%)<br>
-        &nbsp;&nbsp;&nbsp;&nbsp; TOEFL: 116 (Reading: 30, Listening: 30, Speaking: 28, Writing: 30)
+        &nbsp;&nbsp;&nbsp;&nbsp; TOEFL: 116 (Reading: 30, Listening: 30, Speaking: 28, Writing: 28)
     </div>
 </div>
 <!-- skills:end -->

@@ -101,4 +101,4 @@ Looking ahead, my long-term goal is to lead a research group in academia or indu
 
 [^7]: Lee, K.; Lee, J.; Park, S.; Kim, W. Y. Facilitating transition state search with minimal conformational sampling using reaction graph. *Journal of Chemical Theory and Computation* **2025**, *21*, 2487–2500. DOI: [10.1021/acs.jctc.4c01692](https://doi.org/10.1021/acs.jctc.4c01692)
 
-[^8]: Lee, K.; Park, S.; Park, M.; Kim, W. Y. MetalloGen: Automated 3D conformer generation for diverse coordination complexes. Submitted.
+[^8]: Lee, K.; Park, S.; Park, M.; Kim, W. Y. MetalloGen: Automated 3D conformer generation for diverse coordination complexes. In revision.
