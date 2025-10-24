@@ -99,6 +99,6 @@ Looking ahead, my long-term goal is to lead a research group in academia or indu
 
 [^6]: Kim, Y.; Kim, J. W.; Kim, Z.; Kim, W. Y. Efficient prediction of reaction paths through molecular graph and reaction network analysis. *Chemical Science* **2018**, *9*, 825–835. DOI: [10.1039/C7SC03628K](https://doi.org/10.1039/C7SC03628K)
 
-[^7]: Lee, K.; Lee, J.; Park, S.; Kim, W. Y. Facilitating transition state search with minimal conformational sampling using reaction graph. *Journal of Chemical Theory and Computation* **2025**, *21*, 2487–2500. DOI: [10.1021/acs.jctc.4c01692](https://doi.org/10.1021/acs.jctc.4c01692)
+[^7]: Lee, K.; Lee, J.; Park, S.; Kim, W. Y. Facilitating transition state search with minimal conformational sampling using reaction graph. *Journal of Chemical Theory and Computation* **2025**, *21*, 2487–2500. DOI: [10.1021/acs.jctc.4c01692](https://doi.org/10.1021/acs.jctc.4c01692) \[[PDF Article](/assets/2025_Lee_et_al_AutoCG.pdf)\] \[[GitHub](https://github.com/kyunghoonlee777/autoCG)\]
 
-[^8]: Lee, K.; Park, S.; Park, M.; Kim, W. Y. MetalloGen: Automated 3D conformer generation for diverse coordination complexes. In revision.
+[^8]: Lee, K.; Park, S.; Park, M.; Kim, W. Y. MetalloGen: Automated 3D conformer generation for diverse coordination complexes. *Journal of Chemical Information and Modeling* **2025**, DOI: [10.1021/acs.jcim.5c02074](https://doi.org/10.1021/acs.jcim.5c02074) \[[PDF Article](/assets/2025_Lee_et_al_MetalloGen.pdf)\] \[[GitHub](https://github.com/kyunghoonlee777/MetalloGen)\]

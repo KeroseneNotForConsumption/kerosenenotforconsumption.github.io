@@ -19,7 +19,7 @@ My research interests include:
 
 Below are some materials to help you learn more about me.
 
-<small>Last updated: 2025-10-09</small>
+<small>Last updated: 2025-10-24</small>
 
 <!-- s.y.park@kaist.ac.kr / [Download CV as PDF](/assets/CV_shinyoungpark_blog.pdf) -->
 
