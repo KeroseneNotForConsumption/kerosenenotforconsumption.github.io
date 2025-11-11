@@ -9,7 +9,7 @@ nav_exclude: true
 
 [Click here to go back](/info)
 
-My deep dive into chemistry began with a challenge posed by Professor Insung S. Choi during a *Physical Organic Chemistry* lecture. While discussing the bent bond model of double bonds, he offered an A+ to the first student who could find the earliest mention of the σ-π description of double bonds, where σ bonds are described by valence bond theory and π bonds are described by molecular orbital theory. To my dismay, someone else had already found a review article that credits a 1934 paper by W. G. Penney[^1] before the end of the lecture.
+It all began with a challenge posed by Professor Insung S. Choi during a *Physical Organic Chemistry* lecture. While discussing the bent bond model of double bonds, he offered an A+ to the first student who could find the earliest mention of the σ-π description of double bonds, where σ bonds are described by valence bond theory and π bonds are described by molecular orbital theory. To my dismay, someone else had already found a review article that credits a 1934 paper by W. G. Penney[^1] before the end of the lecture.
 
 <img src="/assets/img/info/bent_bond.png" width="500" style="display: block; margin: 0 auto;"/>
 
@@ -58,21 +58,21 @@ Implementing this solution was challenging because RDKit struggled to generate p
 R/S configuration inversion of a pseudo-TS of a Diels-Alder reaction.
 {: style="color:gray; font-size: 80%; text-align: center;"}
 
-Our updated algorithm generated reactant and product conformations that successfully led to the desired TS structures, allowing us to finalize and publish our paper in the *Journal of Chemical Theory and Computation*.[^7] However, what intrigued me most, even more than the publication itself, were the unexpected TS structures that emerged from stereoisomer enumeration. Analyzing TS structures from pathways such as frontside S<sub>N</sub>2 attacks and antarafacial-antarafacial Diels-Alder reactions led me to realize that chemistry, especially its most novel and interesting aspects, extends beyond simplified models.
+Our updated algorithm not only yielded reactant and product conformations that led to the desired TS structures but also, unexpectedly, produced TSs that were more stable than the original references. As a result, this work was published as a co-first-author article in the *Journal of Chemical Theory and Computation*.[^7] Follow-up research is currently underway, in collaboration with a total synthesis group, to enable rapid prediction of activation barriers and selectivity by integrating machine-learned interatomic potentials into AutoCG. Through this project, I realized how computational tools can reveal possibilities and insights even expert intuition might miss.
 
 <img src="/assets/img/info/autocg_reaction_conformations.png" width="600" style="display: block; margin: 0 auto;"/>
 
 Reactant and product conformations of various organic reactions generated with AutoCG.
 {: style="color:gray; font-size: 80%; text-align: center;"}
 
-My current project, MetalloGen, lies at the heart of this effort to move beyond simple templates and constructs. MetalloGen is a fully automated 3D conformer generation utility for organometallic compounds.[^8] Unlike its predecessors, it supports a wide range of polydentate and polyhapto ligands, expanding the scope of organometallic compounds accessible to automated computational methods. Drawing on my experience with computational chemistry programs from my work on AutoCG, and my deep understanding of d-orbital chemistry during the *Organometallic Chemistry* course, I proposed key ideas behind several core features of MetalloGen. These included introducing dummy atoms between polyhapto ligands and the metal center to enable 3D conformer embedding with RDKit, and refining embedded structures using both force field and quantum chemical methods.
+With my subsequent project, MetalloGen, I set out to push the boundaries of automated 3D conformer generation for organometallic compounds. Compared to its predecessors, MetalloGen supports a wider range of polydentate and polyhapto ligands, as well as more diverse geometry types. Drawing on my experience developing AutoCG and knowledge from *Organometallic Chemistry*, I proposed key ideas behind several core features of MetalloGen. These included introducing dummy atoms between polyhapto ligands and the metal center to enable 3D conformer embedding with RDKit, and refining embedded structures using both force field and quantum chemical methods.
 
 <img src="/assets/img/info/metallogen_overview.png" width="600" style="display: block; margin: 0 auto;"/>
 
 Overview of our MetalloGen algorithm.
 {: style="color:gray; font-size: 80%; text-align: center;"}
 
-I also led the literature review that guided development, curated datasets and catalytic systems to benchmark MetalloGen, and conducted tests and analyses that improved the tool's reliability. As a result, MetalloGen can now automatically generate major classes of organometallic complexes important in catalysis, including metallocenes and half-sandwich structures, which were previously unavailable through fully automated methods. This work, currently submitted, reflects my broader goal: to develop automated computational tools that not only predict established chemistry but also uncover new discoveries in domains that are often overlooked.
+To set MetalloGen apart from earlier works, I proposed evaluating it on catalytic cycles involving unstable and transient intermediates, whereas prior methods were tested on stable, experimentally characterized complexes. We demonstrated that MetalloGen could generate a wide spectrum of catalytically relevant organometallic structures—from half-sandwich structures to σ- and π-complexes—resulting in positive and encouraging responses from reviewers. This work, published in the *Journal of Chemical Information and Modeling*,[^8] supports my broader goal: to develop computational tools that not only reproduce known chemistry but also guide the discovery and optimization of new functional systems.
 
 <img src="/assets/img/info/metallogen_profiles.png" width="600" style="display: block; margin: 0 auto;"/>
 
@@ -101,4 +101,4 @@ Looking ahead, my long-term goal is to lead a research group in academia or indu
 
 [^7]: Lee, K.; Lee, J.; Park, S.; Kim, W. Y. Facilitating transition state search with minimal conformational sampling using reaction graph. *Journal of Chemical Theory and Computation* **2025**, *21*, 2487–2500. DOI: [10.1021/acs.jctc.4c01692](https://doi.org/10.1021/acs.jctc.4c01692) \[[PDF Article](/assets/2025_Lee_et_al_AutoCG.pdf)\] \[[GitHub](https://github.com/kyunghoonlee777/autoCG)\]
 
-[^8]: Lee, K.; Park, S.; Park, M.; Kim, W. Y. MetalloGen: Automated 3D conformer generation for diverse coordination complexes. *Journal of Chemical Information and Modeling* **2025**, DOI: [10.1021/acs.jcim.5c02074](https://doi.org/10.1021/acs.jcim.5c02074) \[[PDF Article](/assets/2025_Lee_et_al_MetalloGen.pdf)\] \[[GitHub](https://github.com/kyunghoonlee777/MetalloGen)\]
+[^8]: Lee, K.; Park, S.; Park, M.; Kim, W. Y. MetalloGen: Automated 3D conformer generation for diverse coordination complexes. *Journal of Chemical Information and Modeling* **2025**, *65*, 11878−11891. DOI: [10.1021/acs.jcim.5c02074](https://doi.org/10.1021/acs.jcim.5c02074) \[[PDF Article](/assets/2025_Lee_et_al_MetalloGen.pdf)\] \[[GitHub](https://github.com/kyunghoonlee777/MetalloGen)\]

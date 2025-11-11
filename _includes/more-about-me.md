@@ -55,15 +55,15 @@ s.y.park@kaist.ac.kr / [View CV as PDF](/assets/CV_shinyoungpark_blog.pdf)
             <ul style="font-size: 0.9em; list-style-type: disc; margin-left: 20px; margin-top: 6px; margin-bottom: 0;">
                 <li>Devised a novel stereochemical manipulation technique to obtain low-energy TS structures.</li>
                 <li>Validated <b>AutoCG</b> with Gaussian and ORCA across three benchmark sets, comprising 32 reactions.</li>
-                <li>Drafted and revised the manuscript published in <i>J. Chem. Theory Comput.</i> titled <a href="#lee2025">Facilitating Transition State Search with Minimal Conformational Sampling Using Reaction Graph.</a></li>
+                <li>Drafted and revised the manuscript published in <i>J. Chem. Theory Comput.</i> titled <a href="#lee2025autocg">Facilitating Transition State Search with Minimal Conformational Sampling Using Reaction Graph.</a></li>
             </ul>
         </li>
         <li style="margin-bottom: 12px;">
-            <b>Developed MetalloGen, an automated tool for generating 3D conformers of organometallic complexes with challenging polydentate and polyhapto ligands.</b>
+            <b>Developed <a href="https://github.com/kyunghoonlee777/MetalloGen">MetalloGen</a>, an automated tool for generating 3D conformers of organometallic complexes with challenging polydentate and polyhapto ligands.</b>
             <ul style="font-size: 0.9em; list-style-type: disc; margin-left: 20px; margin-top: 6px; margin-bottom: 0;">
                 <li>Proposed solutions for polyhapto ligand embedding and conformer refinement.</li>
                 <li>Benchmarked <b>MetalloGen</b> with CREST and Gaussian on 80 organometallic complexes from diverse transition metal reactions and real-world catalytic mechanisms.</li>
-                <li>Drafted the majority of the manuscript, currently submitted.</li>
+                <li>Published article in <i>J. Chem. Inf. Model.</i> titled <a href="#lee2025metallogen">MetalloGen: Automated 3D Conformer Generation for Diverse Coordination Complexes.</a></li>
             </ul>
         </li>
         <li style="margin-bottom: 12px;">
@@ -213,18 +213,20 @@ and their research for
 <!-- publications:start -->
 ### Publications
 <ol style="list-style-type: decimal; margin-left: 1.5em;">
-  <li id="lee2025">
+  <li id="lee2025metallogen">
+    Lee, K.; <i>Park, S.</i>; Park, M.; Kim, W. Y. 
+    <b>MetalloGen: Automated 3D Conformer Generation for Diverse Coordination Complexes.</b>
+    <i>J. Chem. Inf. Model.</i> <b>2025</b>, <i>65</i> (21), 11878–11891. 
+    <a href="https://doi.org/10.1021/acs.jcim.5c02074">DOI: 10.1021/acs.jcim.5c02074</a>  
+    <!-- (2<sup>nd</sup> author) -->
+  </li>
+  <li id="lee2025autocg">
     Lee, K.<sup>†</sup>; Lee, J.<sup>†</sup>; <i>Park, S.</i><sup>†</sup>; Kim, W. Y. 
-    Facilitating Transition State Search with Minimal Conformational Sampling Using Reaction Graph. 
+    <b>Facilitating Transition State Search with Minimal Conformational Sampling Using Reaction Graph.</b>
     <i>J. Chem. Theory Comput.</i> <b>2025</b>, <i>21</i> (5), 2487–2500. 
     <a href="https://doi.org/10.1021/acs.jctc.4c01692">DOI: 10.1021/acs.jctc.4c01692</a> 
     (<sup>†</sup>Equal contribution)
     <!-- (<sup>†</sup>Co-1st author) -->
-  </li>
-  <li>
-    Lee, K.; <i>Park, S.</i>; Park, M.; Kim, W. Y. 
-    MetalloGen: Automated 3D Conformer Generation for Diverse Coordination Complexes. Submitted. 
-    <!-- (2<sup>nd</sup> author) -->
   </li>
 </ol>
 
