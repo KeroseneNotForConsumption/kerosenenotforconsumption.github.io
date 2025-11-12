@@ -116,7 +116,7 @@ s.y.park@kaist.ac.kr / [View CV as PDF](/assets/CV_shinyoungpark_blog.pdf)
             <b>Dean's List</b>
         </div>
         <div style="text-align: right;">
-            <i>Spring 2020, Spring 2022, Fall 2022, Spring 2023, Fall 2023</i>
+            <i>Spring 2020, Spring/Fall 2022, Spring/Fall 2023, Fall 2024</i>
         </div>
     </div>
     <div style="font-size: 14px;">
